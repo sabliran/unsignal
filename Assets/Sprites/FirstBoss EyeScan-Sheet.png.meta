@@ -1,0 +1,872 @@
+fileFormatVersion: 2
+guid: 914a6f1313c89bd439e1080020a94dac
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6370931832435618532
+    second: FirstBoss EyeScan-Sheet_0
+  - first:
+      213: -5079122016539196082
+    second: FirstBoss EyeScan-Sheet_1
+  - first:
+      213: 437697128856452781
+    second: FirstBoss EyeScan-Sheet_2
+  - first:
+      213: 6755796454515701245
+    second: FirstBoss EyeScan-Sheet_3
+  - first:
+      213: -6532931061578710679
+    second: FirstBoss EyeScan-Sheet_4
+  - first:
+      213: 1404962105200852105
+    second: FirstBoss EyeScan-Sheet_5
+  - first:
+      213: -8554975531992109247
+    second: FirstBoss EyeScan-Sheet_6
+  - first:
+      213: -5974590206081080078
+    second: FirstBoss EyeScan-Sheet_7
+  - first:
+      213: 5204569411707822821
+    second: FirstBoss EyeScan-Sheet_8
+  - first:
+      213: 3048438322487352560
+    second: FirstBoss EyeScan-Sheet_9
+  - first:
+      213: 5856402822375860053
+    second: FirstBoss EyeScan-Sheet_10
+  - first:
+      213: -2266440955617832337
+    second: FirstBoss EyeScan-Sheet_11
+  - first:
+      213: 8509534259836554629
+    second: FirstBoss EyeScan-Sheet_12
+  - first:
+      213: -6098801617981801245
+    second: FirstBoss EyeScan-Sheet_13
+  - first:
+      213: 2420572740178401681
+    second: FirstBoss EyeScan-Sheet_14
+  - first:
+      213: 4351606087485258365
+    second: FirstBoss EyeScan-Sheet_15
+  - first:
+      213: -6644461626140087921
+    second: FirstBoss EyeScan-Sheet_16
+  - first:
+      213: -3158458076808090345
+    second: FirstBoss EyeScan-Sheet_17
+  - first:
+      213: 4685615100680294816
+    second: FirstBoss EyeScan-Sheet_18
+  - first:
+      213: -7972691235405458635
+    second: FirstBoss EyeScan-Sheet_19
+  - first:
+      213: 7665470453304855783
+    second: FirstBoss EyeScan-Sheet_20
+  - first:
+      213: 5220799421663799379
+    second: FirstBoss EyeScan-Sheet_21
+  - first:
+      213: -6410946670628637775
+    second: FirstBoss EyeScan-Sheet_22
+  - first:
+      213: 4067001231231946604
+    second: FirstBoss EyeScan-Sheet_23
+  - first:
+      213: 7065298738380314645
+    second: FirstBoss EyeScan-Sheet_24
+  - first:
+      213: -3455612929392039443
+    second: FirstBoss EyeScan-Sheet_25
+  - first:
+      213: 4252171904018957994
+    second: FirstBoss EyeScan-Sheet_26
+  - first:
+      213: -8772460979175297046
+    second: FirstBoss EyeScan-Sheet_27
+  - first:
+      213: -2259146294225850868
+    second: FirstBoss EyeScan-Sheet_28
+  - first:
+      213: 534909348950645535
+    second: FirstBoss EyeScan-Sheet_29
+  - first:
+      213: 6634280576220352144
+    second: FirstBoss EyeScan-Sheet_30
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 2660
+        y: 248
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2bd883fb81a6850800000000000000
+      internalID: 6370931832435618532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 109
+        width: 165
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45c051bf655389b0800000000000000
+      internalID: -5079122016539196082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 109
+        width: 169
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae72bc3833031600800000000000000
+      internalID: 437697128856452781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 109
+        width: 167
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df57046e41961cd50800000000000000
+      internalID: 6755796454515701245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2046
+        y: 109
+        width: 171
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9614c7cffcd5655a0800000000000000
+      internalID: -6532931061578710679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2382
+        y: 218
+        width: 60
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98cb163479d6f7310800000000000000
+      internalID: 1404962105200852105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 175
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14fa371741f964980800000000000000
+      internalID: -8554975531992109247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 104
+        width: 165
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f46200ccddf51da0800000000000000
+      internalID: -5974590206081080078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 85
+        width: 166
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e265b11e485a3840800000000000000
+      internalID: 5204569411707822821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 109
+        width: 102
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fcdb83c08a3e4a20800000000000000
+      internalID: 3048438322487352560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 109
+        width: 103
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557ee41a65f164150800000000000000
+      internalID: 5856402822375860053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 109
+        width: 170
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62900085fbfb80e0800000000000000
+      internalID: -2266440955617832337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2302
+        y: 105
+        width: 172
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d0399e250f71670800000000000000
+      internalID: 8509534259836554629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2558
+        y: 0
+        width: 171
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ecfd94cd34bc5ba0800000000000000
+      internalID: -6098801617981801245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2815
+        y: 89
+        width: 171
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199d35b151a979120800000000000000
+      internalID: 2420572740178401681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 85
+        width: 169
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a7cf64ea2046c30800000000000000
+      internalID: 4351606087485258365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 3393
+        y: 109
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89a43ada512ac3a0800000000000000
+      internalID: -6644461626140087921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 3651
+        y: 107
+        width: 102
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71de3e50d17ea24d0800000000000000
+      internalID: -3158458076808090345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 94
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a1514ecb16a60140800000000000000
+      internalID: 4685615100680294816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 98
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53399c1009f4b5190800000000000000
+      internalID: -7972691235405458635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 3406
+        y: 100
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec0d7d83c8316a60800000000000000
+      internalID: 7665470453304855783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 85
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358e5dbb961047840800000000000000
+      internalID: 5220799421663799379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 83
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3f43f38fdb707a0800000000000000
+      internalID: -6410946670628637775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 76
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f08a86214e07830800000000000000
+      internalID: 4067001231231946604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 72
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5189c2dd4cbfc0260800000000000000
+      internalID: 7065298738380314645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 2213
+        y: 79
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9275e69523b00d0800000000000000
+      internalID: -3455612929392039443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 70
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa642f651dfb20b30800000000000000
+      internalID: 4252171904018957994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 2482
+        y: 70
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aefe74ac735f14680800000000000000
+      internalID: -8772460979175297046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 63
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e27053a66e5a0e0800000000000000
+      internalID: -2259146294225850868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 63
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b1d3308316c6700800000000000000
+      internalID: 534909348950645535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirstBoss EyeScan-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 2744
+        y: 63
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09e43edb803b11c50800000000000000
+      internalID: 6634280576220352144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
