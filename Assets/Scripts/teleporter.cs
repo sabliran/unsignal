@@ -42,6 +42,11 @@ public class teleporter : MonoBehaviour
             SceneManager.LoadScene("net2");
         }
 
+            public void net3()
+        {
+            SceneManager.LoadScene("net3");
+        }
+
         public void SceeneChangerBase()
         {
             SceneManager.LoadScene("Game");
