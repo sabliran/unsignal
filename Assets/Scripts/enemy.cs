@@ -130,6 +130,8 @@ public class enemy : MonoBehaviour
      void StopChasingPlayer()
     {
             rb2d.velocity = new Vector2(0, 0);
+            
+            
     }
 
     void TakeDamage(int damage)
