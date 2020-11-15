@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/net2.unity
     guid: bb1be6ee3c09c094dbc48dc3249f8bc4
+  - enabled: 1
+    path: Assets/Scenes/net3.unity
+    guid: e8e86d96655142341a1c841628a868c6
   m_configObjects: {}
