@@ -6,7 +6,10 @@ using System.Runtime.Serialization;
 using System.ComponentModel;
 using System.Threading;
 
+
+
 [RequireComponent(typeof(Rigidbody))]
+
 
 /*ALGORITHMS AS ANEMIES */
 
@@ -21,7 +24,16 @@ using System.Threading;
 //fix the up button *not to fly
 //delete the bullet instances after some time
 public class playerscript : MonoBehaviour
+
 {
+
+    
+               ///////////////////////////////////////////test event damage 
+    public delegate void ClickAction();
+    public static event ClickAction OnClicked;
+    
+
+
     private const bool V = true;
     public Transform Screentip;
     public Rigidbody2D rb;
@@ -85,6 +97,10 @@ public class playerscript : MonoBehaviour
         
         if (damaged == true)
         {
+            ///////////////////////////////////////////test event damage 
+            if(OnClicked != null)
+                OnClicked();
+
             countdown -= Time.deltaTime;
             if (countdown <= 0.0f)
             {
