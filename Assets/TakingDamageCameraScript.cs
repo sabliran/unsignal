@@ -19,8 +19,36 @@ public class TakingDamageCameraScript : MonoBehaviour
     void Update()
     {
         
-        Debug.Log(transform);
+
+
+        
+            
+    
+        
+        void OnEnable() 
+        {
+            playerscript.OnClicked += zoom;    
+            
+        }
+        
+        void OnDisable()
+        {
+            playerscript.OnClicked -= zoom; 
+        }   
+
+    
+
+    void zoom()
+    {
+        //Camera field of view changing to 41
         vcam.m_Lens.FieldOfView = 41f;
+    }
+    
+
+
+
+
+
 
     }
    
