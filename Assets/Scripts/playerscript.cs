@@ -28,9 +28,9 @@ public class playerscript : MonoBehaviour
 {
 
     
-               ///////////////////////////////////////////test event damage 
+              
     public delegate void ClickAction();
-    public static event ClickAction OnClicked;
+    public static event ClickAction GotHitCamera;
     
 
 
@@ -97,9 +97,9 @@ public class playerscript : MonoBehaviour
         
         if (damaged == true)
         {
-            ///////////////////////////////////////////test event damage 
-            if(OnClicked != null)
-                OnClicked();
+            
+            if(GotHitCamera != null)
+                GotHitCamera();
 
             countdown -= Time.deltaTime;
             if (countdown <= 0.0f)

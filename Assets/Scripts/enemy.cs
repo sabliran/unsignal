@@ -34,8 +34,6 @@ public class enemy : MonoBehaviour
     
     private bool gotHit;
 
-    public Material Material1;
-    public GameObject Object;
    
     
     void Start()
@@ -108,7 +106,7 @@ public class enemy : MonoBehaviour
     {       //change color
             changeColor.color = new Color(4,2,0,0);
             changeColor.pointLightOuterRadius = 7;
-            Object.GetComponent<Renderer> ().material = Material1;
+           
 
         if (transform.position.x < player.position.x)
         {   //move to the right

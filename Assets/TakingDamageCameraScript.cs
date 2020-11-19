@@ -8,16 +8,12 @@ public class TakingDamageCameraScript : MonoBehaviour
 
    public CinemachineVirtualCamera vcam;
 
-    private float timer = 100f;
-    private float waitTime = 1f;
+  
 
-    void Start()
-    {
-        
-    }
+   
 
-    void Update()
-    {
+    
+
         
 
 
@@ -27,13 +23,13 @@ public class TakingDamageCameraScript : MonoBehaviour
         
         void OnEnable() 
         {
-            playerscript.OnClicked += zoom;    
+            playerscript.GotHitCamera += zoom;    
             
         }
         
         void OnDisable()
         {
-            playerscript.OnClicked -= zoom; 
+            playerscript.GotHitCamera -= zoom; 
         }   
 
     
@@ -41,15 +37,26 @@ public class TakingDamageCameraScript : MonoBehaviour
     void zoom()
     {
         //Camera field of view changing to 41
-        vcam.m_Lens.FieldOfView = 41f;
+        vcam.m_Lens.FieldOfView = 80f;
+        
     }
     
+     void Update() 
+    {
+        
 
-
-
-
+            vcam.m_Lens.FieldOfView = 81f;
+            
+        
 
 
     }
+
+
+
+
+
+
+    
    
 }
