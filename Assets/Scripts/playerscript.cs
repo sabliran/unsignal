@@ -55,8 +55,7 @@ public class playerscript : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public float countdown = 1.0f;
-    private LevelUpSystem levelSystem;
-    public GameObject pointLight;
+       public GameObject pointLight;
     private float levelUpLightCountTime = 1f;
     void Start()
     {
@@ -247,21 +246,6 @@ public class playerscript : MonoBehaviour
         }
         
    
-    public void SetLevelSystem(LevelUpSystem levelSystem)
-    {
-         //This is a function to receive the levelSystem
-        this.levelSystem = levelSystem;
-        
-        levelSystem.OnLevelChanged += LevelSystem_OnLevelChanged;
-    }
-    private void LevelSystem_OnLevelChanged(object sender, EventArgs e)
-    {
-        
-        pointLight.SetActive(true);     
-        currentHealth = currentHealth + 1;    
-        
-    }
-    
   
     
  
