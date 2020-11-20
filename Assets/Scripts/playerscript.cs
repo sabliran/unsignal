@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Runtime.Serialization;
 using System.ComponentModel;
 using System.Threading;
+using TMPro;
 
 
 
@@ -55,8 +56,9 @@ public class playerscript : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public float countdown = 1.0f;
-       public GameObject pointLight;
-    private float levelUpLightCountTime = 1f;
+    public GameObject pointLight;
+
+    public TextMeshProUGUI healthNumbers;
     void Start()
     {
         extraJumps = extraJumpsValue;
@@ -128,17 +130,9 @@ public class playerscript : MonoBehaviour
         Fire();
         Math.Round(bulletDecay);
 
-        //turn off levelUp Light
-        // if (pointLight.activeSelf == true)
-        // {
-        //     levelUpLightCountTime -= Time.deltaTime;
-        //     if(levelUpLightCountTime <= 0.0f)
-        //     {
-        //         pointLight.SetActive(false);
-        //         levelUpLightCountTime = 1f;
+        healthNumbers.text = currentHealth.ToString();    
 
-        //     }
-        // }
+
     }
         void flip()
     {
