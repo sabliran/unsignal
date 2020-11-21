@@ -6173,7 +6173,6 @@ MonoBehaviour:
   healthBar: {fileID: 1868261377}
   countdown: 1
   pointLight: {fileID: 2137694572}
-  healthNumbers: {fileID: 0}
 --- !u!114 &1460773277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9000,7 +8999,7 @@ PrefabInstance:
     - target: {fileID: 8223290994716136988, guid: cfa4d0776037b0e429676fc92c74a064,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 188.93567
+      value: 188.8338
       objectReference: {fileID: 0}
     - target: {fileID: 8223290994716136988, guid: cfa4d0776037b0e429676fc92c74a064,
         type: 3}
@@ -9464,7 +9463,7 @@ PrefabInstance:
     - target: {fileID: 8994146394116243799, guid: dd47cd9fc69d4da47873a73b666d73bc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 188.93567
+      value: 188.8338
       objectReference: {fileID: 0}
     - target: {fileID: 8994146394116243799, guid: dd47cd9fc69d4da47873a73b666d73bc,
         type: 3}
