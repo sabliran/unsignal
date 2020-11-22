@@ -59,7 +59,31 @@ public class enemy : MonoBehaviour
 
             gotHit = true;
         }
+
+
+        // if (col.collider.tag == "Aura")
+        // {
+            
+
+        //     TakeDamage(20);
+
+        //     gotHit = true;
+        // }
+
     }
+
+     void OnTriggerStay2D(Collider2D collision)
+        {
+        if (collision.gameObject.tag == "Aura")
+        {  
+            
+            
+            TakeDamage(1);
+
+            gotHit = true;
+            Debug.Log("auraaaa");
+        }
+        }
 
      private void Update()
     {        
