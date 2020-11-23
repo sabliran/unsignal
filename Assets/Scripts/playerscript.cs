@@ -74,14 +74,14 @@ public class playerscript : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
     }
-    void Update()
+    void Update() //----------------------------------------------------UPDATE START-----------------------------------------------------
     {
         if (Input.GetKeyDown(KeyCode.F7))
         {
             restoreTest(1000);
         }
         
-        //Debug.Log(feetPos.position.y)
+        
         if(isGrounded == true)
         {
             extraJumps = extraJumpsValue;
@@ -121,12 +121,12 @@ public class playerscript : MonoBehaviour
         if (moveHorizontal > 0 && faceRight)
         {
             flip();
-            //projectileSpeed = 50;
+            
         }
         else if (moveHorizontal < 0 && !faceRight)
         {    
             flip();
-            //projectileSpeed = -50;
+            
         }
         Fire();
         Math.Round(bulletDecay);
@@ -134,7 +134,7 @@ public class playerscript : MonoBehaviour
         healthNumbers.text = currentHealth.ToString();    
 
 
-    }
+    } //--------------------------------------------------------------------------UPDATE END---------------------------------------------
         void flip()
     {
         faceRight = !faceRight;
@@ -172,7 +172,30 @@ public class playerscript : MonoBehaviour
         }
         
     }
-    //Collision detection
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+        if (currentHealth <= 0)
+        {
+            Debug.Log("zero health");
+            SceneManager.LoadScene("GameOver");
+        }
+    }
+
+        void restoreTest(int damage)
+        {
+        if (currentHealth < 999)
+        {
+            currentHealth += damage; 
+            Debug.Log("resstoreTest111");
+            healthBar.SetHealth(currentHealth);
+        }
+        }
+        
+   
+    //------------------------------------------------------------------------------Collision detection
     void OnCollisionEnter2D(Collision2D col)
     {
         
@@ -225,39 +248,17 @@ public class playerscript : MonoBehaviour
             restoreTest(2);
         }
         }
-        //------------------
-
-
         
-    //exit collisions
+
+
         void OnCollisionExit2D(Collision2D col)
     {
         damaged = false;
         countdown = 0.1f;
         Debug.Log("resetCount");
     }
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-        if (currentHealth <= 0)
-        {
-            Debug.Log("zero health");
-            SceneManager.LoadScene("GameOver");
-        }
-    }
-
-        void restoreTest(int damage)
-        {
-        if (currentHealth < 999)
-        {
-            currentHealth += damage; 
-            Debug.Log("resstoreTest111");
-            healthBar.SetHealth(currentHealth);
-        }
-        }
         
-   
+    //--------------------------------------------------------------------------------------exit collisions
   
     
  
