@@ -147,9 +147,11 @@ public class playerscript : MonoBehaviour
        if (Input.GetButtonDown("Fire1"))
         {
             //Instantiate Bullet
-            GameObject AuraShoot = Instantiate(AuraPrefab, Screentip.position, Quaternion.identity) as GameObject;
-            //Speed of the Bullet
-            AuraShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
+            GameObject AuraShoot = Instantiate(AuraPrefab, Screentip.position, Screentip.rotation) as GameObject;
+            Rigidbody2D rb = AuraShoot.GetComponent<Rigidbody2D>();
+            rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
+
+            // AuraShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
 
                 // Destroy(laser);               
                 // Debug.Log(bulletDecay);
@@ -160,7 +162,7 @@ public class playerscript : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             //Instantiate Bullet
-            GameObject laser = Instantiate(laserPrefab, Screentip.position, Screentip.rotation);
+            GameObject laser = Instantiate(laserPrefab, Screentip.position, Screentip.rotation) as GameObject;
             Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
             rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
 
