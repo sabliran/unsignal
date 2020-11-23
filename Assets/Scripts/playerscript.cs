@@ -147,13 +147,13 @@ public class playerscript : MonoBehaviour
        if (Input.GetButtonDown("Fire1"))
         {
             //Instantiate Bullet
-            GameObject laser = Instantiate(AuraPrefab, Screentip.position, Quaternion.identity) as GameObject;
+            GameObject AuraShoot = Instantiate(AuraPrefab, Screentip.position, Quaternion.identity) as GameObject;
             //Speed of the Bullet
-            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
+            AuraShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
 
                 // Destroy(laser);               
                 // Debug.Log(bulletDecay);
-                Destroy (laser, 0.3f);
+                Destroy (AuraShoot, 10f);
         }
 
         //---------------------Laser
