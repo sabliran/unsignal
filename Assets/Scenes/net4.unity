@@ -3280,7 +3280,7 @@ RectTransform:
   - {fileID: 1014666036}
   - {fileID: 4784025800307596759}
   m_Father: {fileID: 1460773274}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4723,6 +4723,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7670469782278251654}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1319886549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319886547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e966035179022468e43461f0332f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1382279757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4987,9 +4999,9 @@ Transform:
   m_LocalPosition: {x: 5.1, y: 3.86, z: -0.48}
   m_LocalScale: {x: 1.68309, y: 1.7549413, z: 4.1631885}
   m_Children:
+  - {fileID: 1782280504}
   - {fileID: 1319886548}
   - {fileID: 220329484}
-  - {fileID: 1782280504}
   - {fileID: 7502455476399347991}
   - {fileID: 2137694573}
   m_Father: {fileID: 0}
@@ -5034,7 +5046,7 @@ MonoBehaviour:
   JumpForce: 20
   extraJumpsValue: 1
   AuraPrefab: {fileID: 1319886547}
-  projectileSpeed: 0
+  projectileSpeed: 30
   damaged: 0
   maxHealth: 1000
   currentHealth: 0
@@ -5042,6 +5054,8 @@ MonoBehaviour:
   countdown: 1
   pointLight: {fileID: 2137694572}
   healthNumbers: {fileID: 397140128}
+  laserPrefab: {fileID: 4646282054612185130, guid: 8c9554decd2f2384bb411933f9c89cb6,
+    type: 3}
 --- !u!114 &1460773277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5108,12 +5122,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460773271}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f95ecf272adbb84fa603f2865130818, type: 3}
+  m_Script: {fileID: 11500000, guid: ce35f759070cbff4bb81ec22864c55de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Aura: {fileID: 1319886547}
+  laserPrefab: {fileID: 4646282054612185130, guid: 8c9554decd2f2384bb411933f9c89cb6,
+    type: 3}
+  Screentip: {fileID: 1782280504}
+  projectileSpeed: 30
 --- !u!1 &1565009895
 GameObject:
   m_ObjectHideFlags: 0
@@ -5558,7 +5575,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1460773274}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1782280505
 MonoBehaviour:
@@ -6516,7 +6533,7 @@ PrefabInstance:
     - target: {fileID: 7670469783329700434, guid: da835a93294bbab4f867a744c760ccd4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7670469783329700434, guid: da835a93294bbab4f867a744c760ccd4,
         type: 3}
@@ -6588,7 +6605,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: AuraSignal
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7670469783329700447, guid: da835a93294bbab4f867a744c760ccd4,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7670469783329700435, guid: da835a93294bbab4f867a744c760ccd4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: da835a93294bbab4f867a744c760ccd4, type: 3}
 --- !u!1001 &8223290995212349084
 PrefabInstance:

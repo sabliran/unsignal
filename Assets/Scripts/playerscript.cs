@@ -59,6 +59,7 @@ public class playerscript : MonoBehaviour
     public GameObject pointLight;
 
     public TextMeshProUGUI healthNumbers;
+    public GameObject laserPrefab;
     void Start()
     {
         extraJumps = extraJumpsValue;
@@ -142,6 +143,7 @@ public class playerscript : MonoBehaviour
 
     void Fire()
     {
+        //------------------Aura
        if (Input.GetButtonDown("Fire1"))
         {
             //Instantiate Bullet
@@ -153,6 +155,22 @@ public class playerscript : MonoBehaviour
                 // Debug.Log(bulletDecay);
                 Destroy (laser, 0.3f);
         }
+
+        //---------------------Laser
+        if (Input.GetButtonDown("Fire1"))
+        {
+            //Instantiate Bullet
+            GameObject laser = Instantiate(laserPrefab, Screentip.position, Screentip.rotation);
+            Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
+            rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
+
+            //laser.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
+
+                // Destroy(laser);               
+                // Debug.Log(bulletDecay);
+                Destroy (laser, 0.3f);
+        }
+        
     }
     //Collision detection
     void OnCollisionEnter2D(Collision2D col)

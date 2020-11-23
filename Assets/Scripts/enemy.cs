@@ -81,7 +81,7 @@ public class enemy : MonoBehaviour
             TakeDamage(1);
 
             gotHit = true;
-            Debug.Log("auraaaa");
+            
         }
         }
 
