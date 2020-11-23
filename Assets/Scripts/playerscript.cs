@@ -47,7 +47,7 @@ public class playerscript : MonoBehaviour
     public float JumpForce;
     private int extraJumps;
     public int extraJumpsValue;
-    [SerializeField] GameObject laserPrefab;
+    [SerializeField] GameObject AuraPrefab;
     [SerializeField] float projectileSpeed;
     private bool faceRight;
     private float bulletDecay = 2;
@@ -142,17 +142,17 @@ public class playerscript : MonoBehaviour
 
     void Fire()
     {
-    //    if (Input.GetButtonDown("Fire1"))
-    //     {
-    //         //Instantiate Bullet
-    //         GameObject laser = Instantiate(laserPrefab, Screentip.position, Quaternion.identity) as GameObject;
-    //         //Speed of the Bullet
-    //         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
+       if (Input.GetButtonDown("Fire1"))
+        {
+            //Instantiate Bullet
+            GameObject laser = Instantiate(AuraPrefab, Screentip.position, Quaternion.identity) as GameObject;
+            //Speed of the Bullet
+            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
 
-    //             // Destroy(laser);               
-    //             // Debug.Log(bulletDecay);
-    //             Destroy (laser, 0.3f);
-    //     }
+                // Destroy(laser);               
+                // Debug.Log(bulletDecay);
+                Destroy (laser, 0.3f);
+        }
     }
     //Collision detection
     void OnCollisionEnter2D(Collision2D col)
