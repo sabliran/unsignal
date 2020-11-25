@@ -52,7 +52,7 @@ public class playerscript : MonoBehaviour
     [SerializeField] float projectileSpeed;
     private bool faceRight;
     private float bulletDecay = 2;
-    [SerializeField] bool damaged;
+    public bool damaged;
     public int maxHealth = 1000;
     public int currentHealth;
     public HealthBar healthBar;
@@ -61,6 +61,7 @@ public class playerscript : MonoBehaviour
 
     public TextMeshProUGUI healthNumbers;
     public GameObject laserPrefab;
+  
      
 
     void Start()
@@ -101,6 +102,7 @@ public class playerscript : MonoBehaviour
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * JumpForce;
+            
         }
 
         if(Input.GetKey(KeyCode.Space) && isJumping == true)
@@ -111,12 +113,15 @@ public class playerscript : MonoBehaviour
                 jumpTimeCounter -= Time.deltaTime;
             }
             else {
-                isJumping = false;            }
+                isJumping = false;  
+                          
+                }
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
+            
         }
 
 
@@ -250,6 +255,12 @@ public class playerscript : MonoBehaviour
         if (col.gameObject.tag == "redEye")
         {
             Debug.Log("red eye touched");
+        }
+
+        if (col.gameObject.tag == "Obstacle")
+        {
+            damaged = true;
+            Debug.Log("hit");
         }
     }
     //Fall off the platform and you DIE!

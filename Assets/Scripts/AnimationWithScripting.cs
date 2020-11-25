@@ -14,9 +14,13 @@ public class AnimationWithScripting : MonoBehaviour
     
     public bool isGreen;
     public bool isDamaged;
+    public playerscript refScript;
     void Start()
     {
+        playerscript refScript = GetComponent<playerscript>();
+        refScript = GetComponent<playerscript>();
         StartCoroutine(Idle());
+
     }
     void Update()
     {
@@ -25,7 +29,8 @@ public class AnimationWithScripting : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(Idle());
         }
-
+    
+        
         // if (Input.GetKeyDown(KeyCode.K))
         // {
         //     StopAllCoroutines();
@@ -52,6 +57,7 @@ public class AnimationWithScripting : MonoBehaviour
         {
             StopAllCoroutines();
             StartCoroutine(Damage());
+            Debug.Log("PIIIIIIAN");
         }
         if (isGreen == true)
         {
@@ -64,7 +70,6 @@ public class AnimationWithScripting : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(PlayerAttack());
         }
-
     }
     IEnumerator Idle()
     {
@@ -135,6 +140,7 @@ public class AnimationWithScripting : MonoBehaviour
             i++;
             yield return new WaitForSeconds(0.05f);
             yield return 0;
+            
         }
         StartCoroutine(Idle());
         
@@ -182,13 +188,7 @@ public class AnimationWithScripting : MonoBehaviour
             
         }
 
-        if (collision.gameObject.tag == "enemy")
-        {
-            isDamaged = true;
-            StopAllCoroutines();
-            StartCoroutine(Damage());
-            
-        }
+
 
     }
         void OnCollisionEnter2D(Collision2D col)
@@ -212,6 +212,7 @@ public class AnimationWithScripting : MonoBehaviour
     {
         isDamaged = false;
     }
+    
 
 }
 

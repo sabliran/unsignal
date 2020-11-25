@@ -4,25 +4,15 @@ using UnityEngine;
 
 public class blade : MonoBehaviour
 {
-    public GameObject Blade;
-    private float countTime = 1.5f;
+
 
 
  
-    void Update()
-    {
-
-
-        countTime -= Time.deltaTime;
-            if (countTime <= 0.0f)
-                {
-                    Blade.SetActive(false);
-                    countTime = 1.5f;
-                }
-
-        countTime = Time.timeSinceLevelLoad;
-        Debug.Log(countTime);
-        
-        
-    }
+    public float speed = 1f;
+    public float delta = 1f;  //delta is the difference between min y to max y.
+      void Update() {
+     float y = Mathf.PingPong(speed * Time.time, delta);
+     Vector3 pos = new Vector3(transform.position.x, y, transform.position.z);
+     transform.position = pos;
+ }
 }

@@ -16,6 +16,7 @@ TagManager:
   - spawnTrigger
   - redEye
   - Aura
+  - Obstacle
   layers:
   - Default
   - TransparentFX
