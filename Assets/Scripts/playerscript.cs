@@ -45,9 +45,8 @@ public class playerscript : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
     public float JumpForce;
-    private float jumpTimeCounter;
-    public float jumpTime;
-    private bool isJumping;
+    private int extraJumps;
+    public int extraJumpsValue;
     [SerializeField] GameObject AuraPrefab;
     [SerializeField] float projectileSpeed;
     private bool faceRight;
@@ -61,11 +60,9 @@ public class playerscript : MonoBehaviour
 
     public TextMeshProUGUI healthNumbers;
     public GameObject laserPrefab;
-     
-
     void Start()
     {
-        
+        extraJumps = extraJumpsValue;
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -74,14 +71,6 @@ public class playerscript : MonoBehaviour
     void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-        // if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     isJumping = true;
-        //     jumpTimeCounter = jumpTime;
-        //     rb.velocity = Vector2.up * JumpForce;
-        // }
-
-
         moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
     }
@@ -93,37 +82,21 @@ public class playerscript : MonoBehaviour
         }
         
         
-        //--------Jump Mechanics
-        
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        if(isGrounded == true)
         {
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
+            extraJumps = extraJumpsValue;
+        }   
+
+        if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
+        {
+            rb.velocity = Vector2.up * JumpForce;
+            extraJumps --;
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGrounded == true)
+        {
             rb.velocity = Vector2.up * JumpForce;
         }
-
-        if(Input.GetKey(KeyCode.Space) && isJumping == true)
-        {
-            if(jumpTimeCounter > 0)
-            {
-                rb.velocity = Vector2.up * JumpForce;
-                jumpTimeCounter -= Time.deltaTime;
-            }
-            else {
-                isJumping = false;            }
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isJumping = false;
-        }
-
-
-
-
-
-
+        
         if (damaged == true)
         {
             
@@ -144,7 +117,7 @@ public class playerscript : MonoBehaviour
         //Horizontal Axis (MOVE LEFT - RIGHT)
         float moveHorizontal = Input.GetAxis("Horizontal");
 
-       
+        //---------test for faceRight bool-----------
         if (moveHorizontal > 0 && faceRight)
         {
             flip();
@@ -156,7 +129,6 @@ public class playerscript : MonoBehaviour
             
         }
         Fire();
-        
         Math.Round(bulletDecay);
 
         healthNumbers.text = currentHealth.ToString();    
