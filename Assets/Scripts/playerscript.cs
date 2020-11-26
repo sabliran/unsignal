@@ -61,6 +61,7 @@ public class playerscript : MonoBehaviour
 
     public TextMeshProUGUI healthNumbers;
     public GameObject laserPrefab;
+
   
      
 
@@ -177,6 +178,21 @@ public class playerscript : MonoBehaviour
     void Fire()
     {
         //------------------Aura
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            laserPrefab.SetActive(false);
+            AuraPrefab.SetActive(true);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            AuraPrefab.SetActive(false);
+            laserPrefab.SetActive(true);
+        }
+        
+       
+       
+       
        if (Input.GetButtonDown("Fire1"))
         {
             //Instantiate Bullet

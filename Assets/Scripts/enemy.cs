@@ -32,7 +32,7 @@ public class enemy : MonoBehaviour
     
      Rigidbody2D rb2d;
     
-    private bool gotHit;
+    public bool gotHit;
     public bool isCloseEnough;
     public float destroyLaser;
 
