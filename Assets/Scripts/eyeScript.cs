@@ -8,8 +8,8 @@ public class eyeScript : MonoBehaviour
     float agroRange;
     private Transform player;
 
-    Rigidbody2D rb2d;
-    float moveSpeed;
+    public Rigidbody2D rb2d;
+    public float moveSpeed;
 
 
     void Start()
@@ -35,7 +35,7 @@ public class eyeScript : MonoBehaviour
              
     
         }
-        Debug.Log(distToPlayer);
+        
 
     }
 

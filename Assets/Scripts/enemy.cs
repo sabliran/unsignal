@@ -23,7 +23,7 @@ public class enemy : MonoBehaviour
     [SerializeField] GameObject laserPrefab;
     
      public Transform Screentip;
-     public float countdown = 1.0f;
+    
      private float nextShootTime;
      
     
@@ -33,6 +33,8 @@ public class enemy : MonoBehaviour
      Rigidbody2D rb2d;
     
     private bool gotHit;
+    public bool isCloseEnough;
+    public float destroyLaser;
 
    
     
@@ -49,11 +51,11 @@ public class enemy : MonoBehaviour
      void OnCollisionEnter2D(Collision2D col)
 
     {
-        getBullet = GameObject.FindWithTag("bullet");
+        getBullet = GameObject.FindWithTag("enemyLaser");
 
         if (col.collider.tag == "bullet")
         {
-            Destroy(getBullet);
+            Destroy(getBullet, 0.3f);
 
             TakeDamage(20);
 
@@ -98,6 +100,8 @@ public class enemy : MonoBehaviour
             ChasePlayer();
 
             fire();  
+            isCloseEnough = true;
+
     
         }
         else 
@@ -178,7 +182,8 @@ public class enemy : MonoBehaviour
                 // Destroy(laserPrefab);               
                 // Debug.Log(bulletDecay);
             //GameObject.Destroy(laserPrefab , 1f);
-            Destroy (laser, 1f);
+            Destroy (laser, destroyLaser);
+            
 
             }
     }
