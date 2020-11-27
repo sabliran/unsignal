@@ -296,6 +296,12 @@ public class playerscript : MonoBehaviour
              SceneManager.LoadScene("S booth");
             
         }
+        
+        if (collision.gameObject.tag == "ObstacleRedLaser")
+        {
+            damaged = true;
+            Debug.Log("hit");
+        }
     }
     
         void OnTriggerStay2D(Collider2D collision)

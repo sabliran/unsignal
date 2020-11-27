@@ -17,6 +17,7 @@ TagManager:
   - redEye
   - Aura
   - Obstacle
+  - ObstacleRedLaser
   layers:
   - Default
   - TransparentFX
