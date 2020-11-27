@@ -273,11 +273,11 @@ public class playerscript : MonoBehaviour
             Debug.Log("red eye touched");
         }
 
-        if (col.gameObject.tag == "Obstacle")
-        {
-            damaged = true;
-            Debug.Log("hit");
-        }
+        // if (col.gameObject.tag == "Obstacle")
+        // {
+        //     damaged = true;
+        //     Debug.Log("hit");
+        // }
     }
     //Fall off the platform and you DIE!
     private void OnTriggerEnter2D(Collider2D collision)
@@ -299,7 +299,8 @@ public class playerscript : MonoBehaviour
         
         if (collision.gameObject.tag == "ObstacleRedLaser")
         {
-            damaged = true;
+            // damaged = true;
+           
             Debug.Log("hit");
         }
     }
