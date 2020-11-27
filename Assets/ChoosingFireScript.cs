@@ -7,7 +7,9 @@ public class ChoosingFireScript : MonoBehaviour
     public GameObject AuraTextSelected;
     public GameObject LaserTextSelected;
   
-    
+    public GameObject iconAura;
+    public GameObject iconLaser;
+  
   
     
     void Start()
@@ -21,12 +23,16 @@ public class ChoosingFireScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             AuraTextSelected.SetActive(true);
+            iconAura.SetActive(true);
+            iconLaser.SetActive(false);
             Invoke("SetFalseAura",1.0f);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             LaserTextSelected.SetActive(true);
+            iconAura.SetActive(false);
+            iconLaser.SetActive(true);
             Invoke("SetFalseLaser",1.0f);
         }        
 
@@ -40,6 +46,7 @@ public class ChoosingFireScript : MonoBehaviour
     void SetFalseAura()
     {
         AuraTextSelected.SetActive(false);
+
     }
     
     void SetFalseLaser()
