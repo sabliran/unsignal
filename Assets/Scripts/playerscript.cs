@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.ComponentModel;
 using System.Threading;
 using TMPro;
+using UnityEngine.InputSystem;
 
 
 
@@ -39,14 +40,16 @@ public class playerscript : MonoBehaviour
     public Transform Screentip;
     public Rigidbody2D rb;
     public float speed;
-    private float moveInput;
+    
     private bool isGrounded;
     public Transform feetPos;
     public float checkRadius;
-    public LayerMask whatIsGround;
-    public float JumpForce;
+    [SerializeField] private LayerMask Ground;
+    
     private float jumpTimeCounter;
     public float jumpTime;
+   
+    public float jumpSpeed;
     private bool isJumping;
     [SerializeField] GameObject AuraPrefab;
     [SerializeField] float projectileSpeed;
@@ -61,73 +64,55 @@ public class playerscript : MonoBehaviour
 
     public TextMeshProUGUI healthNumbers;
     public GameObject laserPrefab;
+    private PlayerControls  playerControls;
+    private Collider2D col;
+    public LayerMask whatIsGround;
+    public float JumpForce;
+    private void Awake() 
+    {
+        playerControls = new PlayerControls();
+        rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+    }
+    private void OnEnable() {
+        playerControls.Enable();
+    }
 
-  
-     
+    private void OnDisable() {
+        playerControls.Disable();
+    }
 
     void Start()
     {
-        
-        rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
-    // FixedUpdate is used to manipulate all physics related aspects
-    void FixedUpdate()
-    {
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-        // if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     isJumping = true;
-        //     jumpTimeCounter = jumpTime;
-        //     rb.velocity = Vector2.up * JumpForce;
-        // }
+ 
+
+ 
+public void OnJump()
+{
+    HandleJump();
+}
 
 
-        moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-    }
+
     void Update() //----------------------------------------------------UPDATE START-----------------------------------------------------
     {
-        if (Input.GetKeyDown(KeyCode.F7))
-        {
-            restoreTest(1000);
-        }
+        
+        float movementInput = playerControls.Player.Move.ReadValue<float>();
+
+       
+        //move the player
+        Vector3 currentPosition = transform.position;
+        currentPosition.x += movementInput * speed * Time.deltaTime;
+        transform.position = currentPosition;
+        
+
         
         
-        //--------Jump Mechanics
-        
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
-        {
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * JumpForce;
-            
-        }
-
-        if(Input.GetKey(KeyCode.Space) && isJumping == true)
-        {
-            if(jumpTimeCounter > 0)
-            {
-                rb.velocity = Vector2.up * JumpForce;
-                jumpTimeCounter -= Time.deltaTime;
-            }
-            else {
-                isJumping = false;  
-                          
-                }
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isJumping = false;
-            
-        }
-
-
-
-
+        // --------Jump Mechanics
+    
 
 
         if (damaged == true)
@@ -148,15 +133,16 @@ public class playerscript : MonoBehaviour
         }
 
         //Horizontal Axis (MOVE LEFT - RIGHT)
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        // float moveHorizontal = Input.GetAxis("Horizontal");
 
        
-        if (moveHorizontal > 0 && faceRight)
+        if (movementInput > 0 && faceRight)
         {
             flip();
             
+            
         }
-        else if (moveHorizontal < 0 && !faceRight)
+        else if (movementInput < 0 && !faceRight)
         {    
             flip();
             
@@ -177,52 +163,53 @@ public class playerscript : MonoBehaviour
 
     void Fire()
     {
-        //------------------Aura
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            laserPrefab.SetActive(false);
-            AuraPrefab.SetActive(true);
-        }
+        // //------------------Aura
+        // if (Input.GetKeyDown(KeyCode.Alpha1))
+        // {
+        //     laserPrefab.SetActive(false);
+        //     AuraPrefab.SetActive(true);
+        // }
         
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            AuraPrefab.SetActive(false);
-            laserPrefab.SetActive(true);
-        }
+        // if (Input.GetKeyDown(KeyCode.Alpha2))
+        // {
+        //     AuraPrefab.SetActive(false);
+        //     laserPrefab.SetActive(true);
+        // }
         
        
        
        
-       if (Input.GetButtonDown("Fire1"))
-        {
-            //Instantiate Bullet
-            GameObject AuraShoot = Instantiate(AuraPrefab, Screentip.position, Screentip.rotation) as GameObject;
-            Rigidbody2D rb = AuraShoot.GetComponent<Rigidbody2D>();
-            rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
+    //    if (Input.GetButtonDown("Fire1"))
+    //     {
+    //         //Instantiate Bullet
+    //         GameObject AuraShoot = Instantiate(AuraPrefab, Screentip.position, Screentip.rotation) as GameObject;
+    //         Rigidbody2D rb = AuraShoot.GetComponent<Rigidbody2D>();
+    //         rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
 
-            // AuraShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
+    //         // AuraShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
 
-                // Destroy(laser);               
-                // Debug.Log(bulletDecay);
-                Destroy (AuraShoot, 10f);
-        }
+    //             // Destroy(laser);               
+    //             // Debug.Log(bulletDecay);
+    //             Destroy (AuraShoot, 10f);
+    //     }
 
         //---------------------Laser
-        if (Input.GetButtonDown("Fire1"))
-        {
-            //Instantiate Bullet
-            GameObject laser = Instantiate(laserPrefab, Screentip.position, Screentip.rotation) as GameObject;
-            Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
-            rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
+    //     if (Input.GetButtonDown("Fire1"))
+    //     {
+    //         //Instantiate Bullet
+    //         GameObject laser = Instantiate(laserPrefab, Screentip.position, Screentip.rotation) as GameObject;
+    //         Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
+    //         rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
 
-            //laser.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
+    //         //laser.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
 
-                // Destroy(laser);               
-                // Debug.Log(bulletDecay);
-                Destroy (laser, 0.3f);
-        }
+    //             // Destroy(laser);               
+    //             // Debug.Log(bulletDecay);
+    //             Destroy (laser, 0.3f);
+    //     }
         
-    }
+     }
+
 
     void TakeDamage(int damage)
     {
@@ -244,6 +231,40 @@ public class playerscript : MonoBehaviour
             healthBar.SetHealth(currentHealth);
         }
         }
+
+        public void HandleJump()
+        { 
+        float Jumpfloat = playerControls.Player.Jump.ReadValue<float>();
+        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+        if (isGrounded == true && Jumpfloat < 1)
+        {
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+            rb.velocity = Vector2.up * Jumpfloat;
+            Debug.Log("jump");
+        }
+
+        if(isJumping == true)
+        {
+            if(jumpTimeCounter > 0)
+            {
+                rb.velocity = Vector2.up * JumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else {
+                isJumping = false;  
+                          
+                }
+        }
+
+        if (Jumpfloat == 0f)
+        {
+            isJumping = false;
+        }
+
+
+        }
+
         
    
     //------------------------------------------------------------------------------Collision detection

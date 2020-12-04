@@ -1,0 +1,617 @@
+fileFormatVersion: 2
+guid: 74a1d62fc1ba2f547963a51ca1e30f9b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3852250250195986342
+    second: obstacleWithSpikes-Sheet_0
+  - first:
+      213: 5731433673104642764
+    second: obstacleWithSpikes-Sheet_1
+  - first:
+      213: -4286334234351471956
+    second: obstacleWithSpikes-Sheet_2
+  - first:
+      213: 2477328083799771702
+    second: obstacleWithSpikes-Sheet_3
+  - first:
+      213: 7379408883385990692
+    second: obstacleWithSpikes-Sheet_4
+  - first:
+      213: -8377981872396666127
+    second: obstacleWithSpikes-Sheet_5
+  - first:
+      213: 6304627348913947026
+    second: obstacleWithSpikes-Sheet_6
+  - first:
+      213: 8168277290320152065
+    second: obstacleWithSpikes-Sheet_7
+  - first:
+      213: -6829809551455861697
+    second: obstacleWithSpikes-Sheet_8
+  - first:
+      213: -3442148908563838780
+    second: obstacleWithSpikes-Sheet_9
+  - first:
+      213: -6541584510795698628
+    second: obstacleWithSpikes-Sheet_10
+  - first:
+      213: -1098571599434027958
+    second: obstacleWithSpikes-Sheet_11
+  - first:
+      213: 2767443753223879632
+    second: obstacleWithSpikes-Sheet_12
+  - first:
+      213: 3175066604487587516
+    second: obstacleWithSpikes-Sheet_13
+  - first:
+      213: 1268744413654194540
+    second: obstacleWithSpikes-Sheet_14
+  - first:
+      213: -1760077981264921031
+    second: obstacleWithSpikes-Sheet_15
+  - first:
+      213: 940434132709325841
+    second: obstacleWithSpikes-Sheet_16
+  - first:
+      213: -1268872213486700535
+    second: obstacleWithSpikes-Sheet_17
+  - first:
+      213: 8466830143632930780
+    second: obstacleWithSpikes-Sheet_18
+  - first:
+      213: -1794163357339663539
+    second: obstacleWithSpikes-Sheet_19
+  - first:
+      213: -2254542009219190273
+    second: obstacleWithSpikes-Sheet_20
+  - first:
+      213: -9092631654286547345
+    second: obstacleWithSpikes-Sheet_21
+  - first:
+      213: 8273301679121338865
+    second: obstacleWithSpikes-Sheet_22
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 35
+        width: 77
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58982bbece0a8ac0800000000000000
+      internalID: -3852250250195986342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 35
+        width: 77
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc25d1b2f842a8f40800000000000000
+      internalID: 5731433673104642764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1912
+        y: 35
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca272ec49b1e384c0800000000000000
+      internalID: -4286334234351471956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2038
+        y: 35
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e759a184de86660800000000000000
+      internalID: 7379408883385990692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2164
+        y: 35
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2918a35ab298e7750800000000000000
+      internalID: 6304627348913947026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 35
+        width: 77
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3447e91664a731a0800000000000000
+      internalID: -6829809551455861697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 35
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8cd011ec70b30d0800000000000000
+      internalID: -3442148908563838780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 35
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e23d5db8f9735a0800000000000000
+      internalID: -6541584510795698628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 35
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ce66763f611c0f0800000000000000
+      internalID: -1098571599434027958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 35
+        width: 77
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0db78c65e6fe76620800000000000000
+      internalID: 2767443753223879632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 35
+        width: 77
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb630ba214a101c20800000000000000
+      internalID: 3175066604487587516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 35
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c699e96725c7b9110800000000000000
+      internalID: 1268744413654194540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 35
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93eb7bdb662f297e0800000000000000
+      internalID: -1760077981264921031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 35
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11cbace6cd71d0d00800000000000000
+      internalID: 940434132709325841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 35
+        width: 77
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908f2c1d17f046ee0800000000000000
+      internalID: -1268872213486700535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 35
+        width: 77
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd77fcc0829308570800000000000000
+      internalID: 8466830143632930780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 35
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d434fb0bee9d917e0800000000000000
+      internalID: -1794163357339663539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 35
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff17b49dcf146b0e0800000000000000
+      internalID: -2254542009219190273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 35
+        width: 78
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6627cc6fab70d180800000000000000
+      internalID: -9092631654286547345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstacleWithSpikes-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 2417
+        y: 35
+        width: 77
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f19ba71b0ca0d270800000000000000
+      internalID: 8273301679121338865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
