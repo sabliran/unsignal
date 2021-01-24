@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8994146394116243799}
   - component: {fileID: 8994146394116243796}
   - component: {fileID: 1272670825}
+  - component: {fileID: 1387415212}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -54,7 +55,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 81
+    FieldOfView: 83
     OrthographicSize: 7.37
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -69,6 +70,19 @@ MonoBehaviour:
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 8994146395295624001}
 --- !u!114 &1272670825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8994146394116243797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce47121ae231a14aa653521bcb98dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vcam: {fileID: 8994146394116243796}
+--- !u!114 &1387415212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,8 +158,8 @@ MonoBehaviour:
   m_XDamping: 0
   m_YDamping: 2.3
   m_ZDamping: 0
-  m_ScreenX: 0.5
-  m_ScreenY: 0.7900001
+  m_ScreenX: 0.51
+  m_ScreenY: 0.54
   m_CameraDistance: 10.69
   m_DeadZoneWidth: 0.25
   m_DeadZoneHeight: 0.1
@@ -154,7 +168,7 @@ MonoBehaviour:
   m_SoftZoneWidth: 0.67
   m_SoftZoneHeight: 0.71
   m_BiasX: 0.0149999345
-  m_BiasY: -0.24900009
+  m_BiasY: -0.24900013
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
   m_AdjustmentMode: 0

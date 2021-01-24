@@ -8,6 +8,7 @@ public class RedEyeChangingMaterial : MonoBehaviour
     public Material Material1;
     public GameObject Object;
     public enemy refScript;
+    
 
     
     void Start()
@@ -23,13 +24,8 @@ public class RedEyeChangingMaterial : MonoBehaviour
         
         if (refScript.isCloseEnough == true)
         {
-            Object.GetComponent<Renderer> ().material = Material1;
+            Object.GetComponent<Renderer>().material = Material1;
         }
-        
 
-        
-
-         
-        
     }
 }

@@ -1,0 +1,623 @@
+fileFormatVersion: 2
+guid: e1a4ca2f48f510044a017266af2a6eb5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7787325908397297202
+    second: NEWBodyUnsignal-Sheettilthead_0
+  - first:
+      213: -8590124506856829763
+    second: NEWBodyUnsignal-Sheettilthead_1
+  - first:
+      213: -3207287144848961966
+    second: NEWBodyUnsignal-Sheettilthead_2
+  - first:
+      213: -2101746507048160369
+    second: NEWBodyUnsignal-Sheettilthead_3
+  - first:
+      213: 7143738955596277757
+    second: NEWBodyUnsignal-Sheettilthead_4
+  - first:
+      213: 4750377592965181898
+    second: NEWBodyUnsignal-Sheettilthead_5
+  - first:
+      213: -8802648621726733584
+    second: NEWBodyUnsignal-Sheettilthead_6
+  - first:
+      213: -5451840195553340192
+    second: NEWBodyUnsignal-Sheettilthead_7
+  - first:
+      213: -2321362014688186377
+    second: NEWBodyUnsignal-Sheettilthead_8
+  - first:
+      213: 4736479687417850789
+    second: NEWBodyUnsignal-Sheettilthead_9
+  - first:
+      213: -1649125204414638542
+    second: NEWBodyUnsignal-Sheettilthead_10
+  - first:
+      213: 3865737029078745712
+    second: NEWBodyUnsignal-Sheettilthead_11
+  - first:
+      213: 6976093239233676332
+    second: NEWBodyUnsignal-Sheettilthead_12
+  - first:
+      213: -4190154208835570819
+    second: NEWBodyUnsignal-Sheettilthead_13
+  - first:
+      213: 2177223396357174492
+    second: NEWBodyUnsignal-Sheettilthead_14
+  - first:
+      213: -1810763118957237264
+    second: NEWBodyUnsignal-Sheettilthead_15
+  - first:
+      213: -3191017258922429437
+    second: NEWBodyUnsignal-Sheettilthead_16
+  - first:
+      213: -1311730465106272777
+    second: NEWBodyUnsignal-Sheettilthead_17
+  - first:
+      213: 2938999817282222194
+    second: NEWBodyUnsignal-Sheettilthead_18
+  - first:
+      213: -5154163791420581974
+    second: NEWBodyUnsignal-Sheettilthead_19
+  - first:
+      213: 2388286958003363704
+    second: NEWBodyUnsignal-Sheettilthead_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_20
+      rect:
+        serializedVersion: 2
+        x: 4710
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f1d79a556e42120800000000000000
+      internalID: 2388286958003363704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_0
+      rect:
+        serializedVersion: 2
+        x: 4966
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e873897a3221c60800000000000000
+      internalID: 7787325908397297202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_1
+      rect:
+        serializedVersion: 2
+        x: 4454
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbccb60064fb9c880800000000000000
+      internalID: -8590124506856829763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_2
+      rect:
+        serializedVersion: 2
+        x: 4198
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ec99ea55d6d73d0800000000000000
+      internalID: -3207287144848961966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_3
+      rect:
+        serializedVersion: 2
+        x: 3942
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83f977ffa815d2e0800000000000000
+      internalID: -2101746507048160369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_4
+      rect:
+        serializedVersion: 2
+        x: 3686
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7af602bb8a32360800000000000000
+      internalID: 7143738955596277757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_5
+      rect:
+        serializedVersion: 2
+        x: 3430
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac13aa1904bbce140800000000000000
+      internalID: 4750377592965181898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_6
+      rect:
+        serializedVersion: 2
+        x: 3174
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa656b87b5b6d580800000000000000
+      internalID: -8802648621726733584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_7
+      rect:
+        serializedVersion: 2
+        x: 2918
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4d8db2a3c2754b0800000000000000
+      internalID: -5451840195553340192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_8
+      rect:
+        serializedVersion: 2
+        x: 2662
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ffec67fb8dd8cfd0800000000000000
+      internalID: -2321362014688186377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_9
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abe4664e2b5bb140800000000000000
+      internalID: 4736479687417850789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_10
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236d8b03d512d19e0800000000000000
+      internalID: -1649125204414638542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_11
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072005da85bd5a530800000000000000
+      internalID: 3865737029078745712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_12
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c24078417df00d060800000000000000
+      internalID: 6976093239233676332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_13
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d737f3c82f499d5c0800000000000000
+      internalID: -4190154208835570819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_14
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4f980c42d073e10800000000000000
+      internalID: 2177223396357174492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_15
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fbec228980eed6e0800000000000000
+      internalID: -1810763118957237264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_16
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 304b9c1b5ba37b3d0800000000000000
+      internalID: -3191017258922429437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_17
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd5842871ccbcde0800000000000000
+      internalID: -1311730465106272777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NEWBodyUnsignal-Sheettilthead_18
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 98
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2787b0823cc69c820800000000000000
+      internalID: 2938999817282222194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -30,7 +30,7 @@ public class playerscript : MonoBehaviour
 {
 
     
-              
+
     public delegate void ClickAction();
     public static event ClickAction GotHitCamera;
     
@@ -50,8 +50,8 @@ public class playerscript : MonoBehaviour
     public float jumpTime;
    
     public float jumpSpeed;
-    private bool isJumping;
-    [SerializeField] GameObject AuraPrefab;
+    public bool isJumping;
+  
     [SerializeField] float projectileSpeed;
     private bool faceRight;
     private float bulletDecay = 2;
@@ -63,13 +63,29 @@ public class playerscript : MonoBehaviour
     public GameObject pointLight;
 
     public TextMeshProUGUI healthNumbers;
+    public GameObject AuraPrefab;
     public GameObject laserPrefab;
     private PlayerControls  playerControls;
     private Collider2D col;
     public LayerMask whatIsGround;
     public float JumpForce;
+    public bool LazerOn;
+    public bool AuraOn;
+    
+    public int weaponNumber;
+    public int damage;
+    
+    public bool isMoving;
+    public float movementInput;
+
+    public float dashSpeed;
+    private float dashTime;
+    public float startDashTime;
+    private int direction;
     private void Awake() 
     {
+
+
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
@@ -86,23 +102,168 @@ public class playerscript : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        dashTime = startDashTime;
     }
- 
+    
 
- 
-public void OnJump()
-{
-    HandleJump();
-}
-
-
-
-    void Update() //----------------------------------------------------UPDATE START-----------------------------------------------------
+    public void OnJump()
+    {
+        HandleJump();
+    isJumping = true;
+    
+    }
+    public void OnShootLaser()
     {
         
-        float movementInput = playerControls.Player.Move.ReadValue<float>();
+        if (weaponNumber == 0)
+        {
+            LaserShoot();
+        }
+        if (weaponNumber == 1)
+        {
+            auraShoot();
+        }
+    }
 
+// switches between the weaponNumber switch function (in the update function)
+    public void OnChangeWeapon()
+    {
+        weaponNumber++;
+        
+        if (weaponNumber == 0)
+        {
+            LazerOn = true;
+        }else
+        {
+            LazerOn = false;
+        }
+
+        if (weaponNumber == 1)
+        {
+            AuraOn = true;
+        }else
+        {
+            AuraOn = false;
+        }
+
+        if (weaponNumber == 2)
+        {
+            // stops counting and sets weaponNumber to 0
+            weaponNumber = 0;
+        }
+    }
+
+
+    public void LaserShoot()
+    {
+        GameObject laser = Instantiate(laserPrefab, Screentip.position, Screentip.rotation) as GameObject;
+        Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
+        rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
+        Destroy (laser, 0.3f);
+        LazerOn = true;
+        AuraOn = false;
+    }
+
+   public void auraShoot()
+    {
+        GameObject aura = Instantiate(AuraPrefab, Screentip.position, Screentip.rotation) as GameObject;
+        Rigidbody2D rb = aura.GetComponent<Rigidbody2D>();
+        rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
+        Destroy (aura, 0.3f);
+        LazerOn = false;
+        AuraOn = true;
+    }
+ 
+    void Update() //----------------------------------------------------UPDATE START-----------------------------------------------------
+    {
        
+
+      
+       
+    switch (weaponNumber)
+    {
+        case 1 :
+            print("aura case 1");
+            AuraPrefab.SetActive(true);
+            break;
+
+        default:
+            laserPrefab.SetActive(true);
+            
+            break;
+    }
+
+
+        
+    float movementInput = playerControls.Player.Move.ReadValue<float>();
+        if(movementInput != 0)
+        {
+            isMoving = true;
+            
+        }
+        else
+        {
+            isMoving = false;
+
+           
+        }
+         Debug.Log(movementInput);
+         // -1 = LEFT
+         // 1 = RIGHT
+
+#region DASH
+
+        if(direction == 0)
+        {
+            if(Keyboard.current.shiftKey.wasPressedThisFrame)
+            {
+                if(movementInput == -1)
+                {
+                    direction = 1;
+                }else if(movementInput == 1)
+                {
+                    direction = 2;
+                }
+            }
+        }else
+        {
+            if(dashTime <= 0)
+            {
+                direction = 0;
+                dashTime = startDashTime;
+                rb.velocity = Vector2.zero;
+            }else
+            {
+                 dashTime -= Time.deltaTime;
+
+                 if (direction == 1)
+                 {
+                    rb.velocity = Vector2.left * dashSpeed;
+                 }else if(direction == 2)
+                 {
+                     rb.velocity = Vector2.right * dashSpeed;
+                 }
+                 
+            }
+        }
+
+
+#endregion
+
+ 
+
+
+        float jumpInput = playerControls.Player.Jump.ReadValue<float>();
+        
+        if(jumpInput == 1)
+        {
+            isJumping = true;
+        }
+        else
+        {
+            isJumping = false;
+        }
+
         //move the player
         Vector3 currentPosition = transform.position;
         currentPosition.x += movementInput * speed * Time.deltaTime;
@@ -132,10 +293,6 @@ public void OnJump()
             damaged = false;
         }
 
-        //Horizontal Axis (MOVE LEFT - RIGHT)
-        // float moveHorizontal = Input.GetAxis("Horizontal");
-
-       
         if (movementInput > 0 && faceRight)
         {
             flip();
@@ -147,71 +304,26 @@ public void OnJump()
             flip();
             
         }
-        Fire();
+        
         
         Math.Round(bulletDecay);
 
         healthNumbers.text = currentHealth.ToString();    
+        
 
 
     } //--------------------------------------------------------------------------UPDATE END---------------------------------------------
-        void flip()
+
+
+
+   
+    void flip()
     {
         faceRight = !faceRight;
         transform.Rotate(0f, 180f, 0f);
     }    
 
-    void Fire()
-    {
-        // //------------------Aura
-        // if (Input.GetKeyDown(KeyCode.Alpha1))
-        // {
-        //     laserPrefab.SetActive(false);
-        //     AuraPrefab.SetActive(true);
-        // }
-        
-        // if (Input.GetKeyDown(KeyCode.Alpha2))
-        // {
-        //     AuraPrefab.SetActive(false);
-        //     laserPrefab.SetActive(true);
-        // }
-        
-       
-       
-       
-    //    if (Input.GetButtonDown("Fire1"))
-    //     {
-    //         //Instantiate Bullet
-    //         GameObject AuraShoot = Instantiate(AuraPrefab, Screentip.position, Screentip.rotation) as GameObject;
-    //         Rigidbody2D rb = AuraShoot.GetComponent<Rigidbody2D>();
-    //         rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
-
-    //         // AuraShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
-
-    //             // Destroy(laser);               
-    //             // Debug.Log(bulletDecay);
-    //             Destroy (AuraShoot, 10f);
-    //     }
-
-        //---------------------Laser
-    //     if (Input.GetButtonDown("Fire1"))
-    //     {
-    //         //Instantiate Bullet
-    //         GameObject laser = Instantiate(laserPrefab, Screentip.position, Screentip.rotation) as GameObject;
-    //         Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
-    //         rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
-
-    //         //laser.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
-
-    //             // Destroy(laser);               
-    //             // Debug.Log(bulletDecay);
-    //             Destroy (laser, 0.3f);
-    //     }
-        
-     }
-
-
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -222,26 +334,26 @@ public void OnJump()
         }
     }
 
-        void restoreTest(int damage)
-        {
-        if (currentHealth < 999)
-        {
-            currentHealth += damage; 
-            Debug.Log("resstoreTest111");
-            healthBar.SetHealth(currentHealth);
-        }
-        }
+    void restoreTest(int damage)
+    {
+    if (currentHealth < 999)
+    {
+        currentHealth += damage; 
+        Debug.Log("resstoreTest111");
+        healthBar.SetHealth(currentHealth);
+    }
+    }
 
-        public void HandleJump()
-        { 
+    public void HandleJump()
+    {
         float Jumpfloat = playerControls.Player.Jump.ReadValue<float>();
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
         if (isGrounded == true && Jumpfloat < 1)
         {
-            isJumping = true;
+            
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * Jumpfloat;
-            Debug.Log("jump");
+            
         }
 
         if(isJumping == true)
@@ -253,7 +365,7 @@ public void OnJump()
             }
             else {
                 isJumping = false;  
-                          
+                        
                 }
         }
 
@@ -263,7 +375,7 @@ public void OnJump()
         }
 
 
-        }
+    }
 
         
    
@@ -340,7 +452,7 @@ public void OnJump()
     {
         damaged = false;
         countdown = 0.1f;
-        Debug.Log("resetCount");
+        
     }
         
     //--------------------------------------------------------------------------------------exit collisions

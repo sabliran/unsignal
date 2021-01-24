@@ -1,17 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FaceMouse : MonoBehaviour
 {
-  public Transform Screentip;
-   
-    private void Update() 
-    {
-     Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-     float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-     transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+PlayerControls Obj_PlayerInputActions;
+Vector2 input_View; 
 
-    }
-
+private void Awake()
+{
+  Obj_PlayerInputActions = new PlayerControls();
+  Obj_PlayerInputActions.Player.MouseAim.performed += x => input_View = x.ReadValue<Vector2>();
 }
+  
+private void Update()
+{
+  Debug.Log(input_View);  
+  
+}
+
+
+} 

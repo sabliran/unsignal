@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5963ffd81f529c14c85c9033686c70a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f1efca1a8778b4fab8ad97cb15bf85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agroRange: 7
-  moveSpeed: 10
+  agroRange: 3
+  moveSpeed: 2
   getBullet: {fileID: 4646282054612185130, guid: 8c9554decd2f2384bb411933f9c89cb6,
     type: 3}
   maxHealth: 100
@@ -251,7 +251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3381686383617362361}
   m_LocalRotation: {x: -0, y: -0, z: -0.72356975, w: 0.6902513}
-  m_LocalPosition: {x: 0.69, y: -0.14, z: -0.27999997}
+  m_LocalPosition: {x: 1.122, y: 0.054, z: -0.27999997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3381686383025888098}
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0.04
-  m_PointLightInnerAngle: 89
+  m_PointLightInnerAngle: 59
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
   m_PointLightOuterRadius: 0

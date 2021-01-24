@@ -9,12 +9,11 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: GlowTest
   m_Shader: {fileID: 4800000, guid: 8d2bb70cbf9db8d4da26e15b26e74248, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _ALPHATEST_ON _EMISSION _GLOSSINESS_FROM_BASE_ALPHA
-    _SPECULAR_COLOR
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _ALPHATEST_ON _EMISSION _SPECULAR_COLOR
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2500
+  m_CustomRenderQueue: 2550
   stringTagMap:
     RenderType: TransparentCutout
   disabledShaderPasses: []
@@ -27,8 +26,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 74.4, y: 1.96}
+        m_Offset: {x: 9.48, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -39,8 +38,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 74.4, y: 1.96}
+        m_Offset: {x: 9.48, y: 0}
     - _MaskTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -58,27 +57,27 @@ Material:
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
-    - _Cutoff: 0.266
+    - _Cutoff: 1
     - _DstBlend: 0
     - _EnableExternalAlpha: 0
     - _GlossinessSource: 0
-    - _QueueOffset: 0
+    - _QueueOffset: -50
     - _ReceiveShadows: 1
     - _Shininess: 0
-    - _Smoothness: 1
-    - _SmoothnessSource: 1
+    - _Smoothness: 0.48
+    - _SmoothnessSource: 0
     - _SpecSource: 0
     - _SpecularHighlights: 0
     - _SrcBlend: 1
     - _Surface: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.9669811, b: 0.9669811, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 0, b: 0.77647066, a: 1}
+    - _EmissionColor: {r: 0.29492918, g: 0, b: 0.7735849, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 0.7735849, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0.7735849, g: 0, b: 0, a: 0.48}
 --- !u!114 &1418881335763168141
 MonoBehaviour:
   m_ObjectHideFlags: 11

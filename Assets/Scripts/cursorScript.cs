@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class cursorScript : MonoBehaviour
 {
-   public Texture2D cursorArrow;
-    void Start()
-    {
-        //This is all the code it needs to change the cursor's icon.
-       Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
-    }
+   public Texture2D cursor;
+   
+   private void changeCursor(Texture2D cursorType)           
+{
+    // Vector2 hotspot = new Vector2(cursorType.width /2, cursorType.height /2);
+    Cursor.SetCursor(cursorType, Vector2.zero, CursorMode.Auto);
+}
+
+   
+    // private void Awake()
+    // {
+    //     //changeCursor(cursor);
+    //     // Cursor.lockState = CursorLockMode.Confined;
+    // }
 }

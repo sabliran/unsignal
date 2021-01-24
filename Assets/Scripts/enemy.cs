@@ -95,12 +95,13 @@ public class enemy : MonoBehaviour
 
         if (distToPlayer <= agroRange)
         {
-            
             //code to chase player
+            isCloseEnough = true;
+            
             ChasePlayer();
 
             fire();  
-            isCloseEnough = true;
+            
 
     
         }

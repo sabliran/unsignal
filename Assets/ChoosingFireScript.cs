@@ -10,17 +10,18 @@ public class ChoosingFireScript : MonoBehaviour
     public GameObject iconAura;
     public GameObject iconLaser;
   
-  
     
+    public playerscript refScript;
     void Start()
     {
-        
+        playerscript refScript = GetComponent<playerscript>();
+        refScript = GetComponent<playerscript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (refScript.AuraOn == true)
         {
             AuraTextSelected.SetActive(true);
             iconAura.SetActive(true);
@@ -28,19 +29,13 @@ public class ChoosingFireScript : MonoBehaviour
             Invoke("SetFalseAura",1.0f);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (refScript.LazerOn == true)
         {
             LaserTextSelected.SetActive(true);
             iconAura.SetActive(false);
             iconLaser.SetActive(true);
             Invoke("SetFalseLaser",1.0f);
-        }        
-
-  
-
-
-
-        
+        }           
     }
 
     void SetFalseAura()

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 public class AnimationWithScripting : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
@@ -14,45 +15,54 @@ public class AnimationWithScripting : MonoBehaviour
     
     public bool isGreen;
     public bool isDamaged;
+    private PlayerControls  playerControls;
     public playerscript refScript;
+        private void Awake() 
+    {
+
+
+        playerControls = new PlayerControls();
+    
+    
+    }
     void Start()
     {
         playerscript refScript = GetComponent<playerscript>();
-        refScript = GetComponent<playerscript>();
+        // refScript = GetComponent<playerscript> ();
         StartCoroutine(Idle());
 
     }
+       private void OnEnable() {
+        playerControls.Enable();
+    }
+
+    private void OnDisable() {
+        playerControls.Disable();
+    }
+ 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            StopAllCoroutines();
-            StartCoroutine(Idle());
-        }
-    
-        
-        // if (Input.GetKeyDown(KeyCode.K))
-        // {
-        //     StopAllCoroutines();
-        //     StartCoroutine(Kick());
-        // }
-        
-        //walk
-        if (Input.GetKeyDown(KeyCode.A))
+
+        if(refScript.isMoving == true)
         {
             StopAllCoroutines();
             StartCoroutine(Walk());
         }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            StopAllCoroutines();
-            StartCoroutine(Walk());
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
+        
+
+       
+
+
+
+
+
+
+        if (refScript.isJumping == true)
         {
             StopAllCoroutines();
             StartCoroutine(Jump());
         }
+        
         if (isDamaged == true)
         {
             StopAllCoroutines();
@@ -65,11 +75,11 @@ public class AnimationWithScripting : MonoBehaviour
             StartCoroutine(IlikeLights());
         }
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            StopAllCoroutines();
-            StartCoroutine(PlayerAttack());
-        }
+        // if (Input.GetButtonDown("Fire1"))
+        // {
+        //     StopAllCoroutines();
+        //     StartCoroutine(PlayerAttack());
+        // }
     }
     IEnumerator Idle()
     {
@@ -79,9 +89,8 @@ public class AnimationWithScripting : MonoBehaviour
         {
             spriteRenderer.sprite = idle[i];
             i++;
-            yield return new WaitForSeconds(0.07f);
+            yield return new WaitForSeconds(0.03f);
             yield return 0;
-                
         }
         StartCoroutine(Idle());
     }
@@ -93,10 +102,11 @@ public class AnimationWithScripting : MonoBehaviour
         {
             spriteRenderer.sprite = walk[i];
             i++;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
             yield return 0;
         }
-        StartCoroutine(Idle());
+        
+       StartCoroutine(Idle());
         
     }
 
