@@ -10,7 +10,7 @@ public class teleporter : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {  
            
-           print("teett");
+           
            
            dialogueBox.SetActive(true);
            

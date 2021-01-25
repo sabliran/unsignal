@@ -67,7 +67,7 @@ public class AnimationWithScripting : MonoBehaviour
         {
             StopAllCoroutines();
             StartCoroutine(Damage());
-            Debug.Log("PIIIIIIAN");
+            
         }
         if (isGreen == true)
         {
@@ -206,7 +206,7 @@ public class AnimationWithScripting : MonoBehaviour
         if (col.gameObject.tag == "enemy")
         {
             isDamaged = true;
-            Debug.Log("damaged");
+            
         }
 
     }

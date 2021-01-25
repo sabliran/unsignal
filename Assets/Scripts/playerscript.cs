@@ -82,6 +82,7 @@ public class playerscript : MonoBehaviour
     private float dashTime;
     public float startDashTime;
     private int direction;
+    Animator animator;
     private void Awake() 
     {
 
@@ -103,6 +104,7 @@ public class playerscript : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         dashTime = startDashTime;
+        animator = GetComponent<Animator>();
     }
     
 
@@ -112,6 +114,10 @@ public class playerscript : MonoBehaviour
     isJumping = true;
     
     }
+    
+
+        
+    
     public void OnShootLaser()
     {
         
@@ -173,6 +179,8 @@ public class playerscript : MonoBehaviour
         LazerOn = false;
         AuraOn = true;
     }
+
+
  
     void Update() //----------------------------------------------------UPDATE START-----------------------------------------------------
     {
@@ -199,24 +207,27 @@ public class playerscript : MonoBehaviour
         if(movementInput != 0)
         {
             isMoving = true;
+            animator.SetBool("isWalking", true);
             
         }
         else
         {
             isMoving = false;
-
+            animator.SetBool("isWalking", false);
            
         }
-         Debug.Log(movementInput);
-         // -1 = LEFT
-         // 1 = RIGHT
+
 
 #region DASH
-
+        float dashInput = playerControls.Player.Dash.ReadValue<float>();
+        
+        //0 = not pressed
+        //1 = pressed
         if(direction == 0)
         {
-            if(Keyboard.current.shiftKey.wasPressedThisFrame)
+            if(dashInput == 1)
             {
+                
                 if(movementInput == -1)
                 {
                     direction = 1;
@@ -250,6 +261,16 @@ public class playerscript : MonoBehaviour
 
 #endregion
 
+    #region ANIMATION CONTROLLER
+    if(dashInput == 1)
+    {
+        animator.SetBool("isDash", true);
+    }else
+    {
+        animator.SetBool("isDash", false);
+    }
+    
+    #endregion
  
 
 
@@ -258,10 +279,12 @@ public class playerscript : MonoBehaviour
         if(jumpInput == 1)
         {
             isJumping = true;
+            animator.SetBool("isJumpingAnim", true);
         }
         else
         {
             isJumping = false;
+            animator.SetBool("isJumpingAnim", false);
         }
 
         //move the player
@@ -272,7 +295,7 @@ public class playerscript : MonoBehaviour
 
         
         
-        // --------Jump Mechanics
+        
     
 
 
@@ -329,7 +352,7 @@ public class playerscript : MonoBehaviour
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
-            Debug.Log("zero health");
+            
             SceneManager.LoadScene("GameOver");
         }
     }
@@ -339,7 +362,7 @@ public class playerscript : MonoBehaviour
     if (currentHealth < 999)
     {
         currentHealth += damage; 
-        Debug.Log("resstoreTest111");
+        
         healthBar.SetHealth(currentHealth);
     }
     }
@@ -385,25 +408,25 @@ public class playerscript : MonoBehaviour
         
         if (col.gameObject.tag == "bullet")
         {
-            Debug.Log("bullleplayerr");
+            
         }
         
         if (col.gameObject.tag == "enemy")
         {
             damaged = true;
-            Debug.Log("hit");
+            
         }
         
         if (col.gameObject.tag == "enemyLaser")
         {
             damaged = true;
-            Debug.Log("laser enemy hit");
+            
 
         }
 
         if (col.gameObject.tag == "redEye")
         {
-            Debug.Log("red eye touched");
+           
         }
 
         // if (col.gameObject.tag == "Obstacle")
@@ -422,7 +445,7 @@ public class playerscript : MonoBehaviour
         if (collision.gameObject.tag == "NextScene")
         {  
              SceneManager.LoadScene("Game 1");
-             Debug.Log("nextscene");
+             
         }
         if (collision.gameObject.tag == "suicideB")
         {  
@@ -434,7 +457,7 @@ public class playerscript : MonoBehaviour
         {
             // damaged = true;
            
-            Debug.Log("hit");
+            
         }
     }
     

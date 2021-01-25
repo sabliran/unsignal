@@ -1232,7 +1232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7769854353725627245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.106, y: 0.381, z: 0}
+  m_LocalPosition: {x: 0.222, y: 0.204, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7769854354617289664}
@@ -1501,6 +1501,7 @@ GameObject:
   - component: {fileID: 7769854354617289670}
   - component: {fileID: 7769854354617289669}
   - component: {fileID: 7769854354617289665}
+  - component: {fileID: 146842195}
   m_Layer: 10
   m_Name: player 1
   m_TagString: Player
@@ -1517,7 +1518,7 @@ Transform:
   m_GameObject: {fileID: 7769854354617289677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 98.22, y: 4.19, z: 0}
-  m_LocalScale: {x: 2.9621725, y: 3.088628, z: 7.327049}
+  m_LocalScale: {x: 3.163796, y: 3.318351, z: 8.573205}
   m_Children:
   - {fileID: 7769854352667712553}
   - {fileID: 7769854353725627234}
@@ -1644,14 +1645,26 @@ MonoBehaviour:
   - {fileID: 2938999817282222194, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
   - {fileID: 2388286958003363704, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
   jump:
-  - {fileID: 21300000, guid: c2b12e942e030f54584819c731947c3b, type: 3}
-  - {fileID: 21300000, guid: 8faf14c105dc4c14db288970df3a00e3, type: 3}
-  - {fileID: 21300000, guid: b9b8b43ea1443cb4ea975f23592c4774, type: 3}
-  - {fileID: 21300000, guid: e7f5d4b50c8650e47a47047678465b15, type: 3}
-  - {fileID: 21300000, guid: 06a12c63fd5eae246b86c54a4bf23dd2, type: 3}
-  - {fileID: 21300000, guid: 133507bf2c032f34b9ca16ea8087c638, type: 3}
-  - {fileID: 21300000, guid: db9c493a87b5bf149b4458cf4a620613, type: 3}
-  - {fileID: 21300000, guid: 13434c03879593043a783eb01497c771, type: 3}
+  - {fileID: 7787325908397297202, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: -8590124506856829763, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: -3207287144848961966, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: -2101746507048160369, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: 7143738955596277757, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: 4750377592965181898, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: -8802648621726733584, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: -5451840195553340192, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: -2321362014688186377, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: 4736479687417850789, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: -1649125204414638542, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: 3865737029078745712, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: 6976093239233676332, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: -4190154208835570819, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: 2177223396357174492, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: -1810763118957237264, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: -3191017258922429437, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: -1311730465106272777, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: 2938999817282222194, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
+  - {fileID: 2388286958003363704, guid: e1a4ca2f48f510044a017266af2a6eb5, type: 3}
   damage:
   - {fileID: 21300000, guid: 3cbf918eafcac7742b1e0ca83e309f3a, type: 3}
   - {fileID: 21300000, guid: 96510fac0bc128a4a971747ae4a3740b, type: 3}
@@ -1693,7 +1706,7 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 2048
-  jumpTime: 0.45
+  jumpTime: 0.06
   jumpSpeed: 100
   isJumping: 0
   projectileSpeed: 30
@@ -1711,13 +1724,15 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 2048
-  JumpForce: 10
+  JumpForce: 20
   LazerOn: 0
   AuraOn: 0
   weaponNumber: 0
   damage: 0
   isMoving: 0
-  movementInput: 0
+  movementInput: 0.15
+  dashSpeed: 60
+  startDashTime: 0.1
 --- !u!114 &7769854354617289669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1775,3 +1790,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4912963, y: 0.81}
   m_EdgeRadius: 0
+--- !u!95 &146842195
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769854354617289677}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c285224a008f34448b8ce67e98f9a462, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
