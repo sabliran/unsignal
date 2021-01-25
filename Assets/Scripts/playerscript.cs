@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
@@ -52,7 +52,7 @@ public class playerscript : MonoBehaviour
     public float jumpSpeed;
     public bool isJumping;
   
-    [SerializeField] float projectileSpeed;
+    public float projectileSpeed;
     private bool faceRight;
     private float bulletDecay = 2;
     public bool damaged;
@@ -83,6 +83,7 @@ public class playerscript : MonoBehaviour
     public float startDashTime;
     private int direction;
     Animator animator;
+    public ParticleSystem dust;    
     private void Awake() 
     {
 
@@ -160,6 +161,7 @@ public class playerscript : MonoBehaviour
     }
 
 
+
     public void LaserShoot()
     {
         GameObject laser = Instantiate(laserPrefab, Screentip.position, Screentip.rotation) as GameObject;
@@ -191,7 +193,7 @@ public class playerscript : MonoBehaviour
     switch (weaponNumber)
     {
         case 1 :
-            print("aura case 1");
+            
             AuraPrefab.SetActive(true);
             break;
 
@@ -200,6 +202,7 @@ public class playerscript : MonoBehaviour
             
             break;
     }
+
 
 
         
@@ -225,9 +228,10 @@ public class playerscript : MonoBehaviour
         //1 = pressed
         if(direction == 0)
         {
+            
             if(dashInput == 1)
             {
-                
+                CreateDust();
                 if(movementInput == -1)
                 {
                     direction = 1;
@@ -319,12 +323,14 @@ public class playerscript : MonoBehaviour
         if (movementInput > 0 && faceRight)
         {
             flip();
-            
+            CreateDust();
             
         }
         else if (movementInput < 0 && !faceRight)
         {    
             flip();
+            dust.transform.Rotate(0f, 180f, 0f);
+            CreateDust();
             
         }
         
@@ -338,7 +344,10 @@ public class playerscript : MonoBehaviour
     } //--------------------------------------------------------------------------UPDATE END---------------------------------------------
 
 
-
+    void CreateDust()
+    {
+        dust.Play();
+    }
    
     void flip()
     {
@@ -373,7 +382,7 @@ public class playerscript : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
         if (isGrounded == true && Jumpfloat < 1)
         {
-            
+            CreateDust();
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * Jumpfloat;
             

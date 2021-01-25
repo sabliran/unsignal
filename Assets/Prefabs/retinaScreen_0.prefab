@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096113105}
   m_LocalRotation: {x: -0, y: -0, z: 0.09661866, w: 0.9953215}
-  m_LocalPosition: {x: 0.41, y: 0.07, z: -0.19999999}
+  m_LocalPosition: {x: 0.322, y: 0.052, z: -0.19999999}
   m_LocalScale: {x: 2.0912926, y: 2.1805701, z: 5.172893}
   m_Children: []
   m_Father: {fileID: 8718277910077780449}
@@ -464,11 +464,11 @@ MonoBehaviour:
   laserPrefab: {fileID: 4646282054612185130, guid: 88e37a9d15194d349bf2391f8c7bed1e,
     type: 3}
   Screentip: {fileID: 1096113106}
-  projectileSpeed: 30
+  projectileSpeed: 60
   changeColor: {fileID: 8718277910137176133}
   gotHit: 0
   isCloseEnough: 0
-  destroyLaser: 0
+  destroyLaser: 5
 --- !u!1 &8718277910137176131
 GameObject:
   m_ObjectHideFlags: 0

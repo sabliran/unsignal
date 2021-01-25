@@ -12,15 +12,15 @@ public class enemy : MonoBehaviour
     
 
     [SerializeField]
-    float agroRange;
+    public float agroRange;
 
     [SerializeField]
-    float moveSpeed;
+    public float moveSpeed;
     public GameObject getBullet;
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
-    [SerializeField] GameObject laserPrefab;
+    public GameObject laserPrefab;
     
      public Transform Screentip;
     
@@ -36,7 +36,11 @@ public class enemy : MonoBehaviour
     public bool isCloseEnough;
     public float destroyLaser;
 
+
    
+   
+
+    
     
     void Start()
     {
@@ -171,6 +175,7 @@ public class enemy : MonoBehaviour
     {
             if (Time.time > nextShootTime)
             {
+
 
             
             //Instantiate Bullet

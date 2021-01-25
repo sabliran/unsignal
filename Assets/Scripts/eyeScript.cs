@@ -5,7 +5,7 @@ using UnityEngine;
 public class eyeScript : MonoBehaviour
 {
 
-    float agroRange;
+    public float agroRange;
     private Transform player;
 
     public Rigidbody2D rb2d;
@@ -32,9 +32,11 @@ public class eyeScript : MonoBehaviour
             //code to chase player
             ChasePlayer();
 
+
              
     
         }
+        
         
 
     }
@@ -47,7 +49,7 @@ public class eyeScript : MonoBehaviour
             rb2d.velocity = new Vector2(moveSpeed, 0);
             // MUCH BETTER WAY TO FLIP AN OBJECT. flipX is not a good practice.
             transform.localScale = new Vector2(1, 1);
-            
+           
 
         }
         else 

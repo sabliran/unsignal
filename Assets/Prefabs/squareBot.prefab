@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agroRange: 7
-  moveSpeed: 10
+  moveSpeed: 7
   getBullet: {fileID: 4646282054612185130, guid: 8c9554decd2f2384bb411933f9c89cb6,
     type: 3}
   maxHealth: 100
@@ -206,9 +206,11 @@ MonoBehaviour:
   laserPrefab: {fileID: 4646282054612185130, guid: 88e37a9d15194d349bf2391f8c7bed1e,
     type: 3}
   Screentip: {fileID: 5421526564665567008}
-  countdown: 1
-  projectileSpeed: 10
+  projectileSpeed: 20
   changeColor: {fileID: 3986546488570563323}
+  gotHit: 0
+  isCloseEnough: 0
+  destroyLaser: 5
 --- !u!1 &3986546487481850047
 GameObject:
   m_ObjectHideFlags: 0

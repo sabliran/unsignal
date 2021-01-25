@@ -2132,6 +2132,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4256857926496484270, guid: fefd0ad482e34ef4fb4a60cf3ec99d7f,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fefd0ad482e34ef4fb4a60cf3ec99d7f, type: 3}
 --- !u!1001 &1050985498
@@ -3497,7 +3502,7 @@ PrefabInstance:
     - target: {fileID: 8223290994716136988, guid: cfa4d0776037b0e429676fc92c74a064,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 98.16828
+      value: 98.16325
       objectReference: {fileID: 0}
     - target: {fileID: 8223290994716136988, guid: cfa4d0776037b0e429676fc92c74a064,
         type: 3}
@@ -3675,7 +3680,7 @@ PrefabInstance:
     - target: {fileID: 8994146394116243799, guid: dd47cd9fc69d4da47873a73b666d73bc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 98.16828
+      value: 98.16325
       objectReference: {fileID: 0}
     - target: {fileID: 8994146394116243799, guid: dd47cd9fc69d4da47873a73b666d73bc,
         type: 3}
