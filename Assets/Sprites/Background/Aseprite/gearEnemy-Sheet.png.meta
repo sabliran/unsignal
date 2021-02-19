@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: 5837741610820055882
     second: gearEnemy-Sheet_2
+  - first:
+      213: 5743757647014384329
+    second: gearEnemy-Sheet_0
+  - first:
+      213: -3094765611321104275
+    second: gearEnemy-Sheet_1
+  - first:
+      213: -2342635065278498289
+    second: gearEnemy-Sheet_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -54,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,38 +125,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gearEnemy-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 10
-        width: 61
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ebbc78683e1e741a0800000000000000
-      internalID: -6825238342925825090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: gearEnemy-Sheet_1
       rect:
         serializedVersion: 2
-        x: 164
-        y: 10
-        width: 61
-        height: 87
+        x: 598
+        y: 74
+        width: 128
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,8 +155,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16a03995b00f0f870800000000000000
-      internalID: 8714729210500024929
+      spriteID: d686c12c21f2d05d0800000000000000
+      internalID: -3094765611321104275
       vertices: []
       indices: 
       edges: []
@@ -165,10 +165,10 @@ TextureImporter:
       name: gearEnemy-Sheet_2
       rect:
         serializedVersion: 2
-        x: 289
-        y: 10
-        width: 62
-        height: 87
+        x: 342
+        y: 75
+        width: 128
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,8 +176,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a43327bb013d30150800000000000000
-      internalID: 5837741610820055882
+      spriteID: f0a73b7e1d94d7fd0800000000000000
+      internalID: -2342635065278498289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gearEnemy-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 74
+        width: 128
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2d932f52de5bf40800000000000000
+      internalID: 5743757647014384329
       vertices: []
       indices: 
       edges: []

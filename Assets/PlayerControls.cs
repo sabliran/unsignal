@@ -73,6 +73,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""AntigoniText"",
+                    ""type"": ""Button"",
+                    ""id"": ""b4c76461-f6a5-4864-80b9-1009955d852c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""b98827eb-c551-4775-81d7-f76c46ef357b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -110,8 +126,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Xbox"",
-                    ""id"": ""2cae120b-0d20-47f1-88a5-3dc666be2b39"",
+                    ""name"": ""Android"",
+                    ""id"": ""fe36c9fd-1ff7-4b1a-b3ab-2d725fe05856"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -122,8 +138,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""fe080dca-2526-4675-b25f-fe031afb7b73"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""id"": ""dbd801eb-9faa-4478-b02e-102f4450fece"",
+                    ""path"": ""<AndroidJoystick>/stick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -133,8 +149,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""91faf655-0477-48fa-a084-71a50af4f355"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""id"": ""d84847a0-e2b2-4b36-89e4-cefe95458109"",
+                    ""path"": ""<AndroidJoystick>/stick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -155,8 +171,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7c34f64b-89c2-4751-9830-9eddc8f03bb9"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""id"": ""fa4821e2-cb0b-4dae-b658-236ca45c7bbd"",
+                    ""path"": ""<Touchscreen>/touch0/tap"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -177,23 +193,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""368d36fe-a494-4fad-b032-8574f1244085"",
-                    ""path"": ""<XInputController>/buttonWest"",
+                    ""id"": ""accb5994-9016-44b8-9012-ae7c0e981ca8"",
+                    ""path"": ""<Touchscreen>/touch1/tap"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ShootLaser"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""60eea346-d5fa-4cca-bf52-23184d9e8238"",
-                    ""path"": ""<XInputController>/dpad/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeWeapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -209,37 +214,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Xbox"",
-                    ""id"": ""619a951e-dcac-4eb6-b086-e8a3adbad950"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""057efab6-5d95-42a8-a95e-5e1fdedda33c"",
+                    ""path"": ""<Touchscreen>/touch2/tap"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""HorizontalAxisCamera"",
-                    ""isComposite"": true,
+                    ""action"": ""ChangeWeapon"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""cf3dd4b8-9cd7-495f-9ca9-3f8a42067188"",
-                    ""path"": ""<XInputController>/rightStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HorizontalAxisCamera"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""58ec115a-63da-4614-8dfc-1f031ab2017f"",
-                    ""path"": ""<XInputController>/rightStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HorizontalAxisCamera"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -255,11 +238,44 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""76552e73-9705-4da5-9671-8fad0b70e927"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""15e6f319-306a-4874-a2cd-4da345cf15f2"",
+                    ""path"": ""<Touchscreen>/touch3/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0100a04f-179c-4547-a721-0417d8076321"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AntigoniText"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""de004ead-3e3d-48b9-83c1-eaba0833c153"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -277,6 +293,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_ChangeWeapon = m_Player.FindAction("ChangeWeapon", throwIfNotFound: true);
         m_Player_MouseAim = m_Player.FindAction("MouseAim", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+        m_Player_AntigoniText = m_Player.FindAction("AntigoniText", throwIfNotFound: true);
+        m_Player_Quit = m_Player.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -333,6 +351,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_ChangeWeapon;
     private readonly InputAction m_Player_MouseAim;
     private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_AntigoniText;
+    private readonly InputAction m_Player_Quit;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -344,6 +364,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @ChangeWeapon => m_Wrapper.m_Player_ChangeWeapon;
         public InputAction @MouseAim => m_Wrapper.m_Player_MouseAim;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @AntigoniText => m_Wrapper.m_Player_AntigoniText;
+        public InputAction @Quit => m_Wrapper.m_Player_Quit;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -374,6 +396,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @AntigoniText.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAntigoniText;
+                @AntigoniText.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAntigoniText;
+                @AntigoniText.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAntigoniText;
+                @Quit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -399,6 +427,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @AntigoniText.started += instance.OnAntigoniText;
+                @AntigoniText.performed += instance.OnAntigoniText;
+                @AntigoniText.canceled += instance.OnAntigoniText;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -412,5 +446,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnChangeWeapon(InputAction.CallbackContext context);
         void OnMouseAim(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnAntigoniText(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
 }

@@ -13,18 +13,6 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 
 
-/*ALGORITHMS AS ANEMIES */
-
-//[TODOS]
-
-//2 rigidbodies
-//fix the flip fire function with (brackeys 2D shoooting in unity video) 
-//---------------------------------------------------------------------------------
-//[POLISHING UP]
-//fix where the signalvore have the lazers comming out of
-//gravity
-//fix the up button *not to fly
-//delete the bullet instances after some time
 public class playerscript : MonoBehaviour
 
 {
@@ -83,11 +71,11 @@ public class playerscript : MonoBehaviour
     public float startDashTime;
     private int direction;
     Animator animator;
-    public ParticleSystem dust;    
+    public ParticleSystem dust;  
+    public GameObject antigoniText;
+   
     private void Awake() 
     {
-
-
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
@@ -130,6 +118,19 @@ public class playerscript : MonoBehaviour
         {
             auraShoot();
         }
+        
+    }
+
+    public void OnAntigoniText() {
+        {
+            
+
+            antigoniText.SetActive(true);
+
+            
+            
+            
+        }
     }
 
 // switches between the weaponNumber switch function (in the update function)
@@ -160,7 +161,10 @@ public class playerscript : MonoBehaviour
         }
     }
 
-
+    public void OnQuit()
+    {
+        Application.Quit();
+    }
 
     public void LaserShoot()
     {
@@ -266,6 +270,7 @@ public class playerscript : MonoBehaviour
 #endregion
 
     #region ANIMATION CONTROLLER
+    //DASH ANIM
     if(dashInput == 1)
     {
         animator.SetBool("isDash", true);
@@ -273,8 +278,8 @@ public class playerscript : MonoBehaviour
     {
         animator.SetBool("isDash", false);
     }
-    
-    #endregion
+
+
  
 
 
@@ -291,6 +296,10 @@ public class playerscript : MonoBehaviour
             animator.SetBool("isJumpingAnim", false);
         }
 
+#endregion
+
+
+
         //move the player
         Vector3 currentPosition = transform.position;
         currentPosition.x += movementInput * speed * Time.deltaTime;
@@ -302,9 +311,10 @@ public class playerscript : MonoBehaviour
         
     
 
-
+        //Damage Anim
         if (damaged == true)
         {
+            animator.SetBool("isDamaged", true);
             
             if(GotHitCamera != null)
                 GotHitCamera();
@@ -318,6 +328,9 @@ public class playerscript : MonoBehaviour
         else
         {
             damaged = false;
+            animator.SetBool("isDamaged", false);
+
+           
         }
 
         if (movementInput > 0 && faceRight)
@@ -340,14 +353,15 @@ public class playerscript : MonoBehaviour
         healthNumbers.text = currentHealth.ToString();    
         
 
-
+ 
     } //--------------------------------------------------------------------------UPDATE END---------------------------------------------
 
-
+// play particle function
     void CreateDust()
     {
         dust.Play();
     }
+
    
     void flip()
     {
@@ -382,6 +396,7 @@ public class playerscript : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
         if (isGrounded == true && Jumpfloat < 1)
         {
+            
             CreateDust();
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * Jumpfloat;
@@ -399,6 +414,7 @@ public class playerscript : MonoBehaviour
                 isJumping = false;  
                         
                 }
+
         }
 
         if (Jumpfloat == 0f)
@@ -407,7 +423,10 @@ public class playerscript : MonoBehaviour
         }
 
 
+
+
     }
+
 
         
    

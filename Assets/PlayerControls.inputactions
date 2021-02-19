@@ -60,6 +60,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "AntigoniText",
+                    "type": "Button",
+                    "id": "b4c76461-f6a5-4864-80b9-1009955d852c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "b98827eb-c551-4775-81d7-f76c46ef357b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -97,8 +113,8 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Xbox",
-                    "id": "2cae120b-0d20-47f1-88a5-3dc666be2b39",
+                    "name": "Android",
+                    "id": "fe36c9fd-1ff7-4b1a-b3ab-2d725fe05856",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -109,8 +125,8 @@
                 },
                 {
                     "name": "negative",
-                    "id": "fe080dca-2526-4675-b25f-fe031afb7b73",
-                    "path": "<Gamepad>/leftStick/left",
+                    "id": "dbd801eb-9faa-4478-b02e-102f4450fece",
+                    "path": "<AndroidJoystick>/stick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -120,8 +136,8 @@
                 },
                 {
                     "name": "positive",
-                    "id": "91faf655-0477-48fa-a084-71a50af4f355",
-                    "path": "<Gamepad>/leftStick/right",
+                    "id": "d84847a0-e2b2-4b36-89e4-cefe95458109",
+                    "path": "<AndroidJoystick>/stick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -142,8 +158,8 @@
                 },
                 {
                     "name": "",
-                    "id": "7c34f64b-89c2-4751-9830-9eddc8f03bb9",
-                    "path": "<XInputController>/buttonSouth",
+                    "id": "fa4821e2-cb0b-4dae-b658-236ca45c7bbd",
+                    "path": "<Touchscreen>/touch0/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -164,23 +180,12 @@
                 },
                 {
                     "name": "",
-                    "id": "368d36fe-a494-4fad-b032-8574f1244085",
-                    "path": "<XInputController>/buttonWest",
+                    "id": "accb5994-9016-44b8-9012-ae7c0e981ca8",
+                    "path": "<Touchscreen>/touch1/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "ShootLaser",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "60eea346-d5fa-4cca-bf52-23184d9e8238",
-                    "path": "<XInputController>/dpad/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ChangeWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -196,37 +201,15 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Xbox",
-                    "id": "619a951e-dcac-4eb6-b086-e8a3adbad950",
-                    "path": "1DAxis",
+                    "name": "",
+                    "id": "057efab6-5d95-42a8-a95e-5e1fdedda33c",
+                    "path": "<Touchscreen>/touch2/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HorizontalAxisCamera",
-                    "isComposite": true,
+                    "action": "ChangeWeapon",
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "cf3dd4b8-9cd7-495f-9ca9-3f8a42067188",
-                    "path": "<XInputController>/rightStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "HorizontalAxisCamera",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "58ec115a-63da-4614-8dfc-1f031ab2017f",
-                    "path": "<XInputController>/rightStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "HorizontalAxisCamera",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -242,11 +225,44 @@
                 {
                     "name": "",
                     "id": "76552e73-9705-4da5-9671-8fad0b70e927",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15e6f319-306a-4874-a2cd-4da345cf15f2",
+                    "path": "<Touchscreen>/touch3/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0100a04f-179c-4547-a721-0417d8076321",
+                    "path": "<Keyboard>/9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AntigoniText",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "de004ead-3e3d-48b9-83c1-eaba0833c153",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
