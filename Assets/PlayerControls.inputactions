@@ -46,8 +46,8 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MouseAim",
-                    "type": "Value",
+                    "name": "MousePosition",
+                    "type": "PassThrough",
                     "id": "d0f669fc-5d92-4591-935b-220f5c0415ac",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -213,17 +213,6 @@
                 },
                 {
                     "name": "",
-                    "id": "ba5a6b61-8899-449d-b958-e77c5ec2b72c",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseAim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "76552e73-9705-4da5-9671-8fad0b70e927",
                     "path": "<Keyboard>/shift",
                     "interactions": "",
@@ -263,6 +252,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ec46daa-483f-4af0-8fe1-03ec3b0418b0",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

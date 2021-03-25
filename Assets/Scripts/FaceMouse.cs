@@ -11,7 +11,7 @@ Vector2 input_View;
 private void Awake()
 {
   Obj_PlayerInputActions = new PlayerControls();
-  Obj_PlayerInputActions.Player.MouseAim.performed += x => input_View = x.ReadValue<Vector2>();
+  Obj_PlayerInputActions.Player.MousePosition.performed += x => input_View = x.ReadValue<Vector2>();
 }
   
 private void Update()

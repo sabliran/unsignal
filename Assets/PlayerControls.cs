@@ -59,8 +59,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""MouseAim"",
-                    ""type"": ""Value"",
+                    ""name"": ""MousePosition"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""d0f669fc-5d92-4591-935b-220f5c0415ac"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
@@ -226,17 +226,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ba5a6b61-8899-449d-b958-e77c5ec2b72c"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseAim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""76552e73-9705-4da5-9671-8fad0b70e927"",
                     ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
@@ -278,6 +267,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0ec46daa-483f-4af0-8fe1-03ec3b0418b0"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -291,7 +291,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_ShootLaser = m_Player.FindAction("ShootLaser", throwIfNotFound: true);
         m_Player_ChangeWeapon = m_Player.FindAction("ChangeWeapon", throwIfNotFound: true);
-        m_Player_MouseAim = m_Player.FindAction("MouseAim", throwIfNotFound: true);
+        m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_AntigoniText = m_Player.FindAction("AntigoniText", throwIfNotFound: true);
         m_Player_Quit = m_Player.FindAction("Quit", throwIfNotFound: true);
@@ -349,7 +349,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_ShootLaser;
     private readonly InputAction m_Player_ChangeWeapon;
-    private readonly InputAction m_Player_MouseAim;
+    private readonly InputAction m_Player_MousePosition;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_AntigoniText;
     private readonly InputAction m_Player_Quit;
@@ -362,7 +362,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @ShootLaser => m_Wrapper.m_Player_ShootLaser;
         public InputAction @ChangeWeapon => m_Wrapper.m_Player_ChangeWeapon;
-        public InputAction @MouseAim => m_Wrapper.m_Player_MouseAim;
+        public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @AntigoniText => m_Wrapper.m_Player_AntigoniText;
         public InputAction @Quit => m_Wrapper.m_Player_Quit;
@@ -390,9 +390,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @ChangeWeapon.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeWeapon;
                 @ChangeWeapon.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeWeapon;
                 @ChangeWeapon.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeWeapon;
-                @MouseAim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouseAim;
-                @MouseAim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouseAim;
-                @MouseAim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouseAim;
+                @MousePosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
+                @MousePosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
+                @MousePosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
                 @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
@@ -421,9 +421,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @ChangeWeapon.started += instance.OnChangeWeapon;
                 @ChangeWeapon.performed += instance.OnChangeWeapon;
                 @ChangeWeapon.canceled += instance.OnChangeWeapon;
-                @MouseAim.started += instance.OnMouseAim;
-                @MouseAim.performed += instance.OnMouseAim;
-                @MouseAim.canceled += instance.OnMouseAim;
+                @MousePosition.started += instance.OnMousePosition;
+                @MousePosition.performed += instance.OnMousePosition;
+                @MousePosition.canceled += instance.OnMousePosition;
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
@@ -444,7 +444,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnShootLaser(InputAction.CallbackContext context);
         void OnChangeWeapon(InputAction.CallbackContext context);
-        void OnMouseAim(InputAction.CallbackContext context);
+        void OnMousePosition(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnAntigoniText(InputAction.CallbackContext context);
         void OnQuit(InputAction.CallbackContext context);
