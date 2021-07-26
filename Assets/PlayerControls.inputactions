@@ -62,17 +62,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "AntigoniText",
+                    "name": "Quit",
                     "type": "Button",
-                    "id": "b4c76461-f6a5-4864-80b9-1009955d852c",
+                    "id": "b98827eb-c551-4775-81d7-f76c46ef357b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "Quit",
+                    "name": "ToggleMap",
                     "type": "Button",
-                    "id": "b98827eb-c551-4775-81d7-f76c46ef357b",
+                    "id": "c32e18e8-7623-4a45-ad02-02e0c2fc2177",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -235,17 +235,6 @@
                 },
                 {
                     "name": "",
-                    "id": "0100a04f-179c-4547-a721-0417d8076321",
-                    "path": "<Keyboard>/9",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AntigoniText",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "de004ead-3e3d-48b9-83c1-eaba0833c153",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -263,6 +252,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "61ce3de9-2d42-4a08-a7dd-2e93ee815df8",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleMap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -36,6 +36,11 @@ public class enemy : MonoBehaviour
     public bool isCloseEnough;
     public float destroyLaser;
 
+    public bool EnemyIsAttacking;
+    public bool isChasing;
+   
+   public float distToPlayer;
+   public float jumpSpeed;
 
    
    
@@ -95,7 +100,11 @@ public class enemy : MonoBehaviour
     {        
         
         //distance to player
-        float distToPlayer = Vector2.Distance(transform.position, player.position); 
+          distToPlayer = Vector2.Distance(transform.position, player.position); 
+
+        
+
+
 
         if (distToPlayer <= agroRange)
         {
@@ -105,6 +114,11 @@ public class enemy : MonoBehaviour
             ChasePlayer();
 
             fire();  
+
+            EnemyIsAttacking = true;
+
+
+
             
 
     
@@ -114,9 +128,11 @@ public class enemy : MonoBehaviour
             gotHit = false;
             //stop chasing player
             StopChasingPlayer();
+             isChasing = false;
             changeColor.intensity= 1f;
             changeColor.color = new Color(0,3,4,0);
             changeColor.pointLightOuterRadius = 2;
+            EnemyIsAttacking = false;
             
         }
 
@@ -139,11 +155,12 @@ public class enemy : MonoBehaviour
     {       //change color
             changeColor.color = new Color(4,2,0,0);
             changeColor.pointLightOuterRadius = 7;
+            isChasing = true;
            
 
         if (transform.position.x < player.position.x)
         {   //move to the right
-            rb2d.velocity = new Vector2(moveSpeed, 0);
+            rb2d.velocity = new Vector2(moveSpeed, jumpSpeed);
             // MUCH BETTER WAY TO FLIP AN OBJECT. flipX is not a good practice.
             transform.localScale = new Vector2(1, 1);
             projectileSpeed = 10;
@@ -151,7 +168,7 @@ public class enemy : MonoBehaviour
         }
         else 
         {  //move to the left
-            rb2d.velocity = new Vector2(-moveSpeed, 0);
+            rb2d.velocity = new Vector2(-moveSpeed, jumpSpeed);
             transform.localScale = new Vector2(-1, 1);
             projectileSpeed = -10;
         }

@@ -59,6 +59,7 @@ public class playerscript : MonoBehaviour
     public float JumpForce;
     public bool LazerOn;
     public bool AuraOn;
+
     
     public int weaponNumber;
     public int damage;
@@ -72,7 +73,10 @@ public class playerscript : MonoBehaviour
     private int direction;
     Animator animator;
     public ParticleSystem dust;  
-    public GameObject antigoniText;
+
+    public GameObject MiniMap;
+    public bool ActiveMap; 
+   
    
     private void Awake() 
     {
@@ -94,6 +98,7 @@ public class playerscript : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         dashTime = startDashTime;
         animator = GetComponent<Animator>();
+        ActiveMap = false;
     }
     
 
@@ -113,6 +118,7 @@ public class playerscript : MonoBehaviour
         if (weaponNumber == 0)
         {
             LaserShoot();
+            
         }
         if (weaponNumber == 1)
         {
@@ -120,18 +126,19 @@ public class playerscript : MonoBehaviour
         }
         
     }
+///////////////////////////////////////////////////////////////////////////////////////
+    public void OnToggleMap()
+    {
+        
 
-    public void OnAntigoniText() {
-        {
-            
+      
+       
+           MiniMap.SetActive(!MiniMap.activeSelf);
 
-            antigoniText.SetActive(true);
-
-            
-            
-            
-        }
+    
+        
     }
+   /////////////////////////////////////////////////////////////////////////////////////
 
 // switches between the weaponNumber switch function (in the update function)
     public void OnChangeWeapon()
@@ -190,9 +197,8 @@ public class playerscript : MonoBehaviour
  
     void Update() //----------------------------------------------------UPDATE START-----------------------------------------------------
     {
-       
 
-      
+    
        
     switch (weaponNumber)
     {
@@ -203,7 +209,6 @@ public class playerscript : MonoBehaviour
 
         default:
             laserPrefab.SetActive(true);
-            
             break;
     }
 
@@ -223,7 +228,7 @@ public class playerscript : MonoBehaviour
             animator.SetBool("isWalking", false);
            
         }
-
+        
 
 #region DASH
         float dashInput = playerControls.Player.Dash.ReadValue<float>();

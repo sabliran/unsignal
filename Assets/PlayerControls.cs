@@ -75,17 +75,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""AntigoniText"",
+                    ""name"": ""Quit"",
                     ""type"": ""Button"",
-                    ""id"": ""b4c76461-f6a5-4864-80b9-1009955d852c"",
+                    ""id"": ""b98827eb-c551-4775-81d7-f76c46ef357b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Quit"",
+                    ""name"": ""ToggleMap"",
                     ""type"": ""Button"",
-                    ""id"": ""b98827eb-c551-4775-81d7-f76c46ef357b"",
+                    ""id"": ""c32e18e8-7623-4a45-ad02-02e0c2fc2177"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -248,17 +248,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0100a04f-179c-4547-a721-0417d8076321"",
-                    ""path"": ""<Keyboard>/9"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AntigoniText"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""de004ead-3e3d-48b9-83c1-eaba0833c153"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
@@ -278,6 +267,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61ce3de9-2d42-4a08-a7dd-2e93ee815df8"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleMap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -293,8 +293,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_ChangeWeapon = m_Player.FindAction("ChangeWeapon", throwIfNotFound: true);
         m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
-        m_Player_AntigoniText = m_Player.FindAction("AntigoniText", throwIfNotFound: true);
         m_Player_Quit = m_Player.FindAction("Quit", throwIfNotFound: true);
+        m_Player_ToggleMap = m_Player.FindAction("ToggleMap", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -351,8 +351,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_ChangeWeapon;
     private readonly InputAction m_Player_MousePosition;
     private readonly InputAction m_Player_Dash;
-    private readonly InputAction m_Player_AntigoniText;
     private readonly InputAction m_Player_Quit;
+    private readonly InputAction m_Player_ToggleMap;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -364,8 +364,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @ChangeWeapon => m_Wrapper.m_Player_ChangeWeapon;
         public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
-        public InputAction @AntigoniText => m_Wrapper.m_Player_AntigoniText;
         public InputAction @Quit => m_Wrapper.m_Player_Quit;
+        public InputAction @ToggleMap => m_Wrapper.m_Player_ToggleMap;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -396,12 +396,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                @AntigoniText.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAntigoniText;
-                @AntigoniText.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAntigoniText;
-                @AntigoniText.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAntigoniText;
                 @Quit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
                 @Quit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
                 @Quit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
+                @ToggleMap.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleMap;
+                @ToggleMap.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleMap;
+                @ToggleMap.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleMap;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -427,12 +427,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
-                @AntigoniText.started += instance.OnAntigoniText;
-                @AntigoniText.performed += instance.OnAntigoniText;
-                @AntigoniText.canceled += instance.OnAntigoniText;
                 @Quit.started += instance.OnQuit;
                 @Quit.performed += instance.OnQuit;
                 @Quit.canceled += instance.OnQuit;
+                @ToggleMap.started += instance.OnToggleMap;
+                @ToggleMap.performed += instance.OnToggleMap;
+                @ToggleMap.canceled += instance.OnToggleMap;
             }
         }
     }
@@ -446,7 +446,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnChangeWeapon(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
-        void OnAntigoniText(InputAction.CallbackContext context);
         void OnQuit(InputAction.CallbackContext context);
+        void OnToggleMap(InputAction.CallbackContext context);
     }
 }

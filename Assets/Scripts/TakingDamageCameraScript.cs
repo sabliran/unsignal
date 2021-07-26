@@ -8,18 +8,6 @@ public class TakingDamageCameraScript : MonoBehaviour
 
    public CinemachineVirtualCamera vcam;
 
-  
-
-   
-
-    
-
-        
-
-        
-            
-    
-        
         void OnEnable() 
         {
             playerscript.GotHitCamera += zoom;    
