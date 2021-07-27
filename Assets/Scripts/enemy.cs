@@ -28,7 +28,7 @@ public class enemy : MonoBehaviour
      
     
     [SerializeField] float projectileSpeed;
-    public UnityEngine.Experimental.Rendering.Universal.Light2D changeColor;
+   // public UnityEngine.Experimental.Rendering.Universal.Light2D changeColor;
     
      Rigidbody2D rb2d;
     
@@ -129,9 +129,9 @@ public class enemy : MonoBehaviour
             //stop chasing player
             StopChasingPlayer();
              isChasing = false;
-            changeColor.intensity= 1f;
-            changeColor.color = new Color(0,3,4,0);
-            changeColor.pointLightOuterRadius = 2;
+            //changeColor.intensity= 1f;
+            //changeColor.color = new Color(0,3,4,0);
+            //changeColor.pointLightOuterRadius = 2;
             EnemyIsAttacking = false;
             
         }
@@ -153,8 +153,8 @@ public class enemy : MonoBehaviour
 
      void ChasePlayer()
     {       //change color
-            changeColor.color = new Color(4,2,0,0);
-            changeColor.pointLightOuterRadius = 7;
+            //changeColor.color = new Color(4,2,0,0);
+            //changeColor.pointLightOuterRadius = 7;
             isChasing = true;
            
 

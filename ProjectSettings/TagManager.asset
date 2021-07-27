@@ -18,6 +18,7 @@ TagManager:
   - Aura
   - Obstacle
   - ObstacleRedLaser
+  - Wall
   layers:
   - Default
   - TransparentFX
