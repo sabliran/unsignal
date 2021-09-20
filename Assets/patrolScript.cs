@@ -9,7 +9,10 @@ public class patrolScript : MonoBehaviour
 
     private SpriteRenderer _mSpriteRenderer;
     public float mRaycastingDistance = 1f;
-    public bool 
+    
+    public enemy enemyScript;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +31,15 @@ public class patrolScript : MonoBehaviour
         transform.Translate(directionTranslation);
 
 
+        Debug.Log(mRaycastingDistance);
+
         CheckForWalls();
+
+       
+        
+
+
+
     }
 
     private void CheckForWalls()
@@ -45,6 +56,8 @@ public class patrolScript : MonoBehaviour
             {
                 bIsGoingRight = !bIsGoingRight;
                 _mSpriteRenderer.flipX = bIsGoingRight;
+                transform.localScale = new Vector2(1, 1);
+
 
             }
         }

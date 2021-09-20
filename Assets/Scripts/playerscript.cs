@@ -75,9 +75,10 @@ public class playerscript : MonoBehaviour
     public ParticleSystem dust;  
 
     public GameObject MiniMap;
-    public bool ActiveMap; 
-   
-   
+    public bool ActiveMap;
+
+
+    
     private void Awake() 
     {
         playerControls = new PlayerControls();
@@ -109,8 +110,7 @@ public class playerscript : MonoBehaviour
     
     }
     
-
-        
+   
     
     public void OnShootLaser()
     {
@@ -119,12 +119,14 @@ public class playerscript : MonoBehaviour
         {
             LaserShoot();
             
+
         }
         if (weaponNumber == 1)
         {
             auraShoot();
         }
-        
+        animator.SetBool("isShooting", true);
+
     }
 ///////////////////////////////////////////////////////////////////////////////////////
     public void OnToggleMap()
@@ -181,6 +183,7 @@ public class playerscript : MonoBehaviour
         Destroy (laser, 0.3f);
         LazerOn = true;
         AuraOn = false;
+        animator.SetBool("isShooting", true);
     }
 
    public void auraShoot()
@@ -284,8 +287,21 @@ public class playerscript : MonoBehaviour
         animator.SetBool("isDash", false);
     }
 
+     
+    //MELEE ANIM
+        float meleeInput = playerControls.Player.MeleeAttack.ReadValue<float>();
+        if (meleeInput == 1)
+        {
+            animator.SetBool("melee", true);
+        }
+        else
+        {
+            animator.SetBool("melee", false);
+        }
 
- 
+
+
+
 
 
         float jumpInput = playerControls.Player.Jump.ReadValue<float>();
@@ -511,6 +527,7 @@ public class playerscript : MonoBehaviour
         
     }
         
+
     //--------------------------------------------------------------------------------------exit collisions
   
     
