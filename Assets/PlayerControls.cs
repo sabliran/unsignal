@@ -75,17 +75,25 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Quit"",
+                    ""name"": ""ToggleMap"",
                     ""type"": ""Button"",
-                    ""id"": ""b98827eb-c551-4775-81d7-f76c46ef357b"",
+                    ""id"": ""c32e18e8-7623-4a45-ad02-02e0c2fc2177"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""ToggleMap"",
-                    ""type"": ""Button"",
-                    ""id"": ""c32e18e8-7623-4a45-ad02-02e0c2fc2177"",
+                    ""name"": ""RotateGun"",
+                    ""type"": ""Value"",
+                    ""id"": ""11261c18-8e8d-4e0a-aebe-f2e8983a462a"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MeleeAttack"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""723b5604-4401-4126-94ed-83a9d9dc4dff"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -126,8 +134,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Android"",
-                    ""id"": ""fe36c9fd-1ff7-4b1a-b3ab-2d725fe05856"",
+                    ""name"": ""Controller"",
+                    ""id"": ""fb361fc8-1cc5-40ef-ab8c-5d40fa880e20"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -138,8 +146,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""dbd801eb-9faa-4478-b02e-102f4450fece"",
-                    ""path"": ""<AndroidJoystick>/stick/left"",
+                    ""id"": ""85ea2745-d355-4fcd-a0a6-b621a98b7fd1"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -149,8 +157,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""d84847a0-e2b2-4b36-89e4-cefe95458109"",
-                    ""path"": ""<AndroidJoystick>/stick/right"",
+                    ""id"": ""17b15245-3135-4674-92ec-27da3060c76e"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -182,6 +190,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""9c89a4b9-f133-4332-b0e0-62b5faa19565"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""a70b9efc-7711-4afe-9385-4acf5a7c12ba"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
@@ -195,6 +214,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""accb5994-9016-44b8-9012-ae7c0e981ca8"",
                     ""path"": ""<Touchscreen>/touch1/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShootLaser"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""24d5bbca-6df5-4fb6-bb3e-7abf2864f3c1"",
+                    ""path"": ""<XInputController>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -248,12 +278,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""de004ead-3e3d-48b9-83c1-eaba0833c153"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""id"": ""b60190a4-a462-4d44-834f-890905dcac22"",
+                    ""path"": ""<XInputController>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Quit"",
+                    ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -278,6 +308,50 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""ToggleMap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9249e257-8df4-41ce-a451-dc2d51a00217"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleMap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab747041-34fd-412f-bc7e-639394b0a4d4"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateGun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ec2dbcd-3d21-4be1-a443-9546706d6d4b"",
+                    ""path"": ""<XInputController>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MeleeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""090e7694-41f4-401a-b253-d79671aaf5b0"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MeleeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -293,8 +367,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_ChangeWeapon = m_Player.FindAction("ChangeWeapon", throwIfNotFound: true);
         m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
-        m_Player_Quit = m_Player.FindAction("Quit", throwIfNotFound: true);
         m_Player_ToggleMap = m_Player.FindAction("ToggleMap", throwIfNotFound: true);
+        m_Player_RotateGun = m_Player.FindAction("RotateGun", throwIfNotFound: true);
+        m_Player_MeleeAttack = m_Player.FindAction("MeleeAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -351,8 +426,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_ChangeWeapon;
     private readonly InputAction m_Player_MousePosition;
     private readonly InputAction m_Player_Dash;
-    private readonly InputAction m_Player_Quit;
     private readonly InputAction m_Player_ToggleMap;
+    private readonly InputAction m_Player_RotateGun;
+    private readonly InputAction m_Player_MeleeAttack;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -364,8 +440,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @ChangeWeapon => m_Wrapper.m_Player_ChangeWeapon;
         public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
-        public InputAction @Quit => m_Wrapper.m_Player_Quit;
         public InputAction @ToggleMap => m_Wrapper.m_Player_ToggleMap;
+        public InputAction @RotateGun => m_Wrapper.m_Player_RotateGun;
+        public InputAction @MeleeAttack => m_Wrapper.m_Player_MeleeAttack;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -396,12 +473,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                @Quit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
-                @Quit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
-                @Quit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
                 @ToggleMap.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleMap;
                 @ToggleMap.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleMap;
                 @ToggleMap.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleMap;
+                @RotateGun.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateGun;
+                @RotateGun.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateGun;
+                @RotateGun.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateGun;
+                @MeleeAttack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMeleeAttack;
+                @MeleeAttack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMeleeAttack;
+                @MeleeAttack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMeleeAttack;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -427,12 +507,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
-                @Quit.started += instance.OnQuit;
-                @Quit.performed += instance.OnQuit;
-                @Quit.canceled += instance.OnQuit;
                 @ToggleMap.started += instance.OnToggleMap;
                 @ToggleMap.performed += instance.OnToggleMap;
                 @ToggleMap.canceled += instance.OnToggleMap;
+                @RotateGun.started += instance.OnRotateGun;
+                @RotateGun.performed += instance.OnRotateGun;
+                @RotateGun.canceled += instance.OnRotateGun;
+                @MeleeAttack.started += instance.OnMeleeAttack;
+                @MeleeAttack.performed += instance.OnMeleeAttack;
+                @MeleeAttack.canceled += instance.OnMeleeAttack;
             }
         }
     }
@@ -446,7 +529,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnChangeWeapon(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
-        void OnQuit(InputAction.CallbackContext context);
         void OnToggleMap(InputAction.CallbackContext context);
+        void OnRotateGun(InputAction.CallbackContext context);
+        void OnMeleeAttack(InputAction.CallbackContext context);
     }
 }
