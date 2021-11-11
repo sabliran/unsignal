@@ -5572,6 +5572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76ab901180518247863350b0cd0658e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Object: {fileID: 0}
+  FacingRight: 1
 --- !u!1 &7769854352631188945
 GameObject:
   m_ObjectHideFlags: 0
@@ -6157,7 +6159,7 @@ MonoBehaviour:
   LaserTextSelected: {fileID: 7769854353945276441}
   iconAura: {fileID: 7769854352634699175}
   iconLaser: {fileID: 7769854352849224999}
-  refScript: {fileID: 7769854354617289670}
+  refScript: {fileID: 0}
 --- !u!1 &7769854353206617347
 GameObject:
   m_ObjectHideFlags: 0
@@ -6679,7 +6681,6 @@ GameObject:
   - component: {fileID: 7769854354617289664}
   - component: {fileID: 7769854354617289667}
   - component: {fileID: 7769854354617289666}
-  - component: {fileID: 7769854354617289670}
   - component: {fileID: 7769854354617289669}
   - component: {fileID: 7769854354617289665}
   - component: {fileID: 146842195}
@@ -6789,56 +6790,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7769854354617289670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7769854354617289677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04f567e0f40afcb4282acff58e02434d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Screentip: {fileID: 5963429065684555351}
-  rb: {fileID: 7769854354617289666}
-  speed: 8
-  feetPos: {fileID: 273033886921552717}
-  checkRadius: 0.5
-  Ground:
-    serializedVersion: 2
-    m_Bits: 2048
-  jumpTime: 0.06
-  jumpSpeed: 100
-  isJumping: 0
-  projectileSpeed: 30
-  damaged: 0
-  maxHealth: 1000
-  currentHealth: 0
-  healthBar: {fileID: 3003996885922789260}
-  countdown: 1
-  pointLight: {fileID: 7769854353938533174}
-  healthNumbers: {fileID: 7769854353548380922}
-  AuraPrefab: {fileID: 7670469783329700437, guid: da835a93294bbab4f867a744c760ccd4,
-    type: 3}
-  laserPrefab: {fileID: 4646282054612185130, guid: 8c9554decd2f2384bb411933f9c89cb6,
-    type: 3}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 2048
-  JumpForce: 20
-  LazerOn: 0
-  AuraOn: 0
-  weaponNumber: 0
-  damage: 0
-  isMoving: 0
-  movementInput: 0.15
-  dashSpeed: 60
-  startDashTime: 0.1
-  dust: {fileID: 1931683663}
-  MiniMap: {fileID: 2141171160}
-  ActiveMap: 0
 --- !u!114 &7769854354617289669
 MonoBehaviour:
   m_ObjectHideFlags: 0
