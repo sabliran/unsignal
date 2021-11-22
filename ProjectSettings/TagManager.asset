@@ -19,6 +19,7 @@ TagManager:
   - Obstacle
   - ObstacleRedLaser
   - Wall
+  - SwitchCubeFace
   layers:
   - Default
   - TransparentFX
