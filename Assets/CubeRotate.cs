@@ -6,24 +6,15 @@ public class CubeRotate : MonoBehaviour
 {
     //values that will be set in the Inspector
     public Transform Target;
-    public float RotationSpeed;
+    public float RotationSpeed GetComponent<CubeRotate>();
 
     //values for internal use
     private Quaternion _lookRotation;
     private Vector3 _direction;
-    public bool isReadyToTurn;
 
     // Update is called once per frame
     void Update()
     {
-
-        
-    }
-
-
-     public void cubeRotateFunction()
-    {
-
         //find the vector pointing from our position to the target
         _direction = (Target.position - transform.position).normalized;
 
@@ -32,7 +23,7 @@ public class CubeRotate : MonoBehaviour
 
         //rotate us over time according to speed until we are in the required rotation
         transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
-
-        Debug.Log("cube rotated");    
     }
+
+ 
 }
