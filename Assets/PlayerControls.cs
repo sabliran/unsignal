@@ -278,6 +278,53 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""ToggleMap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+<<<<<<< HEAD
+=======
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9249e257-8df4-41ce-a451-dc2d51a00217"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleMap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab747041-34fd-412f-bc7e-639394b0a4d4"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateGun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ec2dbcd-3d21-4be1-a443-9546706d6d4b"",
+                    ""path"": ""<XInputController>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MeleeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""090e7694-41f4-401a-b253-d79671aaf5b0"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MeleeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+>>>>>>> parent of 0650eaa (22/11)
                 }
             ]
         }
@@ -295,6 +342,11 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Quit = m_Player.FindAction("Quit", throwIfNotFound: true);
         m_Player_ToggleMap = m_Player.FindAction("ToggleMap", throwIfNotFound: true);
+<<<<<<< HEAD
+=======
+        m_Player_RotateGun = m_Player.FindAction("RotateGun", throwIfNotFound: true);
+        m_Player_MeleeAttack = m_Player.FindAction("MeleeAttack", throwIfNotFound: true);
+>>>>>>> parent of 0650eaa (22/11)
     }
 
     public void Dispose()
@@ -448,5 +500,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnQuit(InputAction.CallbackContext context);
         void OnToggleMap(InputAction.CallbackContext context);
+<<<<<<< HEAD
+=======
+        void OnRotateGun(InputAction.CallbackContext context);
+        void OnMeleeAttack(InputAction.CallbackContext context);
+>>>>>>> parent of 0650eaa (22/11)
     }
 }
