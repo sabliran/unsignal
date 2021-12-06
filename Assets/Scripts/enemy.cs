@@ -43,7 +43,7 @@ public class enemy : MonoBehaviour
    public float jumpSpeed;
 
    
-
+   
 
     
     
@@ -54,8 +54,7 @@ public class enemy : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         //changeColor = GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
         player = GameObject.FindWithTag("Player").transform;
-       
-
+        
     }
 
      void OnCollisionEnter2D(Collision2D col)
@@ -109,7 +108,6 @@ public class enemy : MonoBehaviour
 
         if (distToPlayer <= agroRange)
         {
-            GetComponent<patrolScript>().enabled = false;
             //code to chase player
             isCloseEnough = true;
             
@@ -127,7 +125,6 @@ public class enemy : MonoBehaviour
         }
         else 
         {
-            GetComponent<patrolScript>().enabled = true;
             gotHit = false;
             //stop chasing player
             StopChasingPlayer();
@@ -152,12 +149,6 @@ public class enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-
-
-        
-
-
-
     }
 
      void ChasePlayer()
@@ -165,8 +156,7 @@ public class enemy : MonoBehaviour
             //changeColor.color = new Color(4,2,0,0);
             //changeColor.pointLightOuterRadius = 7;
             isChasing = true;
-            
-
+           
 
         if (transform.position.x < player.position.x)
         {   //move to the right
@@ -182,15 +172,14 @@ public class enemy : MonoBehaviour
             transform.localScale = new Vector2(-1, 1);
             projectileSpeed = -10;
         }
-        
-
+    
     }
 
      void StopChasingPlayer()
     {
-        rb2d.velocity = new Vector2(0, 0);
-        
-
+            rb2d.velocity = new Vector2(0, 0);
+            
+            
     }
 
     void TakeDamage(int damage)

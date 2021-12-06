@@ -5410,7 +5410,6 @@ GameObject:
   - component: {fileID: 1547726686}
   - component: {fileID: 5963429065684555349}
   - component: {fileID: 5963429065684555352}
-  - component: {fileID: 6211275023048869515}
   m_Layer: 0
   m_Name: eye1_0
   m_TagString: Player
@@ -5560,18 +5559,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &6211275023048869515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5963429065684555348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c76ab901180518247863350b0cd0658e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7769854352631188945
 GameObject:
   m_ObjectHideFlags: 0
@@ -6962,4 +6949,8 @@ MonoBehaviour:
   - {x: -0.08633963, y: -0.36756778, z: 0}
   m_ShapePathHash: 2032777848
   m_Mesh: {fileID: 0}
+<<<<<<< HEAD
   m_InstanceId: 30916
+=======
+  m_InstanceId: -20264
+>>>>>>> parent of 05edfad (20/9 last backup)
