@@ -354,77 +354,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
-        },
-        {
-            ""name"": ""Player_Map"",
-            ""id"": ""b2f9f242-1ff9-4c7f-a6be-1be59e20b6ec"",
-            ""actions"": [
-                {
-                    ""name"": ""Movement"",
-                    ""type"": ""Value"",
-                    ""id"": ""41f71ac6-184d-4140-83a6-34469f1d6d02"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""5918bf1d-6ee2-428f-a380-2e2cbaa9d5af"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""eb6c8f6d-4625-49ce-ba7f-ff5d24da9a94"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""45fa67cf-5f09-4ecb-9bad-bfbddd515c21"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""658c8808-bf25-4136-9e2d-0b4e50ef3cba"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""9cdb2c6e-a1fd-46de-92b5-84505dcdf9f1"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                }
-            ]
         }
     ],
     ""controlSchemes"": []
@@ -441,9 +370,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_ToggleMap = m_Player.FindAction("ToggleMap", throwIfNotFound: true);
         m_Player_RotateGun = m_Player.FindAction("RotateGun", throwIfNotFound: true);
         m_Player_MeleeAttack = m_Player.FindAction("MeleeAttack", throwIfNotFound: true);
-        // Player_Map
-        m_Player_Map = asset.FindActionMap("Player_Map", throwIfNotFound: true);
-        m_Player_Map_Movement = m_Player_Map.FindAction("Movement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -594,39 +520,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
-
-    // Player_Map
-    private readonly InputActionMap m_Player_Map;
-    private IPlayer_MapActions m_Player_MapActionsCallbackInterface;
-    private readonly InputAction m_Player_Map_Movement;
-    public struct Player_MapActions
-    {
-        private @PlayerControls m_Wrapper;
-        public Player_MapActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_Player_Map_Movement;
-        public InputActionMap Get() { return m_Wrapper.m_Player_Map; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(Player_MapActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayer_MapActions instance)
-        {
-            if (m_Wrapper.m_Player_MapActionsCallbackInterface != null)
-            {
-                @Movement.started -= m_Wrapper.m_Player_MapActionsCallbackInterface.OnMovement;
-                @Movement.performed -= m_Wrapper.m_Player_MapActionsCallbackInterface.OnMovement;
-                @Movement.canceled -= m_Wrapper.m_Player_MapActionsCallbackInterface.OnMovement;
-            }
-            m_Wrapper.m_Player_MapActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Movement.started += instance.OnMovement;
-                @Movement.performed += instance.OnMovement;
-                @Movement.canceled += instance.OnMovement;
-            }
-        }
-    }
-    public Player_MapActions @Player_Map => new Player_MapActions(this);
     public interface IPlayerActions
     {
         void OnHorizontalAxisCamera(InputAction.CallbackContext context);
@@ -639,9 +532,5 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnToggleMap(InputAction.CallbackContext context);
         void OnRotateGun(InputAction.CallbackContext context);
         void OnMeleeAttack(InputAction.CallbackContext context);
-    }
-    public interface IPlayer_MapActions
-    {
-        void OnMovement(InputAction.CallbackContext context);
     }
 }
