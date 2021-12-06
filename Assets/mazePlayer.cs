@@ -9,6 +9,9 @@ public class mazePlayer : MonoBehaviour
     private PlayerControls _playerAction;
     private Rigidbody2D _rbody;
     private Vector2 _moveInput;
+
+    public GameObject cubeObj;
+
     
     // Start is called before the first frame update
     void Awake()
@@ -40,6 +43,8 @@ public class mazePlayer : MonoBehaviour
         _moveInput = _playerAction.Player_Map.Movement.ReadValue<Vector2>();
 
         _rbody.velocity = _moveInput * _speed;
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,7 +52,7 @@ public class mazePlayer : MonoBehaviour
         if (collision.gameObject.tag == "SwitchCubeFace")
         {
             Debug.Log("switch");
-            
+            //cubeObj.GetComponent<CubeRotate>().cubeRotateFunction();
 
         }
     }
