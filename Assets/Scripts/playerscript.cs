@@ -182,7 +182,7 @@ public class playerscript : MonoBehaviour
         GameObject laser = Instantiate(laserPrefab, Screentip.position, Screentip.rotation) as GameObject;
         Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
         rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
-        Destroy (laser, 0.3f);
+        Destroy (laser, 1.8f);
         LazerOn = true;
         AuraOn = false;
         animator.SetBool("isShooting", true);
