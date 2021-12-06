@@ -100,6 +100,8 @@ public class playerscript : MonoBehaviour
         dashTime = startDashTime;
         animator = GetComponent<Animator>();
         ActiveMap = false;
+        // maximize fps
+        Application.targetFrameRate = 300;
     }
     
 
