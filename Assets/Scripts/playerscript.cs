@@ -77,8 +77,10 @@ public class playerscript : MonoBehaviour
     public GameObject MiniMap;
     public bool ActiveMap;
 
+    public float timeRemaining = 100;
 
-    
+
+
     private void Awake() 
     {
         playerControls = new PlayerControls();
@@ -202,10 +204,26 @@ public class playerscript : MonoBehaviour
  
     void Update() //----------------------------------------------------UPDATE START-----------------------------------------------------
     {
+        
 
-    
-       
-    switch (weaponNumber)
+
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+
+        }else
+        {
+            Debug.Log("Timer has stopped");
+            //startDashTime = 0;
+        }
+
+
+
+
+
+
+
+        switch (weaponNumber)
     {
         case 1 :
             
@@ -237,16 +255,20 @@ public class playerscript : MonoBehaviour
 
 #region DASH
         float dashInput = playerControls.Player.Dash.ReadValue<float>();
-        
+
         //0 = not pressed
         //1 = pressed
-        if(direction == 0)
+
+
+        
+        if (direction == 0)
         {
             
             if(dashInput == 1)
             {
                 CreateDust();
-                if(movementInput == -1)
+                StartCoroutine(RealDashTime());
+                if (movementInput == -1)
                 {
                     direction = 1;
                 }else if(movementInput == 1)
@@ -264,6 +286,7 @@ public class playerscript : MonoBehaviour
             }else
             {
                  dashTime -= Time.deltaTime;
+
 
                  if (direction == 1)
                  {
@@ -378,6 +401,21 @@ public class playerscript : MonoBehaviour
 
  
     } //--------------------------------------------------------------------------UPDATE END---------------------------------------------
+
+
+    IEnumerator RealDashTime()
+    {
+        Debug.Log("time");
+        yield return new WaitForSeconds(5.0f);
+        print("5 seconds has passed");
+    }
+
+
+
+
+
+
+
 
 // play particle function
     void CreateDust()
