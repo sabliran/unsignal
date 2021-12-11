@@ -22,7 +22,7 @@ public class switchRotateScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             cubeObj.GetComponent<CubeRotate>().cubeRotateFunction();
-            Debug.Log("Player has touched");
+           
         }
     }
 }

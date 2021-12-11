@@ -10,6 +10,7 @@ using UnityEngine.InputSystem;
 
 
 
+
 [RequireComponent(typeof(Rigidbody))]
 
 
@@ -78,6 +79,7 @@ public class playerscript : MonoBehaviour
     public bool ActiveMap;
 
     public float timeRemaining = 100;
+   
 
 
 
@@ -200,29 +202,12 @@ public class playerscript : MonoBehaviour
         AuraOn = true;
     }
 
+  
 
- 
+
     void Update() //----------------------------------------------------UPDATE START-----------------------------------------------------
     {
-        
-
-
-        if (timeRemaining > 0)
-        {
-            timeRemaining -= Time.deltaTime;
-
-        }else
-        {
-            Debug.Log("Timer has stopped");
-            //startDashTime = 0;
-        }
-
-
-
-
-
-
-
+       
         switch (weaponNumber)
     {
         case 1 :
@@ -253,58 +238,59 @@ public class playerscript : MonoBehaviour
         }
         
 
-#region DASH
         float dashInput = playerControls.Player.Dash.ReadValue<float>();
 
         //0 = not pressed
         //1 = pressed
 
 
-        
         if (direction == 0)
         {
-            
-            if(dashInput == 1)
+
+            if (dashInput == 1)
             {
                 CreateDust();
-                StartCoroutine(RealDashTime());
+                
                 if (movementInput == -1)
                 {
                     direction = 1;
-                }else if(movementInput == 1)
+                }
+                else if (movementInput == 1)
                 {
                     direction = 2;
                 }
             }
-        }else
+        }
+        else
         {
-            if(dashTime <= 0)
+            if (dashTime <= 0)
             {
                 direction = 0;
                 dashTime = startDashTime;
                 rb.velocity = Vector2.zero;
-            }else
+            }
+            else
             {
-                 dashTime -= Time.deltaTime;
+                dashTime -= Time.deltaTime;
 
 
-                 if (direction == 1)
-                 {
+                if (direction == 1)
+                {
                     rb.velocity = Vector2.left * dashSpeed;
-                 }else if(direction == 2)
-                 {
-                     rb.velocity = Vector2.right * dashSpeed;
-                 }
-                 
+                }
+                else if (direction == 2)
+                {
+                    rb.velocity = Vector2.right * dashSpeed;
+                }
+
             }
         }
 
 
-#endregion
 
-    #region ANIMATION CONTROLLER
-    //DASH ANIM
-    if(dashInput == 1)
+
+        //DASH ANIM
+        if (dashInput == 1)
     {
         animator.SetBool("isDash", true);
     }else
@@ -342,7 +328,7 @@ public class playerscript : MonoBehaviour
             animator.SetBool("isJumpingAnim", false);
         }
 
-#endregion
+
 
 
 
@@ -403,14 +389,7 @@ public class playerscript : MonoBehaviour
     } //--------------------------------------------------------------------------UPDATE END---------------------------------------------
 
 
-    IEnumerator RealDashTime()
-    {
-        Debug.Log("time");
-        yield return new WaitForSeconds(5.0f);
-        print("5 seconds has passed");
-    }
-
-
+  
 
 
 
@@ -548,6 +527,17 @@ public class playerscript : MonoBehaviour
            
             
         }
+
+        if (collision.gameObject.tag == "PuzzleCube")
+        {
+            print("puzzleCube touched");
+            
+            
+            SceneManager.LoadScene("1cubepuzzle");
+
+
+        }
+
     }
     
         void OnTriggerStay2D(Collider2D collision)

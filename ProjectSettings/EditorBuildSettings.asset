@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/net4.unity
     guid: 91bbf16919a46d248a81b748f3a1b416
+  - enabled: 1
+    path: Assets/Scenes/1cubepuzzle.unity
+    guid: a3bc2226b9177694998c617667694d0c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bb20a3a01dbcab441a4d99276301d7c4,
       type: 2}

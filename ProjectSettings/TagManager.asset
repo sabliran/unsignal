@@ -19,6 +19,7 @@ TagManager:
   - Obstacle
   - ObstacleRedLaser
   - Wall
+  - PuzzleCube
   layers:
   - Default
   - TransparentFX
