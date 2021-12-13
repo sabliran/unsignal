@@ -97,6 +97,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ActivateButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""3277eff9-6bb2-46c8-abb8-b5ebce2d5b2a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -352,6 +360,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""MeleeAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fac87904-295f-455e-942d-c1598e017e41"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActivateButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -441,6 +460,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_ToggleMap = m_Player.FindAction("ToggleMap", throwIfNotFound: true);
         m_Player_RotateGun = m_Player.FindAction("RotateGun", throwIfNotFound: true);
         m_Player_MeleeAttack = m_Player.FindAction("MeleeAttack", throwIfNotFound: true);
+        m_Player_ActivateButton = m_Player.FindAction("ActivateButton", throwIfNotFound: true);
         // Player_Map
         m_Player_Map = asset.FindActionMap("Player_Map", throwIfNotFound: true);
         m_Player_Map_Movement = m_Player_Map.FindAction("Movement", throwIfNotFound: true);
@@ -503,6 +523,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_ToggleMap;
     private readonly InputAction m_Player_RotateGun;
     private readonly InputAction m_Player_MeleeAttack;
+    private readonly InputAction m_Player_ActivateButton;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -517,6 +538,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @ToggleMap => m_Wrapper.m_Player_ToggleMap;
         public InputAction @RotateGun => m_Wrapper.m_Player_RotateGun;
         public InputAction @MeleeAttack => m_Wrapper.m_Player_MeleeAttack;
+        public InputAction @ActivateButton => m_Wrapper.m_Player_ActivateButton;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -556,6 +578,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MeleeAttack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMeleeAttack;
                 @MeleeAttack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMeleeAttack;
                 @MeleeAttack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMeleeAttack;
+                @ActivateButton.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActivateButton;
+                @ActivateButton.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActivateButton;
+                @ActivateButton.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActivateButton;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -590,6 +615,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MeleeAttack.started += instance.OnMeleeAttack;
                 @MeleeAttack.performed += instance.OnMeleeAttack;
                 @MeleeAttack.canceled += instance.OnMeleeAttack;
+                @ActivateButton.started += instance.OnActivateButton;
+                @ActivateButton.performed += instance.OnActivateButton;
+                @ActivateButton.canceled += instance.OnActivateButton;
             }
         }
     }
@@ -639,6 +667,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnToggleMap(InputAction.CallbackContext context);
         void OnRotateGun(InputAction.CallbackContext context);
         void OnMeleeAttack(InputAction.CallbackContext context);
+        void OnActivateButton(InputAction.CallbackContext context);
     }
     public interface IPlayer_MapActions
     {
