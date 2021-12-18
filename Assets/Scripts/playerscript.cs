@@ -79,9 +79,6 @@ public class playerscript : MonoBehaviour
     public bool ActiveMap;
 
     public float timeRemaining = 100;
-
-    public bool ActivateButtonBool;
-    public GameObject AgoraEnterText;
    
 
 
@@ -118,15 +115,9 @@ public class playerscript : MonoBehaviour
     isJumping = true;
     
     }
-
-    public void OnActivateButton()
-    {
-        ActivateButtonBool = true;
-
-    }
-
-
-
+    
+   
+    
     public void OnShootLaser()
     {
         
@@ -551,47 +542,19 @@ public class playerscript : MonoBehaviour
     
         void OnTriggerStay2D(Collider2D collision)
         {
-
-
-
-            if (collision.gameObject.tag == "GreenLight")
-            {  
-                restoreTest(2);
-            }
-
-
-        if (collision.gameObject.tag == "agoraEnterCollider")
-        {
-            AgoraEnterText.SetActive(true);
-
-            if (ActivateButtonBool == true)
-            {
-                SceneManager.LoadScene("Pub");
-            }
-
-            
+        if (collision.gameObject.tag == "GreenLight")
+        {  
+            restoreTest(2);
         }
-
         }
         
-        void OnTriggerExit2D(Collider2D other)
-        {
 
-        if (other.gameObject.tag == "agoraEnterCollider")
-        {
-            
-            AgoraEnterText.SetActive(false);
-        }
-
-    }
 
         void OnCollisionExit2D(Collision2D col)
     {
         damaged = false;
         countdown = 0.1f;
-
-
-
+        
     }
         
 
