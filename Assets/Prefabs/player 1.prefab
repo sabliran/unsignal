@@ -5055,7 +5055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2141171161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6719,7 +6719,7 @@ MonoBehaviour:
   countdown: 1
   pointLight: {fileID: 7769854353938533174}
   healthNumbers: {fileID: 7769854353548380922}
-  AuraPrefab: {fileID: 7670469783329700437, guid: da835a93294bbab4f867a744c760ccd4,
+  AuraPrefab: {fileID: 4646282054612185130, guid: 5085670c824408643aa4223954486644,
     type: 3}
   laserPrefab: {fileID: 4646282054612185130, guid: 8c9554decd2f2384bb411933f9c89cb6,
     type: 3}
@@ -6862,7 +6862,7 @@ MonoBehaviour:
   - {x: -0.08633963, y: -0.36756778, z: 0}
   m_ShapePathHash: 2032777848
   m_Mesh: {fileID: 0}
-  m_InstanceId: -222858
+  m_InstanceId: 124212
 --- !u!1001 &268264861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6870,6 +6870,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7769854354617289664}
     m_Modifications:
+    - target: {fileID: 1158445162193518952, guid: 0cfe0e2cd8583534c90e94e112022a93,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1158445162977969609, guid: 0cfe0e2cd8583534c90e94e112022a93,
         type: 3}
       propertyPath: m_Name
@@ -6929,6 +6934,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158445162977969611, guid: 0cfe0e2cd8583534c90e94e112022a93,
+        type: 3}
+      propertyPath: m_Time
+      value: 1.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158445162977969611, guid: 0cfe0e2cd8583534c90e94e112022a93,
+        type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 3.6234372
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cfe0e2cd8583534c90e94e112022a93, type: 3}
