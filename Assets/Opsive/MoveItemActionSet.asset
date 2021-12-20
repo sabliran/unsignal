@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1775bda1c0fed14478e41147acda094e, type: 3}
-  m_Name: Droppable Item Action
+  m_Name: MoveItemActionSet
   m_EditorClassIdentifier: 
   m_ItemCategory:
     m_Name: Normal Item
@@ -19,10 +19,9 @@ MonoBehaviour:
     m_ItemCategories: []
   m_ItemActionCollection:
     m_ItemActionsData:
-    - m_ObjectType: Opsive.UltimateInventorySystem.ItemActions.DropItemAction
-      m_ValueHashes: 0d00eb255bd71d430ed8eeffdb7c171a5a77514593f00734
-      m_ValuePositions: 000000000400000008000000090000000a0000000e000000
-      m_Values: 44726f7000000000010100000040000000000000000000000000
-      m_UnityObjects:
-      - {fileID: 6362288584643107232, guid: 99f2ccf6e56f42146ad63b866481f569, type: 3}
+    - m_ObjectType: Opsive.UltimateInventorySystem.ItemActions.MoveItemAction
+      m_ValueHashes: 0d00eb25
+      m_ValuePositions: 00000000
+      m_Values: 4d6f7665
+      m_UnityObjects: []
       m_Version: 3.1
