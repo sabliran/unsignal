@@ -38,8 +38,8 @@ MonoBehaviour:
     - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
       m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4a95fdf7a7d9cf9114
-      m_ValuePositions: 000000000b0000000c0000000c00000010000000100000001400000053000000
-      m_Values: 4465736372697074696f6e01000000001468a8fe412077616e64207468617420686f6c647320612074696e7920626974206f66206d616769632e205468652068616e646c652069732076657279207761726d2e546869732069732061206772656174207374616666
+      m_ValuePositions: 000000000a0000000b0000000b0000000f0000000f0000001300000052000000
+      m_Values: 4c61736572203230303001010000001468a8fe412077616e64207468617420686f6c647320612074696e7920626974206f66206d616769632e205468652068616e646c652069732076657279207761726d2e412077616e64207468617420686f6c647320612074696e7920626974206f66206d616769632e205468652068616e646c652069732076657279207761726d2e
       m_UnityObjects: []
       m_Version: 3.1
     - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[UnityEngine.GameObject,
@@ -133,9 +133,9 @@ MonoBehaviour:
       m_AttributeCollectionData:
       - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[Opsive.UltimateInventorySystem.Core.DataStructures.ItemAmounts,
           Opsive.UltimateInventorySystem, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
-        m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4a6a0d994035481f3faedf32ad
-        m_ValuePositions: 000000000500000006000000060000000a0000000a0000000e0000000e00000012000000
-        m_Values: 536c6f7473010000000076e59f4e00000000
+        m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4a6a0d9940aedf32ad
+        m_ValuePositions: 000000000500000006000000060000000a0000000a0000000e0000000e000000
+        m_Values: 536c6f7473010000000076e59f4e
         m_UnityObjects: []
         m_Version: 3.1
       - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[System.Int32,

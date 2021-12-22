@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Droppable Item Action
   m_EditorClassIdentifier: 
   m_ItemCategory:
-    m_Name: Normal Item
-    m_ItemCategory: {fileID: 11400000, guid: 0ffe4bd44fc20f847b9fa67351b1ea68, type: 2}
+    m_Name: Pickupable
+    m_ItemCategory: {fileID: 11400000, guid: c04c60620f1a5d2479cc014da321fc36, type: 2}
   m_ExceptionCategories:
     m_ItemCategories: []
   m_ItemActionCollection:

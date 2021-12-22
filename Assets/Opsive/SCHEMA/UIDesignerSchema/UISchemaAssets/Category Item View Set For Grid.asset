@@ -16,7 +16,7 @@ MonoBehaviour:
     type: 3}
   m_CategoriesItemViews:
   - m_Category:
-      m_Name: Normal Item
-      m_ItemCategory: {fileID: 11400000, guid: 0ffe4bd44fc20f847b9fa67351b1ea68, type: 2}
+      m_Name: 
+      m_ItemCategory: {fileID: 0}
     m_ItemViewPrefab: {fileID: 5256083001076740352, guid: ccb883dc330b56946a348ee63bb3cca3,
       type: 3}
