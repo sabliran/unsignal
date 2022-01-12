@@ -1,37 +1,31 @@
 fileFormatVersion: 2
-guid: ae3c0234126ba2d46917104384483873
+guid: cdce41117bd03644ba5f106d08ed6eab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2468866099839556514
-    second: laserBeam_0
+      213: -40453077371757810
+    second: OrganicMatter_0
   - first:
-      213: -3421487525403242030
-    second: laserBeam_1
+      213: 4610301506661409433
+    second: OrganicMatter_1
   - first:
-      213: 3067404715157258119
-    second: laserBeam_2
+      213: -6300871292109225936
+    second: OrganicMatter_2
   - first:
-      213: -4527811363238820250
-    second: laserBeam_3
+      213: -1954933992447693137
+    second: OrganicMatter_3
   - first:
-      213: -1274000225554441606
-    second: laserBeam_4
+      213: -3945134481508635124
+    second: OrganicMatter_4
   - first:
-      213: 5418152395175788510
-    second: laserBeam_5
+      213: 2981480175483934183
+    second: OrganicMatter_5
   - first:
-      213: 3333750885491690114
-    second: laserBeam_6
+      213: 4375758538262633212
+    second: OrganicMatter_6
   - first:
-      213: 6248589091349266470
-    second: laserBeam_7
-  - first:
-      213: 3610879260225083459
-    second: laserBeam_8
-  - first:
-      213: -7982377165942638586
-    second: laserBeam_9
+      213: -7273670829897866929
+    second: OrganicMatter_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,6 +47,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -84,9 +79,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -137,17 +135,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: laserBeam_0
+      name: OrganicMatter_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 16
-        width: 52
-        height: 28
+        x: 16
+        y: 12
+        width: 65
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2abd0fe13ac234220800000000000000
-      internalID: 2468866099839556514
+      spriteID: e0b5f25f328407ff0800000000000000
+      internalID: -40453077371757810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: laserBeam_1
+      name: OrganicMatter_1
       rect:
         serializedVersion: 2
-        x: 69
-        y: 16
-        width: 52
-        height: 28
+        x: 112
+        y: 13
+        width: 65
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d1d8e4393f6480d0800000000000000
-      internalID: -3421487525403242030
+      spriteID: 992600c3bc41bff30800000000000000
+      internalID: 4610301506661409433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: laserBeam_2
+      name: OrganicMatter_2
       rect:
         serializedVersion: 2
-        x: 133
-        y: 16
-        width: 52
-        height: 28
+        x: 208
+        y: 13
+        width: 65
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +207,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78f7e4d265c919a20800000000000000
-      internalID: 3067404715157258119
+      spriteID: 0308f5a71fece88a0800000000000000
+      internalID: -6300871292109225936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: laserBeam_3
+      name: OrganicMatter_3
       rect:
         serializedVersion: 2
-        x: 197
-        y: 16
-        width: 52
-        height: 28
+        x: 304
+        y: 13
+        width: 65
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +228,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6664c24fd8bf921c0800000000000000
-      internalID: -4527811363238820250
+      spriteID: faea1dc34edaed4e0800000000000000
+      internalID: -1954933992447693137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: laserBeam_4
+      name: OrganicMatter_4
       rect:
         serializedVersion: 2
-        x: 261
-        y: 16
-        width: 52
-        height: 28
+        x: 400
+        y: 12
+        width: 65
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7a5f087b87d15ee0800000000000000
-      internalID: -1274000225554441606
+      spriteID: c0e688e57111049c0800000000000000
+      internalID: -3945134481508635124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: laserBeam_5
+      name: OrganicMatter_5
       rect:
         serializedVersion: 2
-        x: 325
-        y: 16
-        width: 52
-        height: 28
+        x: 496
+        y: 12
+        width: 65
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,20 +270,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edf726595e4213b40800000000000000
-      internalID: 5418152395175788510
+      spriteID: 7e5d69c4c68506920800000000000000
+      internalID: 2981480175483934183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: laserBeam_6
+      name: OrganicMatter_6
       rect:
         serializedVersion: 2
-        x: 389
-        y: 16
-        width: 52
-        height: 28
+        x: 592
+        y: 12
+        width: 65
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,20 +291,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28a406374ccd34e20800000000000000
-      internalID: 3333750885491690114
+      spriteID: cfad600f431d9bc30800000000000000
+      internalID: 4375758538262633212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: laserBeam_7
+      name: OrganicMatter_7
       rect:
         serializedVersion: 2
-        x: 453
-        y: 16
-        width: 52
-        height: 28
+        x: 688
+        y: 12
+        width: 65
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,50 +312,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62001411ca277b650800000000000000
-      internalID: 6248589091349266470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: laserBeam_8
-      rect:
-        serializedVersion: 2
-        x: 517
-        y: 16
-        width: 52
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3489a805e8b6c1230800000000000000
-      internalID: 3610879260225083459
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: laserBeam_9
-      rect:
-        serializedVersion: 2
-        x: 581
-        y: 16
-        width: 52
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 608bcc09246e83190800000000000000
-      internalID: -7982377165942638586
+      spriteID: f4121d2faeabe0b90800000000000000
+      internalID: -7273670829897866929
       vertices: []
       indices: 
       edges: []
