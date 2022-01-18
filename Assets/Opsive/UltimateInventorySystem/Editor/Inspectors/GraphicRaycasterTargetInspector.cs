@@ -17,9 +17,9 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(GraphicRaycasterTarget), true)]
     public class GraphicRaycasterTargetInspector : InspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { "m_Material", "m_Color" };
+        protected override List<string> ExcludedFields => new List<string>() { "m_Material", "m_Color" };
 
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         { }
     }
 }

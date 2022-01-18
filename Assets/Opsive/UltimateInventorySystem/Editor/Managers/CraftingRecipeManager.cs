@@ -21,6 +21,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers
     using System.Collections;
     using System.Collections.Generic;
     using System.Reflection;
+    using Opsive.Shared.Utility;
     using UnityEditor;
     using UnityEngine;
     using UnityEngine.UIElements;
@@ -198,7 +199,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers
             var craftingCategories = new CraftingCategory[0];
             IList list;
             switch (index) {
-                case 0: list = ListUtility.CreateArrayCopy(recipe.Category.GetAllParents(ref craftingCategories, true), craftingCategories); break; // Crafting Categories.
+                case 0: list = Shared.Utility.ListUtility.CreateArrayCopy(recipe.Category.GetAllParents(ref craftingCategories, true), craftingCategories); break; // Crafting Categories.
                 default: list = null; break;
             }
 
@@ -333,12 +334,12 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers
                 recipe.Ingredients, fieldInfo, -1, ingredientType,
                 "Ingredients", string.Empty, true,
                 recipe.Ingredients,
-                m_Ingredients, null,
+                m_Ingredients,
                 (object obj) =>
                 {
                     m_CraftingRecipeView.Refresh();
                     CraftingRecipeEditorUtility.SetCraftingRecipeDirty(SelectedObject, true);
-                }, null, null, new object[] { true, m_InventoryMainWindow.Database });
+                }, null, false, null, null, new object[] { true, m_InventoryMainWindow.Database });
 
             m_DefaultOutputs.Clear();
             fieldInfo = recipe.GetType().GetField("m_DefaultOutput", BindingFlags.NonPublic | BindingFlags.Default | BindingFlags.Instance);
@@ -354,12 +355,12 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers
                 recipe.DefaultOutput, fieldInfo, -1, outputType,
                 "Outputs", string.Empty, true,
                 recipe.DefaultOutput,
-                m_DefaultOutputs, null,
+                m_DefaultOutputs,
                 (object obj) =>
                 {
                     m_CraftingRecipeView.Refresh();
                     CraftingRecipeEditorUtility.SetCraftingRecipeDirty(SelectedObject, true);
-                }, null, null, new object[] { true, m_InventoryMainWindow.Database });
+                }, null, false, null, null, new object[] { true, m_InventoryMainWindow.Database });
 
             m_Other.Refresh(recipe);
 

@@ -1023,6 +1023,39 @@ namespace Opsive.UltimateInventorySystem.Core
             return m_Parents;
         }
 
+        /// <summary>
+        /// Check if the Item Category contains the other item category.
+        /// </summary>
+        /// <param name="other">The other item category which could be contained by the category.</param>
+        /// <param name="includeThis">Returns true if this category is the other category.</param>
+        /// <returns>Return true if the other category is contained by this category.</returns>
+        public bool InherentlyContains(IItemCategoryIdentifier other, bool includeThis = true)
+        {
+            return base.InherentlyContains(other as ItemCategory, includeThis);
+        }
+
+        /// <summary>
+        /// Check if the Item Category contains the item definition.
+        /// </summary>
+        /// <param name="itemDefinition">The item definition which could be contained by the category.</param>
+        /// <param name="includeThis">Returns true if this category directly contains the item definition.</param>
+        /// <returns>Return true if the item definition is contained by this category.</returns>
+        public bool InherentlyContains(ItemDefinitionBase itemDefinition, bool includeThis = true)
+        {
+            return base.InherentlyContains(itemDefinition as ItemDefinition, includeThis);
+        }
+
+        /// <summary>
+        /// Check if the Item Category contains the item.
+        /// </summary>
+        /// <param name="item">The item which could be contained by the category.</param>
+        /// <param name="includeThis">Returns true if this category directly contains the item.</param>
+        /// <returns>Return true if the item is contained by this category.</returns>
+        public bool InherentlyContains(IItemIdentifier item, bool includeThis = true)
+        {
+            return InherentlyContains(item as Item, includeThis);
+        }
+
         #endregion
 
         #region Category Attributes

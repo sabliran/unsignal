@@ -178,6 +178,28 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
         }
 
         /// <summary>
+        /// Can the item be added without specifying a specific position.
+        /// </summary>
+        /// <param name="itemInfo">The item Info to add.</param>
+        /// <param name="receivingItemCollection">The item collection to add the item to (can be null).</param>
+        /// <returns></returns>
+        public bool CanAddItem(ItemInfo itemInfo, ItemCollection receivingItemCollection = null)
+        {
+            return m_ItemShapeGridData.CanAddItem(itemInfo, receivingItemCollection);
+        }
+
+        /// <summary>
+        /// Add an item to any position.
+        /// </summary>
+        /// <param name="itemInfo">The itemInfo to add.</param>
+        /// <param name="receivingItemCollection">The item collection to add the item to (can be null).</param>
+        /// <returns></returns>
+        public ItemInfo AddItem(ItemInfo itemInfo, ItemCollection receivingItemCollection = null)
+        {
+            return m_ItemShapeGridData.AddItem(itemInfo, receivingItemCollection);
+        }
+
+        /// <summary>
         /// Can the item be added at index?
         /// </summary>
         /// <param name="itemInfo">The item info to add.</param>

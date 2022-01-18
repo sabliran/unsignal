@@ -18,7 +18,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(ItemInfoCategoryFilter), true)]
     public class ItemInfoCategoryFilterInspector : DatabaseInspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { "m_ShowItemCategory", "m_HideCategory" };
+        protected override List<string> ExcludedFields => new List<string>() { "m_ShowItemCategory", "m_HideCategory" };
 
         protected ItemInfoCategoryFilter m_ItemInfoCategoryFilter;
         protected ItemCategoryField m_ShowCategory;
@@ -38,7 +38,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             m_ShowCategory = new ItemCategoryField(
                 "Show Item Category",

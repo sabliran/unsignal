@@ -10,6 +10,7 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
     using Opsive.UltimateInventorySystem.ItemActions;
     using Opsive.UltimateInventorySystem.Utility;
     using System;
+    using Opsive.Shared.Utility;
     using UnityEditor;
     using UnityEngine.UIElements;
 
@@ -127,7 +128,7 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
 
             m_OptionsContainer.Clear();
 
-            FieldInspectorView.ShowFields(target, m_ItemAction, Shared.Utility.MemberVisibility.Public, m_OptionsContainer, null,
+            FieldInspectorView.AddFields(target, m_ItemAction, Shared.Utility.MemberVisibility.Public, m_OptionsContainer,
                 (object obj) =>
                 {
                     BeforeRefresh();

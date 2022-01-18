@@ -11,6 +11,7 @@ namespace Opsive.UltimateInventorySystem.UI.Menus
     using Opsive.UltimateInventorySystem.UI.Menus.Crafting;
     using Opsive.UltimateInventorySystem.UI.Panels;
     using System.Collections;
+    using Opsive.Shared.UI;
     using UnityEngine;
 
     /// <summary>

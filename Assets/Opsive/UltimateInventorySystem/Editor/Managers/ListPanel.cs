@@ -9,6 +9,8 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers
     using Opsive.Shared.Editor.UIElements;
     using Opsive.UltimateInventorySystem.Editor.Styles;
     using Opsive.UltimateInventorySystem.Editor.VisualElements;
+    using UnityEditor;
+    using UnityEngine;
     using UnityEngine.UIElements;
 
     /// <summary>
@@ -82,6 +84,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers
             }, null,
             m_Provider.GetSortOptions(),
             m_Provider.GetSearchFilter);
+
             Add(m_SearchableList);
         }
 

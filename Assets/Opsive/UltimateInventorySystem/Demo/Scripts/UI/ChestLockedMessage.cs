@@ -38,7 +38,7 @@ namespace Opsive.UltimateInventorySystem.Demo.UI
         public void OnNoKey()
         {
             if (m_TextPanel != null) {
-                m_TextPanel.DisplayText(m_TextHasKey, m_TextDisplayTime);
+                m_TextPanel.DisplayText(m_TextIfNoKey, m_TextDisplayTime);
             }
         }
 
@@ -48,7 +48,7 @@ namespace Opsive.UltimateInventorySystem.Demo.UI
         public void HasKey()
         {
             if (m_TextPanel != null) {
-                m_TextPanel.DisplayText(m_TextIfNoKey, m_TextDisplayTime);
+                m_TextPanel.DisplayText(m_TextHasKey, m_TextDisplayTime);
             }
         }
     }

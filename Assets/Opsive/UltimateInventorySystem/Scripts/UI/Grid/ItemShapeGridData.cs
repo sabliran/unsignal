@@ -58,9 +58,14 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
 
         [Tooltip("The ID of the Grid Data.")]
         [SerializeField] internal int m_ID;
-        [Tooltip("The Item Collection of the Grid, this is the collection where the items will be added " +
-                 "(NONE, means items from all the collections in the inventory can be placed in the grid data.).")]
-        [SerializeField] internal ItemCollectionID m_ItemCollectionID;
+        [Tooltip("Only try to add items to the first collection. If not try add to each collection in order until added successfully.")]
+        [SerializeField] internal bool m_OnlyTryAddToFirstCollection;
+        [Tooltip("The Item Collections connected to the grid. The order matters as the item will be added to the first item collection with space." +
+                 "If no ItemCollection is specified the entire Inventory is linked and the  ")]
+        [SerializeField] internal string[] m_ItemCollections;
+        //[Tooltip("The Item Collection of the Grid, this is the collection where the items will be added " +
+        //         "(NONE, means items from all the collections in the inventory can be placed in the grid data.).")]
+        //[SerializeField] internal ItemCollectionID m_ItemCollectionID;
         [Tooltip("The Item Info Filter used to prevent certain items from being added in the grid.")]
         [SerializeField] internal ItemInfoFilterSorterBase m_ItemInfoFilter;
         [Tooltip("The Grid Size (must match the UI Grid size.)")]
@@ -73,6 +78,7 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
         public int GridRows => m_GridSize.y;
         public string ShapeAttributeName => m_Controller.ShapeAttributeName;
 
+        protected ItemCollectionGroup m_ItemCollectionGroup;
         protected ItemShapeGridController m_Controller;
 
         protected GridElementData[,] m_ItemStackAnchorGrid;
@@ -82,10 +88,23 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
         public ItemShapeGridController Controller => m_Controller;
         public Inventory Inventory => m_Controller.Inventory;
         public int ID => m_ID;
-        public ItemCollectionID ItemCollectionID {
+
+        public bool OnlyTryAddToFirstCollection
+        {
+            get => m_OnlyTryAddToFirstCollection;
+            set => m_OnlyTryAddToFirstCollection = value;
+        }
+        
+        public ItemCollectionGroup ItemCollectionGroup
+        {
+            get => m_ItemCollectionGroup;
+            set => m_ItemCollectionGroup = value;
+        }
+        
+        /*public ItemCollectionID ItemCollectionID {
             get { return m_ItemCollectionID; }
             set { m_ItemCollectionID = value; }
-        }
+        }*/
 
         public Vector2Int GridSize => m_GridSize;
         public IFilterSorter<ItemInfo> FilterSorter => m_ItemInfoFilter;
@@ -121,13 +140,35 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
         /// Initialize
         /// </summary>
         /// <param name="controller">The item shape inventory grid controller.</param>
-        public void Initialize(ItemShapeGridController controller)
+        public virtual void Initialize(ItemShapeGridController controller)
         {
             if (m_Controller == controller) {
                 return;
             }
 
             m_Controller = controller;
+            var inventory = m_Controller.Inventory;
+            
+            if (m_ItemCollectionGroup == null) {
+                m_ItemCollectionGroup = new ItemCollectionGroup();
+                
+                if (m_ItemCollections == null || m_ItemCollections.Length == 0) {
+                    m_ItemCollectionGroup.ItemCollections = Inventory.ItemCollections;
+                } else {
+                    var itemCollections = new List<ItemCollection>();
+                    for (int i = 0; i < m_ItemCollections.Length; i++) {
+                        var itemCollection = Inventory.GetItemCollection(m_ItemCollections[i]);
+                        if (itemCollection == null) {
+                            Debug.LogWarning($"The Item Collection with the name '{m_ItemCollections[i]}' does not exist in the inventory.");
+                            continue;
+                        }
+                        itemCollections.Add(itemCollection);
+                    }
+                    m_ItemCollectionGroup.ItemCollections = itemCollections;
+                }
+                
+                
+            }
 
             m_ItemStackAnchorGrid = new GridElementData[GridColumns, GridRows];
             m_TemporaryItemStackAnchorGrid = new GridElementData[GridColumns, GridRows];
@@ -138,7 +179,7 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
         /// Set grid data.
         /// </summary>
         /// <param name="gridElementDatas">The grid element datas.</param>
-        public void SetNewGridData(ListSlice<GridElementData> gridElementDatas)
+        public virtual void SetNewGridData(ListSlice<GridElementData> gridElementDatas)
         {
             if (gridElementDatas.Count != GridSizeCount) {
                 Debug.LogWarning("The Grid data size limit does not match. The data cannot be set.");
@@ -337,7 +378,7 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
         /// <param name="itemInfo">The item info.</param>
         /// <param name="position">The position which fits the item.</param>
         /// <returns>True if a position was found.</returns>
-        public bool TryFindAvailablePosition(ItemInfo itemInfo, out Vector2Int position)
+        public virtual bool TryFindAvailablePosition(ItemInfo itemInfo, out Vector2Int position)
         {
             position = Vector2Int.zero;
             if (itemInfo.Item == null) { return false; }
@@ -386,7 +427,7 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
         /// <param name="x">The column.</param>
         /// <param name="y">The row.</param>
         /// <returns>True if the position is available.</returns>
-        public bool IsPositionValid(int x, int y)
+        public virtual bool IsPositionValid(int x, int y)
         {
             if (x < 0 || y < 0 || x >= m_GridSize.x || y >= m_GridSize.y) {
                 return false;
@@ -509,7 +550,7 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
         /// </summary>
         /// <param name="originItemInfo">The original item info.</param>
         /// <param name="itemStackAdded">The item stack of the added item.</param>
-        public void OnItemAdded(ItemInfo originItemInfo, ItemStack itemStackAdded)
+        public virtual void OnItemAdded(ItemInfo originItemInfo, ItemStack itemStackAdded)
         {
             if (m_Controller.IsCollectionIgnored(itemStackAdded.ItemCollection)) { return; }
             
@@ -568,7 +609,7 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
         /// An item was removed, therefore remove it from the grid.
         /// </summary>
         /// <param name="itemInfoRemoved">The item info was removed.</param>
-        public void OnItemRemoved(ItemInfo itemInfoRemoved)
+        public virtual void OnItemRemoved(ItemInfo itemInfoRemoved)
         {
             //Clean up the grid from null items when an item is removed.
             //This works because the item stack is reset if an item is removed from the inventory.
@@ -599,7 +640,7 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
         /// We do not cleanup automatically in case an item moves multiple time within one frame.
         /// Example when the item move collection it is removed and then added, which used to forget the index.
         /// </summary>
-        public void Cleanup()
+        public virtual void Cleanup()
         {
             m_RemovedDirtyIndexedItems.Clear();
         }
@@ -609,7 +650,7 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
         /// </summary>
         /// <param name="position">The position.</param>
         /// <returns>True if an item was removed.</returns>
-        public bool RemoveItemFromPosition(Vector2Int position)
+        public virtual bool RemoveItemFromPosition(Vector2Int position)
         {
             var x = position.x;
             var y = position.y;
@@ -646,7 +687,44 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
 
             return true;
         }
+        
+        /// <summary>
+        /// Check if the item can be added to this item collection.
+        /// </summary>
+        /// <param name="itemInfo">The item info to add.</param>
+        /// <returns>The item info to add.</returns>
+        public ItemCollection GetItemCollectionToAddItemTo(ItemInfo itemInfo)
+        {
+            for (int i = 0; i < m_ItemCollectionGroup.ItemCollections.Count; i++) {
+                var itemCollection = m_ItemCollectionGroup.ItemCollections[i];
+                var result = itemCollection.CanAddItem(itemInfo);
+                if (result.HasValue && result.Value.Amount != 0) {
+                    return itemCollection;
+                }
+            }
 
+            //The item cannot be added.
+            return null;
+        }
+
+        public virtual ItemInfo AddItem(ItemInfo itemInfo, ItemCollection receivingItemCollection)
+        {
+            if (receivingItemCollection == null) {
+                if (m_OnlyTryAddToFirstCollection) {
+                    return m_ItemCollectionGroup.AddItem(itemInfo);
+                } else {
+                    var itemCollection = GetItemCollectionToAddItemTo(itemInfo);
+                    return itemCollection.AddItem(itemInfo);
+                }
+            }
+
+            if (m_ItemCollectionGroup.Contains(receivingItemCollection)) {
+                return receivingItemCollection.AddItem(itemInfo);
+            }
+
+            return ItemInfo.None;
+        }
+        
         /// <summary>
         /// Add the item at the index.
         /// </summary>
@@ -658,20 +736,18 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
             if (IsPositionAvailable(itemInfo, position) == false) {
                 return ItemInfo.None;
             }
-
-            var itemCollection = Inventory.GetItemCollection(m_ItemCollectionID);
-
-            ItemInfo addedItem;
-            if (itemCollection == null) {
-                addedItem = Inventory.AddItem(itemInfo);
-            } else {
-                addedItem = itemCollection.AddItem(itemInfo);
-            }
+            
+            var addedItem = AddItem(itemInfo, null);
 
             var tempItemPos = GetItemPos(addedItem);
 
             RemoveItemFromPosition(tempItemPos);
             var placedItem = TryPlaceItemToPosition(addedItem, position);
+
+            if (placedItem == false) {
+                //The item could not be placed in the position defined for whatever reason, put it back where it had space.
+                TryPlaceItemToPosition(addedItem, tempItemPos);
+            }
 
             return addedItem;
         }
@@ -699,14 +775,18 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
             if (originalItemInfo.Item == null) { return false; }
             if (m_Controller.IsCollectionIgnored(receivingCollection)) { return true; }
 
-            var collectionIsNone =
+            if (receivingCollection != null && m_ItemCollectionGroup.Contains(receivingCollection) == false) {
+                return false;
+            }
+            
+            /*var collectionIsNone =
                 m_ItemCollectionID.Purpose == ItemCollectionPurpose.None
                 && string.IsNullOrWhiteSpace(m_ItemCollectionID.Name);
             var collectionMatch = 
                 m_ItemCollectionID.Compare(receivingCollection) 
                 || (receivingCollection == null && m_ItemCollectionID.Purpose == ItemCollectionPurpose.Main);
 
-            if (!collectionIsNone && !collectionMatch) { return false; }
+            if (!collectionIsNone && !collectionMatch) { return false; }*/
 
             if (m_ItemInfoFilter == null) { return true; }
 
@@ -752,7 +832,7 @@ namespace Opsive.UltimateInventorySystem.UI.Grid
         /// <param name="sourcePos">The source position.</param>
         /// <param name="destinationPos">The destination position.</param>
         /// <returns>True if the item was moved.</returns>
-        public bool TryMoveIndex(Vector2Int sourcePos, Vector2Int destinationPos)
+        public virtual bool TryMoveIndex(Vector2Int sourcePos, Vector2Int destinationPos)
         {
             // Copy values to temporary slot.
             Copy(m_ItemStackAnchorGrid, m_TemporaryItemStackAnchorGrid);

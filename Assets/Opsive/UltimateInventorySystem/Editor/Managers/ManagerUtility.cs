@@ -119,7 +119,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers
                 unityObject,
                 target, null, -1, typeof(UnityEngine.Object),
                 string.Empty, string.Empty, true,
-                obj, container, null,
+                obj, container,
                 (object o) => { });
 
             container.AddToClassList(InventoryManagerStyles.AttributeViewNameAndValue_Value);

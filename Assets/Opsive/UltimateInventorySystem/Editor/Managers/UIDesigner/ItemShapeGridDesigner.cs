@@ -137,8 +137,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers.UIDesigner
             var itemShapeData = inventory.gameObject.AddComponent<ItemShapeGridData>();
             itemShapeData.m_GridSize = m_GridSize.value;
 
-            var selectedItemCollection = inventory.GetItemCollection(m_ItemCollectionField.value);
-            itemShapeData.ItemCollectionID = new ItemCollectionID(selectedItemCollection);
+            itemShapeData.m_ItemCollections = new string[] {m_ItemCollectionField.value};
             itemShapeGridController.m_ItemShapeGridData.Add(itemShapeData);
 
             //Create UI Grid

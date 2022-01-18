@@ -90,13 +90,13 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers
                     fieldValue, field, -1, field.FieldType,
                     field.Name, string.Empty, true,
                     fieldValue,
-                    m_VisualElements[i], null,
+                    m_VisualElements[i],
                     (object obj) =>
                     {
                         if (field.GetValue(m_Value) == obj) { return; }
                         field.SetValue(m_Value, obj);
                         OnValueChanged?.Invoke();
-                    },null,null, Database);
+                    }, null, false, null, null, Database);
             }
         }
     }

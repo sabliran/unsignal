@@ -119,7 +119,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers
         public void Select(T obj)
         {
             var index = -1;
-            m_ListPanel.SearchableList.ClearSearch();
+            m_ListPanel.SearchableList.ClearSearch(false);
 
             //Refresh required before because the inner list needs to be updated.
             m_ListPanel.Refresh();
@@ -175,6 +175,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers
         public override void Refresh()
         {
             base.Refresh();
+            m_ListPanel.SearchableList.ClearSearch(true);
             m_ListPanel.Refresh();
             UpdateElements(SelectedObject);
         }

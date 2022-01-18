@@ -19,23 +19,21 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     /// </summary>
     public class InventoryObjectInspector : InspectorBase
     {
-        protected override List<string> PropertiesToExclude { get; }
-
         /// <summary>
         /// Do not draw the basic visual elements.
         /// </summary>
         /// <param name="parent">The parent container.</param>
         /// <param name="nested">Is the inspector nested?.</param>
-        public override void DrawInOrder(VisualElement parent, bool nested = false)
+        public override void DrawElements(VisualElement parent, bool nested = false)
         {
-            CreateInspector(parent);
+            ShowFooterElements(parent);
         }
 
         /// <summary>
         /// Creates the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             var button = new Button();
             button.clickable.clicked += () =>

@@ -17,7 +17,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers.UIDesigner
     [CustomEditor(typeof(UIDesignerSchema), true)]
     public class UIDesignerSchemaInspector : InspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { };
+        protected override List<string> ExcludedFields => new List<string>() { };
 
         protected UIDesignerSchema m_UIDesignerSchema;
 
@@ -31,7 +31,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers.UIDesigner
             base.InitializeInspector();
         }
 
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         { }
     }
 }

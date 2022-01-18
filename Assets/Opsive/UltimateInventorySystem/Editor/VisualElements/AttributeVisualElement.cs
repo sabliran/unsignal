@@ -238,18 +238,18 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
                 m_Attribute, null, -1, attributeValueType,
                 "Value", string.Empty, true,
                 m_Attribute.GetValueAsObject(),
-                m_Value, null,
+                m_Value,
                 (object obj) => { }
-                , null, null, m_AttributeControlUserData);
+                , null, false, null, null, m_AttributeControlUserData);
 
             FieldInspectorView.AddField(
                 m_Attribute.GetAttachedObject(),
                 m_Attribute, null, -1, attributeValueType,
                 "Inherited Value", string.Empty, true,
                 m_Attribute.GetInheritValueAsObject(),
-                m_InheritValue, null,
+                m_InheritValue,
                 (object obj) => { }
-                , null, null, m_AttributeControlUserData);
+                , null, false, null, null, m_AttributeControlUserData);
         }
 
         /// <summary>
@@ -267,7 +267,7 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
                 -1, m_Attribute.GetValueType(),
                 "Override Value", string.Empty, true,
                 m_Attribute.GetOverrideValueAsObject(),
-                m_OverrideValue, null,
+                m_OverrideValue,
                 (object obj) =>
                 {
                     AttributeEditorUtility.SetOverrideValueAsObject(m_Attribute, obj);
@@ -275,7 +275,7 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
                     //In some cases the displayed Attribute is no longer the one on the object
                     
                     AttributeChanged();
-                }, null, null, m_AttributeControlUserData);
+                }, null, false, null, null, m_AttributeControlUserData);
         }
 
         /// <summary>

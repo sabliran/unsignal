@@ -12,6 +12,7 @@ namespace Opsive.UltimateInventorySystem.UI.Panels.ItemViewSlotContainers.GridFi
     using Opsive.UltimateInventorySystem.UI.Grid;
     using UnityEngine;
     using UnityEngine.Serialization;
+    using UnityEngine.UI;
 
     public class ItemInfoCategoryFilter : ItemInfoFilterBase, IDatabaseSwitcher
     {
@@ -22,10 +23,19 @@ namespace Opsive.UltimateInventorySystem.UI.Panels.ItemViewSlotContainers.GridFi
         [SerializeField] protected DynamicItemCategory m_HideCategory;
         [Tooltip("The items with the hide category which have this boolean attribute set to true will be shown.")]
         [SerializeField] protected string m_ShowAttributeName;
+        [Tooltip("(Optional) use this icon to show the item category.")]
+        [SerializeField] protected Image m_ShowCategoryIcon;
+        [Tooltip("The item attribute name for the category Icon")]
+        [SerializeField] protected string m_CategoryIconAttributeName = "CategoryIcon";
 
-        public ItemCategory ShowItemCategory {
+        public ItemCategory ShowItemCategory
+        {
             get => m_ShowItemCategory;
-            set => m_ShowItemCategory = value;
+            set
+            {
+                m_ShowItemCategory = value;
+                UpdateCategoryIcon();
+            }
         }
 
         public ItemCategory HideCategory {
@@ -41,6 +51,23 @@ namespace Opsive.UltimateInventorySystem.UI.Panels.ItemViewSlotContainers.GridFi
             if (m_ShowItemCategory.SerializedValueIsValid == false || m_HideCategory.SerializedValueIsValid == false) {
                 Debug.LogWarning("Some of the categories referenced on the item info category filter do not reference the right database", gameObject);
             }
+
+            UpdateCategoryIcon();
+        }
+
+        /// <summary>
+        /// Update the category icon displayed.
+        /// </summary>
+        public virtual void UpdateCategoryIcon()
+        {
+            if (m_ShowCategoryIcon == null) { return; }
+            if(m_ShowItemCategory.HasValue == false){ return; }
+
+            if (m_ShowItemCategory.Value.TryGetAttributeValue(m_CategoryIconAttributeName, out Sprite icon) == false) {
+                return;
+            }
+
+            m_ShowCategoryIcon.sprite = icon;
         }
 
         /// <summary>

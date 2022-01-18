@@ -371,6 +371,15 @@ namespace Opsive.UltimateInventorySystem.Core
             return m_ItemDefinition;
         }
 
+        /// <summary>
+        /// Return the Item Category Identifier for this Item.
+        /// </summary>
+        /// <returns>The Item Category of the Item.</returns>
+        public IItemCategoryIdentifier GetItemCategory()
+        {
+            return Category;
+        }
+
         #endregion
 
         #region ItemChanges

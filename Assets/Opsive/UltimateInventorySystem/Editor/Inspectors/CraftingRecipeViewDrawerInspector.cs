@@ -10,6 +10,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     using Opsive.UltimateInventorySystem.UI.DataContainers;
     using Opsive.UltimateInventorySystem.UI.Panels.Crafting;
     using System.Collections.Generic;
+    using Opsive.Shared.Editor.UIElements;
     using UnityEditor;
     using UnityEngine.UIElements;
 
@@ -19,7 +20,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(CraftingRecipeViewDrawer), true)]
     public class CraftingRecipeViewDrawerInspector : InspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { "m_CategoryRecipeViewSet" };
+        protected override List<string> ExcludedFields => new List<string>() { "m_CategoryRecipeViewSet" };
 
         protected CraftingRecipeViewDrawer m_CraftingRecipViewDrawer;
         protected ObjectFieldWithNestedInspector<CategoryRecipeViewSet, CategoryRecipeViewSetInspector>
@@ -39,7 +40,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             m_CategoryItemViewSet = new ObjectFieldWithNestedInspector
                 <CategoryRecipeViewSet, CategoryRecipeViewSetInspector>(

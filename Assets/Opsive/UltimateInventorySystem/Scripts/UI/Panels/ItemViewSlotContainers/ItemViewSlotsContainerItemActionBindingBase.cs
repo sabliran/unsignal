@@ -152,7 +152,7 @@ namespace Opsive.UltimateInventorySystem.UI.Panels.ItemViewSlotContainers
         public void TriggerItemAction(int slotIndex)
         {
             var slotCount = m_ItemViewSlotsContainer.GetItemViewSlotCount();
-            if (slotIndex < 0 && slotIndex >= slotCount) {
+            if (slotIndex < 0 && slotIndex >= slotCount || slotIndex >= m_ItemViewSlotsContainer.ItemViewSlots.Count) {
                 Debug.LogWarning("The slot index you are trying to use is out of range " + slotIndex + " / " + slotCount);
                 return;
             }

@@ -9,7 +9,7 @@
     /// </summary>
     public class SimpleObjectInspector : InspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { };
+        protected override List<string> ExcludedFields => new List<string>() { };
 
         /// <summary>
         /// Initialize the inspector when it is first selected.
@@ -19,7 +19,7 @@
             base.InitializeInspector();
         }
 
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         { }
     }
 }

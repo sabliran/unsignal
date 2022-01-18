@@ -24,7 +24,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     {
         protected const string c_ActionsWithConditions = "m_ActionsWithConditionsData";
 
-        protected override List<string> PropertiesToExclude => new List<string>() { c_ActionsWithConditions };
+        protected override List<string> ExcludedFields => new List<string>() { c_ActionsWithConditions };
 
         protected ItemViewSlotDropActionSet m_ItemViewSlotDropActionSet;
         protected List<ItemViewDropActionsWithConditions> m_List;
@@ -54,7 +54,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             m_List = new List<ItemViewDropActionsWithConditions>(m_ItemViewSlotDropActionSet.ActionsWithConditions);
             m_ReorderableList = new ReorderableList(
@@ -374,13 +374,13 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
                 m_SelectedObject, null, -1, m_SelectedObject.GetType(),
                 typeof(T).Name, string.Empty, true,
                 m_SelectedObject,
-                m_Selection, null,
+                m_Selection,
                 (object obj) =>
                 {
                     m_UpdateList?.Invoke(m_List);
                     m_ReorderableList.Refresh(m_List);
                 }
-                , null, null, m_Database);
+                , null, false, null, null, m_Database);
         }
 
         /// <summary>

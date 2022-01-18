@@ -26,7 +26,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     {
         protected const string c_CategoriesItemViews = "m_CategoriesItemViews";
 
-        protected override List<string> PropertiesToExclude => new List<string>() { c_CategoriesItemViews };
+        protected override List<string> ExcludedFields => new List<string>() { c_CategoriesItemViews };
 
         protected CategoryItemViewSet m_CategoryItemViewSet;
         protected List<CategoryItemViews> m_List;
@@ -52,7 +52,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             m_Container = container;
 

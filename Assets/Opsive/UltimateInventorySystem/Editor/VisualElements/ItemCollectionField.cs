@@ -14,6 +14,7 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
     using Opsive.UltimateInventorySystem.Utility;
     using System;
     using System.Collections.Generic;
+    using Opsive.Shared.Utility;
     using UnityEditor;
     using UnityEngine;
     using UnityEngine.UIElements;
@@ -84,8 +85,8 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
 
             m_Container = new VisualElement();
 
-            FieldInspectorView.ShowFields(m_ItemCollection?.Inventory?.gameObject, m_ItemCollection, Shared.Utility.MemberVisibility.Public, m_Container,
-                                            null, (object obj) => { ValueChanged(); }, null, true, m_PropertiesToExclude);
+            FieldInspectorView.AddFields(m_ItemCollection?.Inventory?.gameObject, m_ItemCollection, Shared.Utility.MemberVisibility.Public, m_Container,
+                                            (object obj) => { ValueChanged(); }, null, true, null, false, m_PropertiesToExclude, null);
             Add(m_Container);
 
             ItemAmounts itemAmounts = null;

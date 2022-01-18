@@ -112,6 +112,21 @@ namespace Opsive.UltimateInventorySystem.Core.InventoryCollections
             => new ItemCollectionID(null, x);
     }
 
+    [Serializable]
+    public struct ItemOverflowOptions
+    {
+        [Tooltip("When an item does not fit in the inventory, should it be returned where it came form (if specified)?")]
+        [SerializeField] private bool m_ReturnOverflow;
+        [Tooltip("Send event")]
+        [SerializeField] private bool m_InvokeRejectedEvent;
+        [Tooltip("Send event")]
+        [SerializeField] private ItemOverflowAction m_OverflowAction;
+        
+        public bool ReturnOverflow { get => m_ReturnOverflow; set => m_ReturnOverflow = value; }
+        public bool InvokeRejectedEvent { get => m_InvokeRejectedEvent; set => m_InvokeRejectedEvent = value; }
+        public ItemOverflowAction OverflowAction { get => m_OverflowAction; set => m_OverflowAction = value; }
+    }
+
     /// <summary>
     /// The ItemCollection is used to store a collection of item amounts in an organized way.
     /// This class is generic and can be extended to fit your particular needs.
@@ -126,7 +141,7 @@ namespace Opsive.UltimateInventorySystem.Core.InventoryCollections
         [Tooltip("The purpose of the Item Collection.")]
         [SerializeField] protected ItemCollectionPurpose m_Purpose;
         [Tooltip("When an item does not fit in the inventory, should it be returned where it came form (if specified)?")]
-        [SerializeField] protected bool m_ReturnOverflow;
+        [SerializeField] protected ItemOverflowOptions m_OverflowOptions = new ItemOverflowOptions(){ InvokeRejectedEvent = true };
         [Tooltip("The default loadout is added to the collection when it is initialize.")]
         [SerializeField] protected ItemAmounts m_DefaultLoadout;
 
@@ -520,19 +535,29 @@ namespace Opsive.UltimateInventorySystem.Core.InventoryCollections
         protected virtual void HandleItemInfoDoesNotFit(ItemInfo originalItemInfo, ref ItemInfo itemInfoAdded)
         {
             var rejectedItemInfo = new ItemInfo(originalItemInfo.Amount - itemInfoAdded.Amount, originalItemInfo);
-            if (m_ReturnOverflow) {
+            
+            if (m_OverflowOptions.ReturnOverflow) {
                 if (originalItemInfo.ItemCollection != null) {
                     var returnedItemInfo = originalItemInfo.ItemCollection.AddItem(rejectedItemInfo);
                     itemInfoAdded = (returnedItemInfo.Amount, itemInfoAdded);
                 }
             }
-            //Part of the item that had to be added was rejected.
-            EventHandler.ExecuteEvent<ItemInfo, ItemInfo, ItemInfo>(m_Inventory,
-                EventNames.c_Inventory_OnAddItemRejected_ItemInfoToAdd_ItemInfoAdded_ItemInfoRejected,
-                originalItemInfo,
-                itemInfoAdded,
-                rejectedItemInfo
-            );
+
+            if (m_OverflowOptions.OverflowAction != null) {
+                m_OverflowOptions.OverflowAction.HandleItemOverflow(m_Inventory, originalItemInfo, itemInfoAdded, rejectedItemInfo);
+            }
+
+            if (m_OverflowOptions.InvokeRejectedEvent) {
+                //Part of the item that had to be added was rejected.
+                EventHandler.ExecuteEvent<ItemInfo, ItemInfo, ItemInfo>(m_Inventory,
+                    EventNames.c_Inventory_OnAddItemRejected_ItemInfoToAdd_ItemInfoAdded_ItemInfoRejected,
+                    originalItemInfo,
+                    itemInfoAdded,
+                    rejectedItemInfo
+                );
+            }
+            
+            
         }
 
         /// <summary>

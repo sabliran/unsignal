@@ -10,6 +10,7 @@ namespace Opsive.UltimateInventorySystem.Crafting
     using Opsive.UltimateInventorySystem.Core;
     using Opsive.UltimateInventorySystem.Storage;
     using System.Collections.Generic;
+    using Opsive.Shared.UI;
     using UnityEngine;
 
     /// <summary>

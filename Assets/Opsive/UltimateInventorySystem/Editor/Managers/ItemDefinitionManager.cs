@@ -21,6 +21,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers
     using System;
     using System.Collections;
     using System.Collections.Generic;
+    using Opsive.Shared.Utility;
     using UnityEditor;
     using UnityEngine;
     using UnityEngine.UIElements;

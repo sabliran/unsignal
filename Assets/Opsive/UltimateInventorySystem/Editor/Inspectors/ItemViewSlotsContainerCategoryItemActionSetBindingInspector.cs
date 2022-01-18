@@ -10,6 +10,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     using Opsive.UltimateInventorySystem.UI.DataContainers;
     using Opsive.UltimateInventorySystem.UI.Panels.ItemViewSlotContainers;
     using System.Collections.Generic;
+    using Opsive.Shared.Editor.UIElements;
     using UnityEditor;
     using UnityEngine.UIElements;
 
@@ -19,7 +20,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(ItemViewSlotsContainerCategoryItemActionSetBinding), true)]
     public class ItemViewSlotsContainerCategoryItemActionSetBindingInspector : InspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { "m_CategoryItemActionSet", "m_ItemActionSet" };
+        protected override List<string> ExcludedFields => new List<string>() { "m_CategoryItemActionSet", "m_ItemActionSet" };
 
         protected ItemViewSlotsContainerCategoryItemActionSetBinding m_ItemViewSlotsContainerCategoryItemActionSetBinding;
         protected VisualElement m_InnerContainer;
@@ -40,7 +41,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             m_InnerContainer = new VisualElement();
             container.Add(m_InnerContainer);

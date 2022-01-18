@@ -14,6 +14,7 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements.ControlTypes
     using Opsive.UltimateInventorySystem.Utility;
     using System;
     using System.Collections.Generic;
+    using Opsive.Shared.Utility;
     using UnityEngine;
     using UnityEngine.UIElements;
 

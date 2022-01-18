@@ -23,7 +23,7 @@ namespace Opsive.UltimateInventorySystem.Demo.UI
         /// </summary>
         /// <param name="text">The text to display.</param>
         /// <param name="displayTime">The time in seconds to display for.</param>
-        public void DisplayText(string text, float displayTime)
+        public virtual void DisplayText(string text, float displayTime)
         {
             m_Text.text = text;
             m_Panel.SetActive(true);
@@ -33,7 +33,7 @@ namespace Opsive.UltimateInventorySystem.Demo.UI
 #pragma warning restore 4014
         }
 
-        protected async Task DisableAfterDelay(float delay)
+        protected virtual async Task DisableAfterDelay(float delay)
         {
             m_Timer = Time.unscaledTime + delay;
             while (Time.unscaledTime < m_Timer) {

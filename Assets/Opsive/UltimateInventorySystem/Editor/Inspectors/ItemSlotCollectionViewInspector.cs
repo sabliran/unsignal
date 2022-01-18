@@ -25,7 +25,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     public class ItemSlotCollectionViewInspector : DatabaseInspectorBase
     {
 
-        protected override List<string> PropertiesToExclude => new List<string>()
+        protected override List<string> ExcludedFields => new List<string>()
         {
             "m_ItemSlotItemViewSlots", "m_ItemSlotSet"
         };
@@ -56,7 +56,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             m_ItemSetSlotField = new ObjectField("Item Slot Set");
             m_ItemSetSlotField.objectType = typeof(ItemSlotSet);

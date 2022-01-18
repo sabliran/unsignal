@@ -317,10 +317,10 @@ namespace Opsive.UltimateInventorySystem.Editor.Managers
             var craftingRecipes = new CraftingRecipe[0];
             IList list;
             switch (index) {
-                case 0: list = UltimateInventorySystem.Utility.ListUtility.CreateArrayCopy(category.GetAllParents(ref craftingCategories, false), craftingCategories); break; //Ancestors
-                case 1: list = UltimateInventorySystem.Utility.ListUtility.CreateArrayCopy(category.GetAllChildren(ref craftingCategories, false), craftingCategories); break; //Descendants
+                case 0: list = Shared.Utility.ListUtility.CreateArrayCopy(category.GetAllParents(ref craftingCategories, false), craftingCategories); break; //Ancestors
+                case 1: list = Shared.Utility.ListUtility.CreateArrayCopy(category.GetAllChildren(ref craftingCategories, false), craftingCategories); break; //Descendants
                 case 2: list = category.Elements; break; // Direct Recipes
-                case 3: list = UltimateInventorySystem.Utility.ListUtility.CreateArrayCopy(category.GetAllChildrenElements(ref craftingRecipes, true), craftingRecipes); break; // Inherit Recipes
+                case 3: list = Shared.Utility.ListUtility.CreateArrayCopy(category.GetAllChildrenElements(ref craftingRecipes, true), craftingRecipes); break; // Inherit Recipes
                 default: list = null; break;
             }
             m_RelationshipsReorderableList.Refresh(list);

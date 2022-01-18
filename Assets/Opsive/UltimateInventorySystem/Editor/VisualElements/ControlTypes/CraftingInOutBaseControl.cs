@@ -88,12 +88,12 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements.ControlTypes
             m_TabContents.Add(() =>
             {
                 m_OtherContent.Clear();
-                FieldInspectorView.ShowFields(unityObject,
+                FieldInspectorView.AddFields(unityObject,
                     target, MemberVisibility.Public, m_OtherContent,
-                    null, (object obj) =>
+                    (object obj) =>
                     {
                         onChangeEvent?.Invoke(obj);
-                    }, null, true, null, new object[] { false, m_Database });
+                    }, null, true, null, false, null, new object[] { false, m_Database });
                 return m_OtherContent;
             });
 

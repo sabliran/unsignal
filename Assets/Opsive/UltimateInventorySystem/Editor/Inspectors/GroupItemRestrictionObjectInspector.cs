@@ -24,7 +24,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(GroupItemRestrictionObject), true)]
     public class GroupItemRestrictionObjectInspector : DatabaseInspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string> { "m_Restriction" };
+        protected override List<string> ExcludedFields => new List<string> { "m_Restriction" };
 
         protected GroupItemRestrictionObject m_Target;
         protected GroupItemRestriction m_GroupItemRestriction;
@@ -70,7 +70,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
 
             var customRestriction = new VisualElement();
@@ -82,12 +82,12 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
                 -1, m_Target.OriginalRestriction.GetType(),
                 "Restriction", string.Empty, true,
                 m_Target.OriginalRestriction,
-                customRestriction, null,
+                customRestriction,
                 (object obj) =>
                 {
                     FieldChanged();
 
-                }, null, new HashSet<string>()
+                }, null, false, null, new HashSet<string>()
                 {
                     //"m_ItemCollectionRestrictions",
                     "m_FullSizeLimit",

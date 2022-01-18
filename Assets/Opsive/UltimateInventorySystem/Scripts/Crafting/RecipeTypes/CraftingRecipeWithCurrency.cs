@@ -6,6 +6,7 @@
 
 namespace Opsive.UltimateInventorySystem.Crafting.RecipeTypes
 {
+    using Opsive.Shared.Utility;
     using Opsive.UltimateInventorySystem.Crafting.IngredientsTypes;
     using Opsive.UltimateInventorySystem.Utility;
 

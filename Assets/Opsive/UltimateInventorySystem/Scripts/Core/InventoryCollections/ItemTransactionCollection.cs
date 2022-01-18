@@ -30,8 +30,11 @@ namespace Opsive.UltimateInventorySystem.Core.InventoryCollections
         [Tooltip(
             "Return the item amount that was actually added in the right item collection or return also the amount that was rejected (in case it was added externally)?")]
         [SerializeField] protected bool m_ReturnRealAddedItemAmount;
+        [Tooltip("Prevent adding items if they do not match any collections.")]
+        [SerializeField] protected bool m_PreventAddingWhenNoMatch = true;
 
         protected ItemCollection m_AddingToCollection;
+        public ItemCollection AddingToCollection => m_AddingToCollection;
 
         /// <summary>
         /// Check if the item can be added to this item collection.
@@ -43,14 +46,27 @@ namespace Opsive.UltimateInventorySystem.Core.InventoryCollections
             for (int i = 0; i < m_ItemCollectionNames.Count; i++) {
                 var itemCollection = m_Inventory.GetItemCollection(m_ItemCollectionNames[i]);
                 var result = itemCollection.CanAddItem(itemInfo);
-                if (result != null && result.Value.Amount != 0) {
+                if (result.HasValue && result.Value.Amount != 0) {
                     m_AddingToCollection = itemCollection;
                     return itemInfo;
                 }
             }
 
+            //The item cannot be added.
             m_AddingToCollection = null;
-            return itemInfo;
+            
+            return m_PreventAddingWhenNoMatch ? (ItemInfo?)null : itemInfo;
+        }
+        
+        /// <summary>
+        /// Check if the item can be added to this item collection.
+        /// </summary>
+        /// <param name="itemInfo">The item info to add.</param>
+        /// <returns>The item info to add.</returns>
+        public ItemCollection GetItemCollectionToTransactionTo(ItemInfo itemInfo)
+        {
+            var canAddItem = CanAddItem(itemInfo);
+            return m_AddingToCollection;
         }
 
         /// <summary>

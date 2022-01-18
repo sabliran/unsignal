@@ -286,6 +286,18 @@ namespace Opsive.UltimateInventorySystem.Editor.Utility
 
                         return false;
                     }),
+                    // search by category inherently
+                    ("i:",(searchWord, itemDefinition) =>{
+                        // Case insensitive Contains(string).
+                        var ancestorCategories = new ItemCategory[0];
+                        var ancestorsCount = itemDefinition.Category.GetAllParents(ref ancestorCategories, true);
+                        for (int i = 0; i < ancestorsCount; i++) {
+                            if (compareInfo.IndexOf(ancestorCategories[i].name, searchWord,
+                                CompareOptions.IgnoreCase) >= 0) { return true; }
+                        }
+                        
+                        return false;
+                    }),
                     //Search by attribute.
                     ("a:", (searchWord, itemDefinition) =>
                     {

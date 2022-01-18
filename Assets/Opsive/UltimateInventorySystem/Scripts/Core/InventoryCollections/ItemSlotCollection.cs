@@ -22,6 +22,8 @@ namespace Opsive.UltimateInventorySystem.Core.InventoryCollections
         [SerializeField] protected ItemSlotSet m_ItemSlotSet;
         [Tooltip("Should newly added items replace previously added items?")]
         [SerializeField] protected bool m_NewItemPriority;
+        [Tooltip("Try to give the replaced Item to where the new item came from, if not the item will simply overflow.")]
+        [SerializeField] protected bool m_TryGivePreviousItemToNewItemCollection;
 
         public ItemSlotSet ItemSlotSet => m_ItemSlotSet;
 
@@ -262,7 +264,16 @@ namespace Opsive.UltimateInventorySystem.Core.InventoryCollections
                 if (itemInfo.Item.StackableEquivalentTo(currentStack.Item)) {
                     amount -= currentStack.Amount;
                 } else if (removePreviousItem) {
-                    RemoveItem((ItemInfo)currentStack);
+                    var removedItem = RemoveItem((ItemInfo)currentStack);
+                    if (removedItem.Amount > 0) {
+                        if (m_TryGivePreviousItemToNewItemCollection &&
+                            (itemInfo.ItemCollection?.CanAddItem(removedItem).HasValue ?? false)) {
+                            itemInfo.ItemCollection.AddItem(removedItem);
+                        } else {
+                            var removedItemInfoAdded = ItemInfo.None;
+                            HandleItemInfoDoesNotFit(removedItem, ref removedItemInfoAdded);
+                        }
+                    }
                 } else {
                     return null;
                 }

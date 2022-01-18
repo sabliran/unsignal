@@ -26,7 +26,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         protected const string c_ItemCollectionData = "m_ItemCollectionData";
         protected const string c_ItemCollections = "m_ItemCollections";
 
-        protected override List<string> PropertiesToExclude => new List<string>() { c_ItemCollectionData, c_ItemCollections };
+        protected override List<string> ExcludedFields => new List<string>() { c_ItemCollectionData, c_ItemCollections };
         
         protected ReorderableList m_ItemCollectionsReorderableList;
         protected VisualElement m_SelectedContainer;
@@ -51,7 +51,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the Inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             m_SelectedContainer = new VisualElement();
 

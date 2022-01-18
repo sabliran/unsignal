@@ -23,7 +23,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(MultiCurrencyView), true)]
     public class MultiCurrencyViewInspector : DatabaseInspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { "m_CurrenciesWithViews" };
+        protected override List<string> ExcludedFields => new List<string>() { "m_CurrenciesWithViews" };
 
         protected MultiCurrencyView m_MultiCurrencyView;
 
@@ -49,7 +49,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
 
             m_List = new List<CurrencyWithView>(m_MultiCurrencyView.m_CurrenciesWithViews);

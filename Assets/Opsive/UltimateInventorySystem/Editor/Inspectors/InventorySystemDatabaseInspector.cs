@@ -18,23 +18,21 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(InventorySystemDatabase))]
     public class InventorySystemDatabaseInspector : InspectorBase
     {
-        protected override List<string> PropertiesToExclude { get; }
-
         /// <summary>
         /// Draw the visual elements in order.
         /// </summary>
         /// <param name="parent">The parent Container.</param>
         /// <param name="nested">Is the inspector nested?.</param>
-        public override void DrawInOrder(VisualElement parent, bool nested = false)
+        public override void DrawElements(VisualElement parent, bool nested = false)
         {
-            CreateInspector(parent);
+            ShowFooterElements(parent);
         }
 
         /// <summary>
         /// Creates the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             var button = new Button();
             button.clickable.clicked += () =>

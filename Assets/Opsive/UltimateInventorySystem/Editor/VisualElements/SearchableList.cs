@@ -11,9 +11,11 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
     using System;
     using System.Collections;
     using System.Collections.Generic;
+    using UnityEditor;
     using UnityEditor.UIElements;
     using UnityEngine;
     using UnityEngine.UIElements;
+
 
     /// <summary>
     /// Searchable List allowing for searching and sorting a ReorderableList.
@@ -25,12 +27,14 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
         protected T m_PreviousSelectedObject;
         protected string m_PreviousSearch;
         protected SortOption m_PreviousSortOption;
-        private Action<int> m_OnSelection;
+        protected Action<int> m_OnSelection;
 
+        protected ObjectField m_FilterPresetField;
         protected ToolbarSearchField m_SearchField;
         protected SortOptionsDropDown m_SortOptionsDropDown;
         protected ReorderableList m_ReorderableList;
 
+        protected IList<SortOption> m_SortOptions;
         protected Func<IList<T>, string, IList<T>> m_SearchFilter;
 
         public List<T> ItemList => m_ItemSourceCopy;
@@ -45,6 +49,32 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
         public T SelectedObject {
             get => SelectedIndex < 0 || SelectedIndex >= m_ItemSourceCopy.Count ? null : m_ItemSourceCopy[SelectedIndex];
             set => SelectObject(value);
+        }
+
+        public ObjectField FilterPresetField => m_FilterPresetField;
+        
+        private static string SearchableListFilterPresetKey => "Opsive.SearchableList.FilterPreset."+typeof(T) +"."+ Application.productName;
+
+        // The database path is based on the project.
+        private static SearchableListFilterPreset StoredSearchableListFilterPreset
+        {
+            get
+            {
+                var guid = EditorPrefs.GetString(SearchableListFilterPresetKey, string.Empty);
+                if (!string.IsNullOrEmpty(guid)) {
+                    return Shared.Editor.Utility.EditorUtility.LoadAsset<SearchableListFilterPreset>(guid);
+                }
+
+                return null;
+            }
+            set
+            {
+                if (value != null) {
+                    EditorPrefs.SetString(SearchableListFilterPresetKey, AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(value)));
+                } else {
+                    EditorPrefs.SetString(SearchableListFilterPresetKey, string.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -68,6 +98,7 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
             Func<IList<T>, string, IList<T>> searchFilter)
         {
             m_SearchFilter = searchFilter;
+            m_SortOptions = sortOptions;
             m_ItemSource = itemsSource;
             m_ItemSourceCopy = new List<T>();
             if (m_ItemSource != null) {
@@ -78,6 +109,43 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
 
             AddToClassList(CommonStyles.s_SearchList);
 
+            var filterPresetContainer = new VisualElement();
+            filterPresetContainer.AddToClassList(CommonStyles.s_SearchList_FilterPresetContainer);
+            
+            m_FilterPresetField = new ObjectField();
+            m_FilterPresetField.objectType = typeof(SearchableListFilterPreset);
+            m_FilterPresetField.RegisterValueChangedCallback(evt =>
+            {
+                var filterPreset = evt.newValue as SearchableListFilterPreset;
+                SetFilterPreset(filterPreset);
+            });
+            
+
+            var newFilterPresetButton = new Button();
+            newFilterPresetButton.text = "+";
+            newFilterPresetButton.clicked += () =>
+            {
+                var fileName = m_SearchField.value.Replace(':', '_');
+                var path = EditorUtility.SaveFilePanel("Create a SearchableListFilterPreset", "Assets", "FilterPreset_"+fileName, "asset");
+                if (path.Length != 0 && Application.dataPath.Length < path.Length) {
+                    var obj = ScriptableObject.CreateInstance<SearchableListFilterPreset>();
+                    
+                    obj.SearchString = m_SearchField.value;
+                    obj.SortOptionIndex = m_SortOptionsDropDown.index;
+                    
+                    // Save the object asset.
+                    path = string.Format("Assets/{0}", path.Substring(Application.dataPath.Length + 1));
+                    AssetDatabase.DeleteAsset(path);
+                    AssetDatabase.CreateAsset(obj, path);
+                    AssetDatabase.ImportAsset(path);
+
+                    m_FilterPresetField.value = obj;
+                }
+            };
+            filterPresetContainer.Add(m_FilterPresetField);
+            filterPresetContainer.Add(newFilterPresetButton);
+           
+            
             var searchSortContainer = new VisualElement();
             searchSortContainer.AddToClassList(CommonStyles.s_SearchList_SearchSortContainer);
             m_SearchField = new ToolbarSearchField();
@@ -105,18 +173,49 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
             m_ReorderableList.Refresh(m_ItemSourceCopy);
             Add(m_ReorderableList);
 
+            //m_ReorderableList.Add(filterPresetContainer);
+            //filterPresetContainer.PlaceBehind(m_ReorderableList.Q("body"));
+            
+            searchSortContainer.Add(filterPresetContainer);
+            
             m_ReorderableList.Add(searchSortContainer);
             searchSortContainer.PlaceBehind(m_ReorderableList.Q("body"));
 
+            SetFilterPreset(StoredSearchableListFilterPreset);
+            
             Refresh();
+        }
+
+        private void SetFilterPreset(SearchableListFilterPreset filterPreset)
+        {
+            m_FilterPresetField.SetValueWithoutNotify(filterPreset);
+            
+            if (filterPreset != null) {
+                m_SearchField.value = filterPreset.SearchString;
+                if (m_SortOptions.Count > 0) {
+                    var sortOptionIndex = filterPreset.SortOptionIndex < 0 ? 0 :
+                        filterPreset.SortOptionIndex >= m_SortOptions.Count ? m_SortOptions.Count - 1 :
+                        filterPreset.SortOptionIndex;
+                    m_SortOptionsDropDown.value = m_SortOptions[sortOptionIndex];
+                }
+            }
+
+            StoredSearchableListFilterPreset = filterPreset;
+            SearchSortRefresh(m_PreviousSearch);
         }
 
         /// <summary>
         /// Clears the search and refreshes.
         /// </summary>
-        public void ClearSearch()
+        public void ClearSearch(bool usePreset)
         {
-            m_SearchField.SetValueWithoutNotify((string)null);
+            var FilterPreset = m_FilterPresetField.value as SearchableListFilterPreset;
+            if (!usePreset || FilterPreset == null) {
+                m_SearchField.SetValueWithoutNotify((string)null);
+            } else {
+                m_SearchField.SetValueWithoutNotify(FilterPreset.SearchString);
+            }
+            
             SearchAndSort(null);
         }
 
@@ -244,14 +343,32 @@ namespace Opsive.UltimateInventorySystem.Editor.VisualElements
         {
             if (string.IsNullOrWhiteSpace(searchValue) == false && searchFilter != null) {
                 var filteredList = searchFilter.Invoke(fullSource, searchValue);
-                for (int i = 0; i < filteredList.Count; ++i) {
-                    subSource.Add(filteredList[i]);
-                }
+                FilterWithPreset(subSource, filteredList, m_FilterPresetField.value as SearchableListFilterPreset);
             } else if (fullSource != null) {
-                for (int i = 0; i < fullSource.Count; ++i) {
-                    subSource.Add(fullSource[i]);
+                FilterWithPreset(subSource, fullSource, m_FilterPresetField.value as SearchableListFilterPreset);
+            }
+        }
+
+        /// <summary>
+        /// Function used to filter a list using the preset.
+        /// </summary>
+        /// <param name="subSource">he filtered list.</param>
+        /// <param name="list">The full lists of objects.</param>
+        /// <param name="filterPreset">The filter preset object.</param>
+        protected void FilterWithPreset(IList subSource, IList<T> list, SearchableListFilterPreset filterPreset)
+        {
+            if (filterPreset == null) {
+                for (int i = 0; i < list.Count; ++i) {
+                    subSource.Add(list[i]);
+                }
+            } else {
+                for (int i = 0; i < list.Count; ++i) {
+                    if (filterPreset.IsValid(list[i])) {
+                        subSource.Add(list[i]);
+                    }
                 }
             }
+            
         }
 
         /// <summary>

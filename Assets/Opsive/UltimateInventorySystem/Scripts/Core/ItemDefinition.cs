@@ -675,6 +675,16 @@ namespace Opsive.UltimateInventorySystem.Core
         public override ItemDefinitionBase GetParent() { return m_Parent; }
 
         /// <summary>
+        /// Check if the item definition contains the item.
+        /// </summary>
+        /// <param name="itemIdentifier">The item to check if it is contained in the definition.</param>
+        /// <returns>Returns true if the item is part of the definition.</returns>
+        public override bool InherentlyContains(IItemIdentifier itemIdentifier)
+        {
+            return InherentlyContains(itemIdentifier as Item);
+        }
+
+        /// <summary>
         /// Returns the category of the current identifier.
         /// </summary>
         /// <returns>The category of the current identifier. Can be null.</returns>

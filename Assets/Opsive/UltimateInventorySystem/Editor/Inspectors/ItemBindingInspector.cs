@@ -20,7 +20,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     public class ItemBindingInspector : DatabaseInspectorBase
     {
         protected const string c_ItemCategoryPropertyName = "m_ItemCategory";
-        protected override List<string> PropertiesToExclude => new List<string>() { c_ItemCategoryPropertyName };
+        protected override List<string> ExcludedFields => new List<string>() { c_ItemCategoryPropertyName };
 
         protected ItemBinding m_ItemBinding;
         protected ItemCategoryAttributeBindingView m_ItemCategoryAttributeBindingView;
@@ -40,7 +40,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
 
             m_SelectedContainer = new VisualElement();

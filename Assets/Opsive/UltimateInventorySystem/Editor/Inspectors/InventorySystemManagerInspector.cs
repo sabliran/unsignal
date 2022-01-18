@@ -23,7 +23,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(InventorySystemManager), true)]
     public class InventorySystemManagerInspector : InspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { "m_Database" };
+        protected override List<string> ExcludedFields => new List<string>() { "m_Database" };
         protected ObjectField m_DatabaseField;
         protected InventorySystemManager m_InventorySystemManager;
 
@@ -331,7 +331,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the Inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             var horizontalLayout = new VisualElement();
             horizontalLayout.AddToClassList("horizontal-layout");

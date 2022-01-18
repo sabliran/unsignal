@@ -12,28 +12,30 @@ namespace Opsive.UltimateInventorySystem.UI.Views
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEngine.Serialization;
+    using Shared.Utility;
+    
 
     /// <summary>
     /// The base class for a box drawer.
     /// </summary>
     public abstract class ViewDrawerBase : MonoBehaviour
     {
-        [FormerlySerializedAs("m_UseViewParent")]
-        [FormerlySerializedAs("m_UseBoxParent")]
+        [UnityEngine.Serialization.FormerlySerializedAs("m_UseViewParent")]
+        [UnityEngine.Serialization.FormerlySerializedAs("m_UseBoxParent")]
         [Tooltip("If use box parent is true the Item Viewes will each be spawned under the next available box parent under this game object. If false they will spawn under this game object.")]
         [SerializeField] protected bool m_UseViewSlot = true;
-        [FormerlySerializedAs("m_DisableViewParentImageComponent")]
-        [FormerlySerializedAs("m_DisableBoxParentImageComponent")]
+        [UnityEngine.Serialization.FormerlySerializedAs("m_DisableViewParentImageComponent")]
+        [UnityEngine.Serialization.FormerlySerializedAs("m_DisableBoxParentImageComponent")]
         [Tooltip("Disables the parent box image component so that it may be used as to preview the grid in the editor, but not affect the boxes in game.")]
         [SerializeField] protected bool m_DisableViewSlotImageComponent = true;
         [Tooltip("Content Transform where the Item Viewes or there parents reside.")]
         [SerializeField] protected Transform m_Content;
-        [FormerlySerializedAs("m_RemoveItemViewsOnInitialize")]
-        [FormerlySerializedAs("m_RemoveItemBoxesOnInitialize")]
+        [UnityEngine.Serialization.FormerlySerializedAs("m_RemoveItemViewsOnInitialize")]
+        [UnityEngine.Serialization.FormerlySerializedAs("m_RemoveItemBoxesOnInitialize")]
         [Tooltip("Initialize this component on start?.")]
         [SerializeField] protected bool m_RemoveViewsOnInitialize = true;
-        [FormerlySerializedAs("m_DrawEmptyItemViewsOnInitialize")]
-        [FormerlySerializedAs("m_DrawEmptyBoxesOnInitialize")]
+        [UnityEngine.Serialization.FormerlySerializedAs("m_DrawEmptyItemViewsOnInitialize")]
+        [UnityEngine.Serialization.FormerlySerializedAs("m_DrawEmptyBoxesOnInitialize")]
         [Tooltip("Draw Empty boxes when initialized?.")]
         [SerializeField] protected bool m_DrawEmptyViewsOnInitialize = true;
 

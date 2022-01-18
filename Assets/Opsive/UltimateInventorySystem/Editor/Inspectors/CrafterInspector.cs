@@ -13,6 +13,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     using Opsive.UltimateInventorySystem.Utility;
     using System;
     using System.Collections.Generic;
+    using Opsive.Shared.Utility;
     using UnityEditor;
     using UnityEngine;
     using UnityEngine.UIElements;
@@ -23,7 +24,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(Crafter), true)]
     public class CrafterInspector : DatabaseInspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { "m_CraftingProcessorData", "m_MiscellaneousRecipes", "m_CraftingCategories" };
+        protected override List<string> ExcludedFields => new List<string>() { "m_CraftingProcessorData", "m_MiscellaneousRecipes", "m_CraftingCategories" };
 
         protected Crafter m_Crafter;
         protected CraftingCategoryReorderableList m_CraftingCategoryReorderableList;
@@ -57,7 +58,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             if (Application.isPlaying == false) {
                 m_Crafter.Deserialize();
@@ -128,8 +129,8 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         private void DrawProcessorFields()
         {
             m_ProcessorContainer.Clear();
-            FieldInspectorView.ShowFields(m_Crafter.gameObject, m_CraftingProcessor, Shared.Utility.MemberVisibility.Public,
-                m_ProcessorContainer, null, (object obj) => { ProcessorValueChanged(); }, null, true, null);
+            FieldInspectorView.AddFields(m_Crafter.gameObject, m_CraftingProcessor, Shared.Utility.MemberVisibility.Public,
+                m_ProcessorContainer, (object obj) => { ProcessorValueChanged(); }, null, true, null);
         }
 
         private void ProcessorValueChanged()

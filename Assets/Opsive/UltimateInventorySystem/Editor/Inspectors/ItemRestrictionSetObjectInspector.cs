@@ -14,10 +14,10 @@
     [CustomEditor(typeof(ItemRestrictionSetObject), true)]
     public class ItemRestrictionSetObjectInspector : DatabaseInspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() {"m_Restriction"};
+        protected override List<string> ExcludedFields => new List<string>() {"m_Restriction"};
 
         private ItemRestrictionSetObject m_ItemRestrictionSetObject;
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             m_ItemRestrictionSetObject = target as ItemRestrictionSetObject;
 
@@ -37,8 +37,6 @@
         }
     }
 
-    
-    
     public class ItemRestrictionReorderableList : VisualElement
     {
         public event Action<List<IItemRestriction>> OnValueChangedE;
@@ -244,12 +242,12 @@
                     -1, m_ItemRestriction.GetType(),
                     label, string.Empty, true,
                     m_ItemRestriction,
-                    m_Container, null,
+                    m_Container,
                     (object obj) =>
                     {
                         m_ItemRestriction = obj as IItemRestriction;
                         OnValueChanged?.Invoke(m_ItemRestriction);
-                    }, null, null, InventorySystemDatabase);
+                    }, null, false, null, null, InventorySystemDatabase);
             }
         }
     }

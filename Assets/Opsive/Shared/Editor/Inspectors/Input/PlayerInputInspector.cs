@@ -42,7 +42,7 @@ namespace Opsive.Shared.Editor.Inspectors.Input
             EditorGUI.BeginChangeCheck();
 #endif
 
-            EditorGUILayout.PropertyField(PropertyFromName("m_HorizontalLookInputName"));
+                EditorGUILayout.PropertyField(PropertyFromName("m_HorizontalLookInputName"));
                 EditorGUILayout.PropertyField(PropertyFromName("m_VerticalLookInputName"));
                 var lookVector = PropertyFromName("m_LookVectorMode");
                 EditorGUILayout.PropertyField(lookVector);

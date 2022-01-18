@@ -23,7 +23,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(ItemObject), true)]
     public class ItemObjectInspector : DatabaseInspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { c_ItemPropertyName };
+        protected override List<string> ExcludedFields => new List<string>() { c_ItemPropertyName };
 
         protected const string c_ItemPropertyName = "m_ItemInfo";
 
@@ -47,7 +47,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
 
             m_AmountField = new IntegerField("Amount");

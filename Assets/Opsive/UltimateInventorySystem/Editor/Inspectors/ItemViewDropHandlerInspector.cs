@@ -9,6 +9,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     using Opsive.UltimateInventorySystem.Editor.VisualElements;
     using Opsive.UltimateInventorySystem.UI.Item.DragAndDrop;
     using System.Collections.Generic;
+    using Opsive.Shared.Editor.UIElements;
     using UnityEditor;
     using UnityEngine.UIElements;
 
@@ -18,7 +19,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(ItemViewDropHandler), true)]
     public class ItemViewDropHandlerInspector : InspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { "m_ItemViewSlotDropActionSet" };
+        protected override List<string> ExcludedFields => new List<string>() { "m_ItemViewSlotDropActionSet" };
 
         protected ItemViewDropHandler m_ItemViewDropHandler;
         protected VisualElement m_InnerContainer;
@@ -39,7 +40,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             m_InnerContainer = new VisualElement();
             container.Add(m_InnerContainer);

@@ -54,6 +54,14 @@ MonoBehaviour:
       m_UnityObjects:
       - {fileID: -1989100132555051953, guid: 12ab13dfdcd42254db7df2308b7102b1, type: 3}
       m_Version: 3.1
+    - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[Opsive.UltimateInventorySystem.Core.ItemDefinition,
+        Opsive.UltimateInventorySystem, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
+      m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4a0c90d91e5062738b
+      m_ValuePositions: 000000001500000016000000160000001a0000001a0000001e00000022000000
+      m_Values: 4372616674696e674974656d436f6c6c6574696f6e0100000000ae797c50ffffffff00000000
+      m_UnityObjects:
+      - {fileID: 11400000, guid: ab34bf49744c9c645b5d53283bff187c, type: 2}
+      m_Version: 3.1
   m_RequiredItemDefinitionAttributes:
     m_AttributeCollectionData:
     - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[UnityEngine.Sprite,

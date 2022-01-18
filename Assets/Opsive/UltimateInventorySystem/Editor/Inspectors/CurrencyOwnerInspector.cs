@@ -22,7 +22,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(CurrencyOwner), true)]
     public class CurrencyOwnerInspector : DatabaseInspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { c_CurrencyAmountPropertyName };
+        protected override List<string> ExcludedFields => new List<string>() { c_CurrencyAmountPropertyName };
 
         protected const string c_CurrencyAmountPropertyName = "m_CurrencyAmount";
 
@@ -49,7 +49,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Creat the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
 
             m_SelectedContainer = new VisualElement();

@@ -472,6 +472,27 @@ namespace Opsive.UltimateInventorySystem.Editor.Utility
             return ManagerUtility.SearchFilter(list, searchValue,
                 new (string prefix, Func<string, ItemCategory, bool>)[]
                 {
+                    //Search by category.
+                    ("c:",(searchWord, itemCategory) =>{
+                        // Case insensitive Contains(string).
+                        for (int i = 0; i < itemCategory.Parents.Count; i++) {
+                            if (compareInfo.IndexOf(itemCategory.Parents[i].name, searchWord,
+                                CompareOptions.IgnoreCase) >= 0) { return true; }
+                        }
+                        
+                        return false;
+                    }),
+                    ("i:",(searchWord, itemCategory) =>{
+                        // Case insensitive Contains(string).
+                        var ancestorCategories = new ItemCategory[0];
+                        var ancestorsCount = itemCategory.GetAllParents(ref ancestorCategories, true);
+                        for (int i = 0; i < ancestorsCount; i++) {
+                            if (compareInfo.IndexOf(ancestorCategories[i].name, searchWord,
+                                CompareOptions.IgnoreCase) >= 0) { return true; }
+                        }
+                        
+                        return false;
+                    }),
                     ("a:", (searchWord, category) =>
                     {
                         var allAttributesCount = category.GetAttributesCount();

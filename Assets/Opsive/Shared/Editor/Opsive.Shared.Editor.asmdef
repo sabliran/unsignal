@@ -1,9 +1,9 @@
 {
     "name": "Opsive.Shared.Editor",
     "references": [
-        "Opsive.Shared"
+        "Opsive.Shared",
+        "Unity.TextMeshPro"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [
         "Editor"
     ],
@@ -13,5 +13,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": []
+    "versionDefines": [],
+    "noEngineReferences": false
 }

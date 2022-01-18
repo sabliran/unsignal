@@ -10,6 +10,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     using Opsive.UltimateInventorySystem.UI.DataContainers;
     using Opsive.UltimateInventorySystem.UI.Item.ItemViewModules;
     using System.Collections.Generic;
+    using Opsive.Shared.Editor.UIElements;
     using UnityEditor;
     using UnityEngine.UIElements;
 
@@ -19,7 +20,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     [CustomEditor(typeof(CategoryAttributeViewSetItemViewModule), true)]
     public class CategoryAttributeViewSetItemViewModuleInspector : InspectorBase
     {
-        protected override List<string> PropertiesToExclude => new List<string>() { "m_CategoryAttributeViewSet" };
+        protected override List<string> ExcludedFields => new List<string>() { "m_CategoryAttributeViewSet" };
 
         protected CategoryAttributeViewSetItemViewModule m_CategoryAttributeViewSetItemViewModule;
         protected ObjectFieldWithNestedInspector<CategoryAttributeViewSet, CategoryAttributeViewSetInspector>
@@ -39,7 +40,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
             m_CategoryAttributeBoxSet = new ObjectFieldWithNestedInspector
                 <CategoryAttributeViewSet, CategoryAttributeViewSetInspector>(

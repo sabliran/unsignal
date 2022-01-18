@@ -30,6 +30,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Styles
 
         public static readonly string s_SearchList = "search-list";
         public static readonly string s_SearchList_SearchSortContainer = "search-list__search-sort-container";
+        public static readonly string s_SearchList_FilterPresetContainer = "search-list__filter-preset-container";
 
         public static readonly string s_ObjectPreview = "object-preview";
         public static readonly string s_ObjectPreviewSmall = "object-preview-small";

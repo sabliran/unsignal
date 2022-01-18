@@ -25,7 +25,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
     {
         protected const string c_Slots = "m_Slots";
 
-        protected override List<string> PropertiesToExclude => new List<string>() { c_Slots, "m_ItemSlotSet" };
+        protected override List<string> ExcludedFields => new List<string>() { c_Slots, "m_ItemSlotSet" };
 
         protected virtual HashSet<string> ItemObjectSlotExclude => new HashSet<string>
             {"m_Name", "m_Category", "m_IsSkinnedEquipment", "m_Transform", "m_ItemObject"};
@@ -55,7 +55,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// Create the inspector.
         /// </summary>
         /// <param name="container">The parent container.</param>
-        protected override void CreateInspector(VisualElement container)
+        protected override void ShowFooterElements(VisualElement container)
         {
 
             m_ItemSetSlotField = new ObjectField("Item Slot Set");
@@ -155,9 +155,9 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
                 m_List, null, -1, m_List[index].GetType(),
                 "More Options", string.Empty, true,
                 m_List[index],
-                m_HideObjectsField, null,
+                m_HideObjectsField,
                 (object obj) => { OnValueChanged(); }
-                , null, ItemObjectSlotExclude);
+                , null, false, null, ItemObjectSlotExclude);
         }
 
         /// <summary>

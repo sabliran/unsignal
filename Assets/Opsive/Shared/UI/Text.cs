@@ -9,7 +9,7 @@
     [Serializable]
     public struct Text
     {
-        [Header("Select either Unity UI Text or TextMesh Pro Text.")]
+        //[Header("Select either Unity UI Text or TextMesh Pro Text.")]
         [Tooltip("Unity Engine UI Text.")]
         [SerializeField] private UnityEngine.UI.Text m_UnityText;
 

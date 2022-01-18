@@ -42,7 +42,7 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
         /// </summary>
         /// <param name="parent">The parent container.</param>
         /// <param name="nested">Is the inspector nested?.</param>
-        public override void DrawInOrder(VisualElement parent, bool nested = false)
+        public override void DrawElements(VisualElement parent, bool nested = false)
         {
             m_Content = new VisualElement();
 
@@ -101,10 +101,10 @@ namespace Opsive.UltimateInventorySystem.Editor.Inspectors
             }
 
             if (target != null) {
-                m_Content.Add(UIElementsUtility.CreateUIElementInspectorGUI(serializedObject, PropertiesToExclude));
+                m_Content.Add(UIElementsUtility.CreateUIElementInspectorGUI(serializedObject, ExcludedFields));
             }
 
-            CreateInspector(m_Content);
+            ShowFooterElements(m_Content);
         }
 
         /// <summary>
