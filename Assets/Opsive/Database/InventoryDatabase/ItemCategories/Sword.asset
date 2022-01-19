@@ -25,21 +25,20 @@ MonoBehaviour:
   m_ChildrenData:
     m_ObjectType: Opsive.Shared.Utility.ResizableArray`1[[Opsive.UltimateInventorySystem.Core.ItemCategory,
       Opsive.UltimateInventorySystem, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
-    m_ValueHashes: 4c1e4f8eedcfa327
-    m_ValuePositions: 0000000004000000
-    m_Values: 0000000000000000
-    m_UnityObjects: []
+    m_ValueHashes: 4c1e4f8eedcfa3275d5b8146
+    m_ValuePositions: 000000000400000008000000
+    m_Values: 010000000100000000000000
+    m_UnityObjects:
+    - {fileID: 11400000, guid: af4f38da089e9b646bd59e0454236f4a, type: 2}
     m_Version: 3.1
   m_ElementsData:
     m_ObjectType: Opsive.Shared.Utility.ResizableArray`1[[Opsive.UltimateInventorySystem.Core.ItemDefinition,
       Opsive.UltimateInventorySystem, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
-    m_ValueHashes: 4c1e4f8ec233006407c1b58994c2b589e1ccb589
-    m_ValuePositions: 0000000004000000080000000c00000010000000
-    m_Values: 0300000003000000000000000100000002000000
+    m_ValueHashes: 4c1e4f8ec233006407c1b589
+    m_ValuePositions: 000000000400000008000000
+    m_Values: 010000000100000000000000
     m_UnityObjects:
-    - {fileID: 11400000, guid: 78ccf8c60fb37d94eb57226e61f8fc1c, type: 2}
-    - {fileID: 11400000, guid: 8907dc4bea1234b49a8e2a2c21f2862f, type: 2}
-    - {fileID: 11400000, guid: f4919de35be391847a4ce6be9ef831c1, type: 2}
+    - {fileID: 11400000, guid: fa391cef14a6319478d67d19315271d2, type: 2}
     m_Version: 3.1
   m_IsAbstract: 0
   m_Color: {r: 0.8784314, g: 0.36862752, b: 0.54412395, a: 1}

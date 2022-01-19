@@ -33,11 +33,10 @@ MonoBehaviour:
   m_ElementsData:
     m_ObjectType: Opsive.Shared.Utility.ResizableArray`1[[Opsive.UltimateInventorySystem.Core.ItemDefinition,
       Opsive.UltimateInventorySystem, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
-    m_ValueHashes: 4c1e4f8ec233006407c1b589
-    m_ValuePositions: 000000000400000008000000
-    m_Values: 010000000100000000000000
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 444cb364949893d42ba24bce4e2d1a00, type: 2}
+    m_ValueHashes: 4c1e4f8ec2330064
+    m_ValuePositions: 0000000004000000
+    m_Values: 0000000000000000
+    m_UnityObjects: []
     m_Version: 3.1
   m_IsAbstract: 0
   m_Color: {r: 0.5981997, g: 0.48900855, b: 0.9339623, a: 1}

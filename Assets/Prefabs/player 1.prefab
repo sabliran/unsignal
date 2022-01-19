@@ -6872,7 +6872,7 @@ MonoBehaviour:
   - {x: -0.08633963, y: -0.36756778, z: 0}
   m_ShapePathHash: 2032777848
   m_Mesh: {fileID: 0}
-  m_InstanceId: -30994
+  m_InstanceId: -2474
 --- !u!114 &443040101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7007,9 +7007,21 @@ MonoBehaviour:
   m_ItemCollectionRestrictionObjects: []
   m_ItemCollectionData:
   - m_ObjectType: Opsive.UltimateInventorySystem.Core.InventoryCollections.ItemCollection
-    m_ValueHashes: 0d00eb25b769d11d5030ac3edb08b6c93edd1331719c8809
-    m_ValuePositions: 000000000f0000000f000000130000001400000014000000
-    m_Values: 4974656d436f6c6c656374696f6e30010000000000000000
+    m_ValueHashes: 0d00eb25b769d11d5030ac3ef1f5543f666e77ff063d5314aacf0d993edd1331719c8809
+    m_ValuePositions: 0000000007000000070000000b0000000b0000000c0000000d0000001100000011000000
+    m_Values: 576561706f6e73010000000001ffffffff00000000
+    m_UnityObjects: []
+    m_Version: 3.1
+  - m_ObjectType: Opsive.UltimateInventorySystem.Core.InventoryCollections.ItemCollection
+    m_ValueHashes: 0d00eb25b769d11d5030ac3ef1f5543f666e77ff063d5314aacf0d993edd1331719c8809
+    m_ValuePositions: 0000000008000000080000000c0000000c0000000d0000000e0000001200000012000000
+    m_Values: 4372616674696e67010000000001ffffffff00000000
+    m_UnityObjects: []
+    m_Version: 3.1
+  - m_ObjectType: Opsive.UltimateInventorySystem.Core.InventoryCollections.ItemCollection
+    m_ValueHashes: 0d00eb25b769d11d5030ac3ef1f5543f666e77ff063d5314aacf0d993edd1331719c8809
+    m_ValuePositions: 0000000007000000070000000b0000000b0000000c0000000d0000001100000011000000
+    m_Values: 506f74696f6e73010000000001ffffffff00000000
     m_UnityObjects: []
     m_Version: 3.1
 --- !u!114 &443040108

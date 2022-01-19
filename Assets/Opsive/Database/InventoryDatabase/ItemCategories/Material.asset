@@ -34,19 +34,14 @@ MonoBehaviour:
   m_ElementsData:
     m_ObjectType: Opsive.Shared.Utility.ResizableArray`1[[Opsive.UltimateInventorySystem.Core.ItemDefinition,
       Opsive.UltimateInventorySystem, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
-    m_ValueHashes: 4c1e4f8ec233006407c1b58994c2b589e1ccb5896eceb589fbcfb58948c9b589d5cab58922d4b589afd5b589
-    m_ValuePositions: 0000000004000000080000000c0000001000000014000000180000001c000000200000002400000028000000
-    m_Values: 0900000009000000000000000100000002000000030000000400000005000000060000000700000008000000
+    m_ValueHashes: 4c1e4f8ec233006407c1b58994c2b589e1ccb5896eceb589
+    m_ValuePositions: 0000000004000000080000000c0000001000000014000000
+    m_Values: 040000000400000000000000010000000200000003000000
     m_UnityObjects:
-    - {fileID: 11400000, guid: ba6abe33a796feb45a317f53752dcd14, type: 2}
-    - {fileID: 11400000, guid: 7416d9c36eb6d074abd83dcb147b68d3, type: 2}
-    - {fileID: 11400000, guid: c204b925938ff574da6df2acf5af7929, type: 2}
-    - {fileID: 11400000, guid: c37939f61f4cf5f4ba6ed43410648f90, type: 2}
-    - {fileID: 11400000, guid: 65ce652aeeefd84428b69b605a5026e4, type: 2}
-    - {fileID: 11400000, guid: 0576a2d0626b0cc4d89c3de025ac3f18, type: 2}
-    - {fileID: 11400000, guid: a6dabf62ee675ad429abd63dc9d62e92, type: 2}
     - {fileID: 11400000, guid: ab34bf49744c9c645b5d53283bff187c, type: 2}
     - {fileID: 11400000, guid: f1ca3ed3c0bb24b4992e31ce50cbba10, type: 2}
+    - {fileID: 11400000, guid: 08e4d064b0e0bdf47917d101ed1c3563, type: 2}
+    - {fileID: 11400000, guid: 1fbec0ea69fc9194f86ad7ab941f16e5, type: 2}
     m_Version: 3.1
   m_IsAbstract: 0
   m_Color: {r: 0.5166907, g: 0.35686275, b: 0.5372549, a: 1}
