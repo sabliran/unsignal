@@ -45,8 +45,10 @@ public class playerscript : MonoBehaviour
     private bool faceRight;
     private float bulletDecay = 2;
     public bool damaged;
-    public int maxHealth = 1000;
-    public int currentHealth;
+    
+    [SerializeField] protected int currentHealth;
+    [SerializeField] protected int maxHealth;
+
     public HealthBar healthBar;
     public float countdown = 1.0f;
     public GameObject pointLight;
@@ -91,6 +93,9 @@ public class playerscript : MonoBehaviour
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
     }
     private void OnEnable() {
         playerControls.Enable();
@@ -102,8 +107,7 @@ public class playerscript : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+       
         dashTime = startDashTime;
         animator = GetComponent<Animator>();
         ActiveMap = false;
@@ -398,14 +402,18 @@ public class playerscript : MonoBehaviour
     } //--------------------------------------------------------------------------UPDATE END---------------------------------------------
 
 
-  
+
+
+    public void Heal(int amount)
+    {
+        if(amount <= 0) { return; }
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+    }
 
 
 
 
-
-
-// play particle function
+    // play particle function
     void CreateDust()
     {
         dust.Play();
@@ -429,15 +437,7 @@ public class playerscript : MonoBehaviour
         }
     }
 
-    void restoreTest(int damage)
-    {
-    if (currentHealth < 999)
-    {
-        currentHealth += damage; 
-        
-        healthBar.SetHealth(currentHealth);
-    }
-    }
+ 
 
     public void HandleJump()
     {
@@ -556,7 +556,7 @@ public class playerscript : MonoBehaviour
 
             if (collision.gameObject.tag == "GreenLight")
             {  
-                restoreTest(2);
+                Heal(2);
             }
 
 

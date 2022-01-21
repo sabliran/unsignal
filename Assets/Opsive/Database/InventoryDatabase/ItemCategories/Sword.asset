@@ -38,7 +38,7 @@ MonoBehaviour:
     m_ValuePositions: 000000000400000008000000
     m_Values: 010000000100000000000000
     m_UnityObjects:
-    - {fileID: 11400000, guid: fa391cef14a6319478d67d19315271d2, type: 2}
+    - {fileID: 11400000, guid: d9b6039879bbe7341b8e34381bc6a35c, type: 2}
     m_Version: 3.1
   m_IsAbstract: 0
   m_Color: {r: 0.8784314, g: 0.36862752, b: 0.54412395, a: 1}

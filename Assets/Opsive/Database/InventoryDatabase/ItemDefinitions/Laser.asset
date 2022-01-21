@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53ac5fa5da8102b468a92c21620db0d0, type: 3}
-  m_Name: Laser Beam
+  m_Name: Laser
   m_EditorClassIdentifier: 
-  m_ID: 2504524718
+  m_ID: 716122058
   m_Category: {fileID: 11400000, guid: 6964159d5232fd242b05ea27ea716cca, type: 2}
   m_Parent: {fileID: 0}
   m_ChildrenData:
@@ -29,55 +29,54 @@ MonoBehaviour:
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
       m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4aaf0255e0f3d4ee4c
       m_ValuePositions: 0000000004000000050000000500000009000000090000000d00000011000000
-      m_Values: 49636f6e01010000001dee1a8f0000000001000000
+      m_Values: 49636f6e01010000001dbaccb90000000001000000
       m_UnityObjects:
-      - {fileID: 2468866099839556514, guid: ae3c0234126ba2d46917104384483873, type: 3}
-      - {fileID: 2468866099839556514, guid: ae3c0234126ba2d46917104384483873, type: 3}
+      - {fileID: 6718159479393042824, guid: fff04ad5aa7ebfa438028680324b7f62, type: 3}
+      - {fileID: 6718159479393042824, guid: fff04ad5aa7ebfa438028680324b7f62, type: 3}
       m_Version: 3.1
     - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[System.String,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
       m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4a95fdf7a7d9cf9114
-      m_ValuePositions: 000000000b0000000c0000000c00000010000000100000001400000014000000
-      m_Values: 4465736372697074696f6e010000000019e7aa4854686973204974656d204465736372697074696f6e206973206d697373696e672c20706c6561736520616464206974
+      m_ValuePositions: 000000000b0000000c0000000c0000001000000010000000140000001e000000
+      m_Values: 4465736372697074696f6e01010000002c5ac92a4c617365722042616c6c4c617365722042616c6c
       m_UnityObjects: []
       m_Version: 3.1
     - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
       m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4abbc6d22cff986c99
       m_ValuePositions: 000000000c0000000d0000000d00000011000000110000001500000019000000
-      m_Values: 5069636b75705072656661620101000000013f992d0000000001000000
+      m_Values: 5069636b75705072656661620101000000aebcbeb10000000001000000
       m_UnityObjects:
-      - {fileID: 882548848359959843, guid: 41006329074af0b489c875ddc5eda36e, type: 3}
-      - {fileID: 882548848359959843, guid: 41006329074af0b489c875ddc5eda36e, type: 3}
+      - {fileID: 0}
+      - {fileID: 0}
       m_Version: 3.1
     - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
       m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4abbc6d22cff986c99
       m_ValuePositions: 000000000f00000010000000100000001400000014000000180000001c000000
-      m_Values: 45717569706d656e745072656661620101000000541e2f5f0000000001000000
+      m_Values: 45717569706d656e745072656661620100000000b71b63ecffffffff00000000
       m_UnityObjects:
-      - {fileID: 882548848359959843, guid: 41006329074af0b489c875ddc5eda36e, type: 3}
-      - {fileID: 882548848359959843, guid: 41006329074af0b489c875ddc5eda36e, type: 3}
+      - {fileID: 8122421820918176137, guid: 4f9f02d76c9c5a445bd50b573e952150, type: 3}
       m_Version: 3.1
     - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
       m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4a424b280f861dc27b
       m_ValuePositions: 000000000a0000000b0000000b0000000f0000000f0000001300000017000000
-      m_Values: 4261736541747461636b01000000008ee548720000000005000000
+      m_Values: 4261736541747461636b0100000000745823b00000000005000000
       m_UnityObjects: []
       m_Version: 3.1
     - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[System.Int32,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
       m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4a424b280f861dc27b
       m_ValuePositions: 00000000090000000a0000000a0000000e0000000e0000001200000016000000
-      m_Values: 536c6f74436f756e740100000000defed8620000000002000000
+      m_Values: 536c6f74436f756e740100000000667cdb500000000002000000
       m_UnityObjects: []
       m_Version: 3.1
     - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[Opsive.UltimateInventorySystem.Exchange.CurrencyAmounts,
         Opsive.UltimateInventorySystem, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
       m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4a00874d324459e79ef550e43ba1bfe96bea49dfe97c5ef5ab
       m_ValuePositions: 000000000800000009000000090000000d0000000d000000110000001100000011000000150000001500000019000000
-      m_Values: 42757950726963650100000000a355d9a8010000000100000000000000
+      m_Values: 427579507269636501000000001ff14494010000000100000000000000
       m_UnityObjects:
       - {fileID: 11400000, guid: 3b4559fe4af5ae74a9a1c8c2b8daf839, type: 2}
       m_Version: 3.1
@@ -85,7 +84,7 @@ MonoBehaviour:
         Opsive.UltimateInventorySystem, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
       m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4a00874d324459e79ef550e43ba1bfe96bea49dfe97c5ef5ab
       m_ValuePositions: 00000000090000000a0000000a0000000e0000000e00000012000000120000001200000016000000160000001a000000
-      m_Values: 53656c6c50726963650100000000d31c00c1010000001400000000000000
+      m_Values: 53656c6c5072696365010000000083ee8ee0010000001400000000000000
       m_UnityObjects:
       - {fileID: 11400000, guid: 5f6419f58f82fff4cb9f33940189a698, type: 2}
       m_Version: 3.1
@@ -93,29 +92,28 @@ MonoBehaviour:
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
       m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4abbc6d22cff986c99
       m_ValuePositions: 000000001000000011000000110000001500000015000000190000001d000000
-      m_Values: 557361626c654974656d507265666162010100000082749b700000000001000000
+      m_Values: 557361626c654974656d50726566616201000000001efa44caffffffff00000000
       m_UnityObjects:
-      - {fileID: 882548848359959843, guid: 41006329074af0b489c875ddc5eda36e, type: 3}
-      - {fileID: 882548848359959843, guid: 41006329074af0b489c875ddc5eda36e, type: 3}
+      - {fileID: 6485169243707545675, guid: 94e041d9ae6badb4880da5dec901af44, type: 3}
       m_Version: 3.1
     - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[Opsive.UltimateInventorySystem.UI.Item.ItemShape,
         Opsive.UltimateInventorySystem, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
       m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4aa4e199aee8b3331b300c16a1fad0e67e614b5779a4e9e59e
       m_ValuePositions: 000000000500000006000000060000000a0000000a0000000e0000000e0000000e00000016000000170000001b000000
-      m_Values: 5368617065010000000072ae3ecf010000000300000000000000000000000000000000
+      m_Values: 536861706501000000007c8777c1010000000300000000000000000000000000000000
       m_UnityObjects: []
       m_Version: 3.1
     - m_ObjectType: Opsive.UltimateInventorySystem.Core.AttributeSystem.Attribute`1[[UnityEngine.Sprite,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
       m_ValueHashes: 0d00eb255b713f72086efd3934ebab2af446621ba8823c4aaf0255e0f3d4ee4c
       m_ValuePositions: 00000000090000000a0000000a0000000e0000000e0000001200000016000000
-      m_Values: 536861706549636f6e01000000004546ececffffffffffffffff
+      m_Values: 536861706549636f6e0100000000444a88f2ffffffffffffffff
       m_UnityObjects: []
       m_Version: 3.1
   m_DefaultItem:
-    m_ID: 2944648479
-    m_Name: Laser Beam
-    m_ItemDefinitionID: 2504524718
+    m_ID: 1714316426
+    m_Name: Laser
+    m_ItemDefinitionID: 716122058
     m_ItemDefinition: {fileID: 11400000}
     m_ItemAttributeCollection:
       m_AttributeCollectionData:
@@ -133,5 +131,4 @@ MonoBehaviour:
         m_Values: 41747461636b010000000070bf4e970000000005000000
         m_UnityObjects: []
         m_Version: 3.1
-  m_EditorIcon: {fileID: 2468866099839556514, guid: ae3c0234126ba2d46917104384483873,
-    type: 3}
+  m_EditorIcon: {fileID: 0}
