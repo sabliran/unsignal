@@ -50,15 +50,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 37e664090b47d9747b39198171c182bc, type: 2}
   - {fileID: 11400000, guid: 5f6419f58f82fff4cb9f33940189a698, type: 2}
   - {fileID: 11400000, guid: 3b4559fe4af5ae74a9a1c8c2b8daf839, type: 2}
-  m_CraftingRecipes:
-  - {fileID: 11400000, guid: cb7183ded901408458012779eb01ae5a, type: 2}
-  - {fileID: 11400000, guid: 5aa63269a4fc3ae4bb916c7df1efe84a, type: 2}
-  - {fileID: 11400000, guid: 1f58fdbc0f3629047ad13a9f9fdd0096, type: 2}
-  - {fileID: 11400000, guid: 7b4cc53d348c1ec478e1c00f92a6b18a, type: 2}
-  - {fileID: 11400000, guid: 27583a769c4139d48b89212a6e2529b6, type: 2}
-  - {fileID: 11400000, guid: ca1cf18e91060794f9ce867521190113, type: 2}
-  - {fileID: 11400000, guid: ae7a10d8ad27a2c46bbba81d9036df30, type: 2}
-  - {fileID: 11400000, guid: 3a3a4e158c75fb64d95217246faf2539, type: 2}
+  m_CraftingRecipes: []
   m_CraftingCategories:
   - {fileID: 11400000, guid: 41fab112bf37b8240ba336a83f7c179f, type: 2}
   - {fileID: 11400000, guid: a8acde77e1d6f124fbef8b220e2e5103, type: 2}

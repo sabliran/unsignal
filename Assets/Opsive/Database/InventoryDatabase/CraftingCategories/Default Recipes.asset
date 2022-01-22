@@ -33,14 +33,10 @@ MonoBehaviour:
   m_ElementsData:
     m_ObjectType: Opsive.Shared.Utility.ResizableArray`1[[Opsive.UltimateInventorySystem.Crafting.CraftingRecipe,
       Opsive.UltimateInventorySystem, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
-    m_ValueHashes: 4c1e4f8e29fdbde2a5e125e828e025e8bbe625e84ee525e8
-    m_ValuePositions: 0000000004000000080000000c0000001000000014000000
-    m_Values: 040000000400000000000000010000000200000003000000
-    m_UnityObjects:
-    - {fileID: 11400000, guid: cb7183ded901408458012779eb01ae5a, type: 2}
-    - {fileID: 11400000, guid: ca1cf18e91060794f9ce867521190113, type: 2}
-    - {fileID: 11400000, guid: 5aa63269a4fc3ae4bb916c7df1efe84a, type: 2}
-    - {fileID: 11400000, guid: 27583a769c4139d48b89212a6e2529b6, type: 2}
+    m_ValueHashes: 4c1e4f8e29fdbde2
+    m_ValuePositions: 0000000004000000
+    m_Values: 0000000000000000
+    m_UnityObjects: []
     m_Version: 3.1
   m_IsAbstract: 0
   m_Color: {r: 0.42958802, g: 0.90744865, b: 0.3922457, a: 1}
