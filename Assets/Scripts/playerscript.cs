@@ -46,8 +46,8 @@ public class playerscript : MonoBehaviour
     private float bulletDecay = 2;
     public bool damaged;
     
-    [SerializeField] protected int currentHealth;
-    [SerializeField] protected int maxHealth;
+    public static int currentHealth;
+    public int maxHealth;
 
     public HealthBar healthBar;
     public float countdown = 1.0f;
@@ -95,6 +95,7 @@ public class playerscript : MonoBehaviour
         col = GetComponent<Collider2D>();
 
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        
 
     }
     private void OnEnable() {
@@ -107,12 +108,14 @@ public class playerscript : MonoBehaviour
 
     void Start()
     {
-       
+        currentHealth = 1000;
+        healthBar.SetMaxHealth(maxHealth);
         dashTime = startDashTime;
         animator = GetComponent<Animator>();
         ActiveMap = false;
         // maximize fps
         Application.targetFrameRate = 300;
+
     }
     
 
@@ -537,16 +540,7 @@ public class playerscript : MonoBehaviour
             
         }
 
-        if (collision.gameObject.tag == "PuzzleCube")
-        {
-            print("puzzleCube touched");
-            
-            
-            SceneManager.LoadScene("1cubepuzzle");
-
-
-        }
-
+   
     }
     
         void OnTriggerStay2D(Collider2D collision)
@@ -556,7 +550,7 @@ public class playerscript : MonoBehaviour
 
             if (collision.gameObject.tag == "GreenLight")
             {  
-                Heal(2);
+                Heal(100);
             }
 
 

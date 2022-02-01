@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 public class teleporter : MonoBehaviour
 {
     public GameObject dialogueBox;
+    public LevelCheckScript lvlScriptCheck;
+    public GameObject net1;
+    public GameObject netw2;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -14,7 +17,7 @@ public class teleporter : MonoBehaviour
            
            dialogueBox.SetActive(true);
            
-            //SceneManager.LoadScene("SCENE");
+            
         }
 
  
@@ -28,7 +31,7 @@ public class teleporter : MonoBehaviour
             dialogueBox.SetActive(false);
         }
             
-
+            
         }
 
 
@@ -57,7 +60,17 @@ public class teleporter : MonoBehaviour
             SceneManager.LoadScene("Game");
         }
 
+    public void Update()
+    {
 
+        if (lvlScriptCheck.Network1 == true)
+        {
+            print("network2 true");
+            netw2.SetActive(true);
+
+
+        }
+    }
 
 
 }

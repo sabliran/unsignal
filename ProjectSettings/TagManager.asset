@@ -21,6 +21,7 @@ TagManager:
   - Wall
   - PuzzleCube
   - agoraEnterCollider
+  - LevelCheck
   layers:
   - Default
   - TransparentFX

@@ -45,7 +45,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 08e4d064b0e0bdf47917d101ed1c3563, type: 2}
   - {fileID: 11400000, guid: 1fbec0ea69fc9194f86ad7ab941f16e5, type: 2}
   - {fileID: 11400000, guid: fa391cef14a6319478d67d19315271d2, type: 2}
-  - {fileID: 11400000, guid: d9b6039879bbe7341b8e34381bc6a35c, type: 2}
   m_Currencies:
   - {fileID: 11400000, guid: 37e664090b47d9747b39198171c182bc, type: 2}
   - {fileID: 11400000, guid: 5f6419f58f82fff4cb9f33940189a698, type: 2}

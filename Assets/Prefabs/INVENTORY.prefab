@@ -36191,7 +36191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Key: 
-  m_SaveOnApplicationQuit: 0
+  m_SaveOnApplicationQuit: 1
   m_SaveOnDestroy: 1
   m_LoadOnStart: 1
   m_UsingNestedItems: 1
@@ -36210,10 +36210,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Key: 
   m_SaveOnApplicationQuit: 1
-  m_SaveOnDestroy: 0
+  m_SaveOnDestroy: 1
   m_LoadOnStart: 1
   m_TargetObject: {fileID: 0}
-  m_SavePosition: 1
+  m_SavePosition: 0
   m_SaveRotation: 0
   m_SaveScale: 0
   m_SaveActiveState: 0

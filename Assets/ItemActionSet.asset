@@ -25,11 +25,3 @@ MonoBehaviour:
       m_Values: 4465627567
       m_UnityObjects: []
       m_Version: 3.1
-    - m_ObjectType: Opsive.UltimateInventorySystem.ItemActions.QuantityDropItemAction
-      m_ValueHashes: 0d00eb2593d7e7b35bd71d43db7c171a5a77514593f00734
-      m_ValuePositions: 0000000004000000080000000c0000000d00000011000000
-      m_Values: 44726f7000000000010000000100000040000000000000000000000000
-      m_UnityObjects:
-      - {fileID: 0}
-      - {fileID: 6362288584643107232, guid: 99f2ccf6e56f42146ad63b866481f569, type: 3}
-      m_Version: 3.1
