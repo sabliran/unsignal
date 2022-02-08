@@ -6,17 +6,7 @@ public class LevelCheckScript : MonoBehaviour
 {
     public bool Network1;
     public bool Network2;
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            
-            Network1 = true;
-            Network2 = true;
-        }
-    }
-
-    
+    public bool Network3;
+    public bool Network4;
 
 }

@@ -84,7 +84,10 @@ public class playerscript : MonoBehaviour
 
     public bool ActivateButtonBool;
     public GameObject AgoraEnterText;
-   
+
+
+    public teleporter teleporterScript;
+
 
 
 
@@ -540,7 +543,31 @@ public class playerscript : MonoBehaviour
             
         }
 
-   
+        // Checking which Levels the player have visited =======================================================
+
+        if (collision.gameObject.tag == "LevelCheck1")
+        {
+            teleporterScript.Network1Bool = true;
+
+
+        }
+
+        if (collision.gameObject.tag == "LevelCheck2")
+        {
+            teleporterScript.Network2Bool = true;
+
+
+        }
+
+    
+
+
+
+
+
+
+        //======================================================================================================
+
     }
     
         void OnTriggerStay2D(Collider2D collision)
