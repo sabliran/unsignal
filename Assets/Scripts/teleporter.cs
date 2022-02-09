@@ -12,12 +12,16 @@ public class teleporter : MonoBehaviour
     public bool Network3Bool;
     public bool Network4Bool;
 
-    public Button net1Button;
+    /*public Button net1Button;
     public Button net2Button;
     public Button net3Button;
-    public Button net4Button;
+    public Button net4Button;*/
 
-    public GameObject network1Obj;
+    public Button network1Obj;
+    public Button network2Obj;
+    public Button network3Obj;
+    public Button network4Obj;
+
 
     
 
@@ -55,7 +59,7 @@ public class teleporter : MonoBehaviour
     //===================================================================================================
 
     
-    private void Awake()
+    public void Awake()
     {
         if (Tp != null)
             GameObject.Destroy(Tp);
@@ -63,11 +67,17 @@ public class teleporter : MonoBehaviour
             Tp = this;
 
         DontDestroyOnLoad(this);
+
+        network1Obj = GameObject.Find("INVENTORY/Inventory Canvas/Classic Schema Full Layout/Main Menu/Net1").GetComponent<Button>();
+        network2Obj = GameObject.Find("INVENTORY/Inventory Canvas/Classic Schema Full Layout/Main Menu/Net2").GetComponent<Button>();
+        network3Obj = GameObject.Find("INVENTORY/Inventory Canvas/Classic Schema Full Layout/Main Menu/Net3").GetComponent<Button>();
+        network4Obj = GameObject.Find("INVENTORY/Inventory Canvas/Classic Schema Full Layout/Main Menu/Net4").GetComponent<Button>();
+
+
     }
 
     private void Start()
     {
-        network1Obj = GameObject.Find("INVENTORY/Inventory Canvas/Classic Schema Full Layout/Main Menu/Net1");
     }
 
 
@@ -79,16 +89,18 @@ public class teleporter : MonoBehaviour
         if (Network1Bool == true)
         {
             print("network2 is ready");
+
+            //net2Button.interactable = true;
+            network2Obj.interactable = true;
             
-            UnityEngine.UI.Button button = GameObject.Find("INVENTORY/Inventory Canvas/Classic Schema Full Layout/Main Menu/Net2").GetComponent<UnityEngine.UI.Button>();
-            button.interactable = true;
         }
 
         if (Network2Bool == true)
         {
             print("network3 is ready");
-            
-            net3Button.interactable = true;
+
+            //net3Button.interactable = true;
+            network3Obj.interactable = true;
 
         }
 
@@ -96,7 +108,8 @@ public class teleporter : MonoBehaviour
         {
             print("network4 is ready");
             
-            net4Button.interactable = true;
+            //net4Button.interactable = true;
+            network4Obj.interactable = true;
 
 
         }
