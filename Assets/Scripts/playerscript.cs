@@ -34,13 +34,13 @@ public class playerscript : MonoBehaviour
     public Transform feetPos;
     public float checkRadius;
     [SerializeField] private LayerMask Ground;
-    
+    /*
     private float jumpTimeCounter;
     public float jumpTime;
-   
     public float jumpSpeed;
     public bool isJumping;
-  
+    public float JumpForce;
+*/
     public float projectileSpeed;
     private bool faceRight;
     private float bulletDecay = 2;
@@ -59,7 +59,7 @@ public class playerscript : MonoBehaviour
     private PlayerControls  playerControls;
     private Collider2D col;
     public LayerMask whatIsGround;
-    public float JumpForce;
+    
     public bool LazerOn;
     public bool AuraOn;
 
@@ -122,12 +122,12 @@ public class playerscript : MonoBehaviour
     }
     
 
-    public void OnJump()
+  /*  public void OnJump()
     {
         HandleJump();
     isJumping = true;
     
-    }
+    }*/
 
     public void OnActivateButton()
     {
@@ -333,7 +333,7 @@ public class playerscript : MonoBehaviour
 
 
 
-
+/*
         float jumpInput = playerControls.Player.Jump.ReadValue<float>();
         
         if(jumpInput == 1)
@@ -347,7 +347,7 @@ public class playerscript : MonoBehaviour
             animator.SetBool("isJumpingAnim", false);
         }
 
-
+*/
 
 
 
@@ -445,7 +445,7 @@ public class playerscript : MonoBehaviour
 
  
 
-    public void HandleJump()
+/*    public void HandleJump()
     {
         float Jumpfloat = playerControls.Player.Jump.ReadValue<float>();
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
@@ -481,7 +481,7 @@ public class playerscript : MonoBehaviour
 
 
     }
-
+*/
 
         
    
