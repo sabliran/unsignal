@@ -1127,6 +1127,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 273033886921552717, guid: 76d14bd5bebe3de438910d47feee7304,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.383
+      objectReference: {fileID: 0}
     - target: {fileID: 3003996885856966441, guid: 76d14bd5bebe3de438910d47feee7304,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1236,6 +1241,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769854354617289670, guid: 76d14bd5bebe3de438910d47feee7304,
+        type: 3}
+      propertyPath: jumpTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769854354617289670, guid: 76d14bd5bebe3de438910d47feee7304,
+        type: 3}
+      propertyPath: checkRadius
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7769854354617289670, guid: 76d14bd5bebe3de438910d47feee7304,
         type: 3}
@@ -82445,7 +82460,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 409.47336, y: 330.26642}
+  m_ConnectedAnchor: {x: 400.6624, y: 330.83682}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!50 &4831331086810344889
@@ -82706,7 +82721,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 410.16666, y: 356.74188}
+  m_ConnectedAnchor: {x: 401.35693, y: 357.358}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!50 &4831331087697943243
@@ -82931,7 +82946,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 409.9028, y: 383.31943}
+  m_ConnectedAnchor: {x: 401.09262, y: 383.98148}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!50 &4831331087896637087
@@ -83018,7 +83033,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 409.47333, y: 303.3667}
+  m_ConnectedAnchor: {x: 400.66238, y: 303.89066}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!222 &6437458053952438110
@@ -83066,7 +83081,7 @@ PrefabInstance:
     - target: {fileID: 8223290994716136988, guid: cfa4d0776037b0e429676fc92c74a064,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 87.189545
+      value: 87.19305
       objectReference: {fileID: 0}
     - target: {fileID: 8223290994716136988, guid: cfa4d0776037b0e429676fc92c74a064,
         type: 3}
@@ -83328,7 +83343,7 @@ PrefabInstance:
     - target: {fileID: 8994146394116243799, guid: dd47cd9fc69d4da47873a73b666d73bc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 87.189545
+      value: 87.19305
       objectReference: {fileID: 0}
     - target: {fileID: 8994146394116243799, guid: dd47cd9fc69d4da47873a73b666d73bc,
         type: 3}

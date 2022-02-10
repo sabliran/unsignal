@@ -34,13 +34,13 @@ public class playerscript : MonoBehaviour
     public Transform feetPos;
     public float checkRadius;
     [SerializeField] private LayerMask Ground;
-    /*
+    
     private float jumpTimeCounter;
     public float jumpTime;
+   
     public float jumpSpeed;
     public bool isJumping;
-    public float JumpForce;
-*/
+  
     public float projectileSpeed;
     private bool faceRight;
     private float bulletDecay = 2;
@@ -59,7 +59,7 @@ public class playerscript : MonoBehaviour
     private PlayerControls  playerControls;
     private Collider2D col;
     public LayerMask whatIsGround;
-    
+    public float JumpForce;
     public bool LazerOn;
     public bool AuraOn;
 
@@ -88,6 +88,7 @@ public class playerscript : MonoBehaviour
 
     public teleporter teleporterScript;
 
+    public float JumpInputController;
 
 
 
@@ -98,8 +99,9 @@ public class playerscript : MonoBehaviour
         col = GetComponent<Collider2D>();
 
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        
 
+
+       
     }
     private void OnEnable() {
         playerControls.Enable();
@@ -120,14 +122,19 @@ public class playerscript : MonoBehaviour
         Application.targetFrameRate = 300;
 
     }
-    
 
-  /*  public void OnJump()
+
+    public void OnJump()
     {
-        HandleJump();
-    isJumping = true;
-    
-    }*/
+        //HandleJump();
+        
+        if(jumpTimeCounter > 0)
+        {
+            rb.velocity = Vector2.up * JumpForce;
+            jumpTimeCounter -= Time.deltaTime;
+        }
+
+    }
 
     public void OnActivateButton()
     {
@@ -226,7 +233,42 @@ public class playerscript : MonoBehaviour
 
     void Update() //----------------------------------------------------UPDATE START-----------------------------------------------------
     {
+        JumpInputController = playerControls.Player.Jump.ReadValue<float>();
+
+        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
        
+        //JUMP
+         if(isGrounded == true && JumpInputController == 1f)
+        {
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+            rb.velocity = Vector2.up * JumpForce;
+        }
+        
+         if(JumpInputController == 1f && isJumping == true)
+        {
+            if(jumpTimeCounter > 0)
+            {
+                rb.velocity = Vector2.up * JumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+            }else
+            {
+                isJumping = false;
+            }
+        }
+
+         if(JumpInputController == 0f)
+        {
+            isJumping = false;
+        }
+
+
+
+
+
+
+
+
         switch (weaponNumber)
     {
         case 1 :
@@ -308,7 +350,7 @@ public class playerscript : MonoBehaviour
 
 
 
-        //DASH ANIM
+     //DASH ANIM
         if (dashInput == 1)
     {
         animator.SetBool("isDash", true);
@@ -332,9 +374,9 @@ public class playerscript : MonoBehaviour
 
 
 
+     // JUMP ANIM
 
-/*
-        float jumpInput = playerControls.Player.Jump.ReadValue<float>();
+       /* float jumpInput = playerControls.Player.Jump.ReadValue<float>();
         
         if(jumpInput == 1)
         {
@@ -346,12 +388,12 @@ public class playerscript : MonoBehaviour
             isJumping = false;
             animator.SetBool("isJumpingAnim", false);
         }
-
 */
 
 
 
-        //move the player
+
+     //move the player
         Vector3 currentPosition = transform.position;
         currentPosition.x += movementInput * speed * Time.deltaTime;
         transform.position = currentPosition;
@@ -362,7 +404,7 @@ public class playerscript : MonoBehaviour
         
     
 
-        //Damage Anim
+     //Damage Anim
         if (damaged == true)
         {
             animator.SetBool("isDamaged", true);
@@ -445,7 +487,7 @@ public class playerscript : MonoBehaviour
 
  
 
-/*    public void HandleJump()
+   /* public void HandleJump()
     {
         float Jumpfloat = playerControls.Player.Jump.ReadValue<float>();
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
@@ -480,8 +522,8 @@ public class playerscript : MonoBehaviour
 
 
 
-    }
-*/
+    }*/
+
 
         
    

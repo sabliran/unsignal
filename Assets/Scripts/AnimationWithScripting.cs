@@ -61,8 +61,8 @@ public class AnimationWithScripting : MonoBehaviour
         {
             StopAllCoroutines();
             StartCoroutine(Jump());
-        }
-        */
+        }*/
+        
         if (isDamaged == true)
         {
             StopAllCoroutines();
