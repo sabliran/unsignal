@@ -38,7 +38,7 @@ public class playerscript : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
    
-    public float jumpSpeed;
+    
     public bool isJumping;
   
     public float projectileSpeed;
@@ -232,12 +232,15 @@ public class playerscript : MonoBehaviour
 
 
     void Update() //----------------------------------------------------UPDATE START-----------------------------------------------------
-    {
+    { 
+        
+        
+        //JUMP
         JumpInputController = playerControls.Player.Jump.ReadValue<float>();
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
        
-        //JUMP
+       
          if(isGrounded == true && JumpInputController == 1f)
         {
             isJumping = true;
@@ -374,26 +377,26 @@ public class playerscript : MonoBehaviour
 
 
 
-     // JUMP ANIM
+        // JUMP ANIM
 
-       /* float jumpInput = playerControls.Player.Jump.ReadValue<float>();
         
-        if(jumpInput == 1)
+
+        if (JumpInputController == 1 && isGrounded)
         {
-            isJumping = true;
+            
             animator.SetBool("isJumpingAnim", true);
         }
         else
         {
-            isJumping = false;
+            
             animator.SetBool("isJumpingAnim", false);
         }
-*/
 
 
 
 
-     //move the player
+
+        //move the player
         Vector3 currentPosition = transform.position;
         currentPosition.x += movementInput * speed * Time.deltaTime;
         transform.position = currentPosition;
@@ -487,44 +490,7 @@ public class playerscript : MonoBehaviour
 
  
 
-   /* public void HandleJump()
-    {
-        float Jumpfloat = playerControls.Player.Jump.ReadValue<float>();
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-        if (isGrounded == true && Jumpfloat < 1)
-        {
-            
-            CreateDust();
-            jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * Jumpfloat;
-            
-        }
-
-        if(isJumping == true)
-        {
-            if(jumpTimeCounter > 0)
-            {
-                rb.velocity = Vector2.up * JumpForce;
-                jumpTimeCounter -= Time.deltaTime;
-            }
-            else {
-                isJumping = false;  
-                        
-                }
-
-        }
-
-        if (Jumpfloat == 0f)
-        {
-            isJumping = false;
-        }
-
-
-
-
-    }*/
-
-
+   
         
    
     //------------------------------------------------------------------------------Collision detection

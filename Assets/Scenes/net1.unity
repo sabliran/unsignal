@@ -1130,7 +1130,7 @@ PrefabInstance:
     - target: {fileID: 273033886921552717, guid: 76d14bd5bebe3de438910d47feee7304,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.383
+      value: -0.488
       objectReference: {fileID: 0}
     - target: {fileID: 3003996885856966441, guid: 76d14bd5bebe3de438910d47feee7304,
         type: 3}
@@ -1244,13 +1244,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7769854354617289670, guid: 76d14bd5bebe3de438910d47feee7304,
         type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769854354617289670, guid: 76d14bd5bebe3de438910d47feee7304,
+        type: 3}
       propertyPath: jumpTime
-      value: 0.4
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769854354617289670, guid: 76d14bd5bebe3de438910d47feee7304,
+        type: 3}
+      propertyPath: JumpForce
+      value: 16.9
       objectReference: {fileID: 0}
     - target: {fileID: 7769854354617289670, guid: 76d14bd5bebe3de438910d47feee7304,
         type: 3}
       propertyPath: checkRadius
-      value: 0.5
+      value: 0.29
       objectReference: {fileID: 0}
     - target: {fileID: 7769854354617289670, guid: 76d14bd5bebe3de438910d47feee7304,
         type: 3}
