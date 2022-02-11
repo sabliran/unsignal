@@ -176,7 +176,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7769854354617289664}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &999288653
 MonoBehaviour:
@@ -5137,7 +5137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273033886921552718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.656, z: 0}
+  m_LocalPosition: {x: 0, y: -0.488, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7769854354617289664}
@@ -5379,7 +5379,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6414,6 +6414,7 @@ GameObject:
   - component: {fileID: 443040107}
   - component: {fileID: 443040108}
   - component: {fileID: 1388002957}
+  - component: {fileID: 97673578}
   m_Layer: 10
   m_Name: player 1
   m_TagString: Player
@@ -6439,8 +6440,8 @@ Transform:
   - {fileID: 7769854353206617344}
   - {fileID: 379231922}
   - {fileID: 1931683661}
-  - {fileID: 999288652}
   - {fileID: 5963429065684555351}
+  - {fileID: 999288652}
   - {fileID: 252494846}
   - {fileID: 1158445162740785239}
   m_Father: {fileID: 0}
@@ -6533,14 +6534,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Screentip: {fileID: 5963429065684555351}
   rb: {fileID: 7769854354617289666}
-  speed: 8
+  speed: 11
   feetPos: {fileID: 273033886921552717}
-  checkRadius: 0.5
+  checkRadius: 0.29
   Ground:
     serializedVersion: 2
     m_Bits: 2048
-  jumpTime: 0.06
-  jumpSpeed: 100
+  jumpTime: 0.35
   isJumping: 0
   projectileSpeed: 30
   damaged: 0
@@ -6556,7 +6556,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 2048
-  JumpForce: 10
+  JumpForce: 16.9
   LazerOn: 0
   AuraOn: 0
   weaponNumber: 0
@@ -6571,6 +6571,8 @@ MonoBehaviour:
   timeRemaining: 10
   ActivateButtonBool: 0
   AgoraEnterText: {fileID: 0}
+  teleporterScript: {fileID: 0}
+  JumpInputController: 0
 --- !u!114 &7769854354617289669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6694,7 +6696,7 @@ MonoBehaviour:
   - {x: -0.08633963, y: -0.36756778, z: 0}
   m_ShapePathHash: 2032777848
   m_Mesh: {fileID: 0}
-  m_InstanceId: -69992
+  m_InstanceId: -1398
 --- !u!114 &443040101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6846,11 +6848,12 @@ MonoBehaviour:
     m_Values: 506f74696f6e73010000000001ffffffff00000000
     m_UnityObjects: []
     m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateInventorySystem.Core.InventoryCollections.ItemCollection
-    m_ValueHashes: 0d00eb25b769d11d5030ac3ef1f5543f666e77ff063d5314aacf0d993edd1331719c8809
-    m_ValuePositions: 0000000008000000080000000c0000000c0000000d0000000e0000001200000012000000
-    m_Values: 4571756970706564030000000001ffffffff00000000
-    m_UnityObjects: []
+  - m_ObjectType: Opsive.UltimateInventorySystem.Core.InventoryCollections.ItemSlotCollection
+    m_ValueHashes: 0d00eb25b769d11d5030ac3ef1f5543f666e77ff063d5314aacf0d993edd1331719c88096ea76198ae473e860963cb9e
+    m_ValuePositions: 0000000008000000080000000c0000000c0000000d0000000e0000001200000012000000160000001a0000001b000000
+    m_Values: 4571756970706564030000000001ffffffff00000000000000000100
+    m_UnityObjects:
+    - {fileID: 11400000, guid: 015a81d8bf27bff46a8a2dbf3899169a, type: 2}
     m_Version: 3.1
 --- !u!114 &443040108
 MonoBehaviour:
@@ -6888,6 +6891,59 @@ MonoBehaviour:
   m_SaveActiveState: 0
   m_SaveDestroyedState: 0
   m_SaveComponentEnabledState: 1
+--- !u!114 &97673578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769854354617289677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34aa3bdebc86413e99c9f631effa760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Inventory: {fileID: 443040107}
+  m_EquipmentItemCollectionID:
+    m_Name: Equipped
+    m_Purpose: 3
+  m_EquipablePrefabAttributeName: EquipmentPrefab
+  m_UsableItemPrefabAttributeName: UsableItemPrefab
+  m_ItemSlotSet: {fileID: 11400000, guid: 015a81d8bf27bff46a8a2dbf3899169a, type: 2}
+  m_Slots:
+  - m_Name: Right Hand
+    m_Category:
+      m_Name: Weapons
+      m_ItemCategory: {fileID: 11400000, guid: f94b8c9bfd0464f4ba6f25cf54d7eaa4, type: 2}
+    m_IsSkinnedEquipment: 0
+    m_Transform: {fileID: 0}
+    m_ItemObject: {fileID: 0}
+    m_HideWhenWearingEquipment: []
+  - m_Name: Head
+    m_Category:
+      m_Name: Head Wear
+      m_ItemCategory: {fileID: 11400000, guid: b2e4e749b37612f4b9c69edb784c1fc5, type: 2}
+    m_IsSkinnedEquipment: 0
+    m_Transform: {fileID: 0}
+    m_ItemObject: {fileID: 0}
+    m_HideWhenWearingEquipment: []
+  - m_Name: Chest
+    m_Category:
+      m_Name: Chest Wear
+      m_ItemCategory: {fileID: 11400000, guid: aeed1ee7441313a4a9608e3c6c834fb0, type: 2}
+    m_IsSkinnedEquipment: 0
+    m_Transform: {fileID: 0}
+    m_ItemObject: {fileID: 0}
+    m_HideWhenWearingEquipment: []
+  - m_Name: Legs
+    m_Category:
+      m_Name: Leg Wear
+      m_ItemCategory: {fileID: 11400000, guid: f6f02140814594146a3d6dc94d6131ce, type: 2}
+    m_IsSkinnedEquipment: 0
+    m_Transform: {fileID: 0}
+    m_ItemObject: {fileID: 0}
+    m_HideWhenWearingEquipment: []
+  m_MainRootNode: {fileID: 0}
 --- !u!1001 &268264861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6995,10 +7051,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: eyePet
       objectReference: {fileID: 0}
+    - target: {fileID: 2066024547365134840, guid: b77576a3ec40e2b4c9edaf26ca8bea14,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2066024547365134843, guid: b77576a3ec40e2b4c9edaf26ca8bea14,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2066024547365134843, guid: b77576a3ec40e2b4c9edaf26ca8bea14,
         type: 3}
@@ -7049,6 +7110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650228913787492594, guid: b77576a3ec40e2b4c9edaf26ca8bea14,
+        type: 3}
+      propertyPath: overlay
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b77576a3ec40e2b4c9edaf26ca8bea14, type: 3}

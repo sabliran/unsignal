@@ -257,6 +257,11 @@ public class playerscript : MonoBehaviour
             }else
             {
                 isJumping = false;
+                if (isJumping == false && isGrounded)
+                {
+                    animator.SetBool("isJumpingAnim", true);
+                }
+
             }
         }
 
@@ -265,6 +270,7 @@ public class playerscript : MonoBehaviour
             isJumping = false;
         }
 
+     
 
 
 
@@ -368,18 +374,21 @@ public class playerscript : MonoBehaviour
         if (meleeInput == 1)
         {
             animator.SetBool("melee", true);
+
+            rb.velocity = Vector2.up * JumpForce;
         }
         else
         {
             animator.SetBool("melee", false);
         }
+   
 
 
 
 
         // JUMP ANIM
 
-        
+
 
         if (JumpInputController == 1 && isGrounded)
         {
@@ -391,8 +400,8 @@ public class playerscript : MonoBehaviour
             
             animator.SetBool("isJumpingAnim", false);
         }
-
-
+        
+        
 
 
 
