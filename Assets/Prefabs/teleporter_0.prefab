@@ -44,19 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e1e46c4d8952a458b3456d581ae7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBox: {fileID: 0}
-  net1: {fileID: 0}
-  netw2: {fileID: 0}
-  netw3: {fileID: 0}
-  netw4: {fileID: 0}
   Network1Bool: 0
   Network2Bool: 0
   Network3Bool: 0
   Network4Bool: 0
-  net1Button: {fileID: 0}
-  net2Button: {fileID: 0}
-  net3Button: {fileID: 0}
-  net4Button: {fileID: 0}
+  network1Obj: {fileID: 0}
+  network2Obj: {fileID: 0}
+  network3Obj: {fileID: 0}
+  network4Obj: {fileID: 0}
 --- !u!1001 &5401815259339074248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -144,7 +139,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: LevelCheck1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8923519437362718649, guid: ff64bf3ff9eb08e4d83a5da814edd9fe, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ff64bf3ff9eb08e4d83a5da814edd9fe, type: 3}
 --- !u!4 &3540304287437213040 stripped
 Transform:

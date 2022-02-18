@@ -562,20 +562,7 @@ public class playerscript : MonoBehaviour
 
         // Checking which Levels the player have visited =======================================================
 
-        if (collision.gameObject.tag == "LevelCheck1")
-        {
-            teleporterScript.Network1Bool = true;
-
-
-        }
-
-        if (collision.gameObject.tag == "LevelCheck2")
-        {
-            teleporterScript.Network2Bool = true;
-
-
-        }
-
+      
     
 
 
