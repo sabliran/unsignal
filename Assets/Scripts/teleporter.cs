@@ -2,39 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class teleporter : MonoBehaviour
 {
-    public GameObject dialogueBox;
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {  
-           
-           
-           
-           dialogueBox.SetActive(true);
-           
-            //SceneManager.LoadScene("SCENE");
-        }
+    public static teleporter Tp;
 
- 
+    
 
-    }
-         private void OnTriggerExit2D(Collider2D collision) {
-            
-        
-        if (collision.gameObject.tag == "Player")
-        {  
-            dialogueBox.SetActive(false);
-        }
-            
+     
 
-        }
-
-
+        //Changing SCENES==============================================================================
         public void SceeneChanger()
         {
             SceneManager.LoadScene("net1");
+            
         }
 
         public void net2()
@@ -42,12 +23,12 @@ public class teleporter : MonoBehaviour
             SceneManager.LoadScene("net2");
         }
 
-            public void net3()
+        public void net3()
         {
             SceneManager.LoadScene("net3");
         }
 
-                    public void net4()
+        public void net4()
         {
             SceneManager.LoadScene("net4");
         }
@@ -58,6 +39,25 @@ public class teleporter : MonoBehaviour
         }
 
 
+    //===================================================================================================
+
+    
+   
+
+    private void Start()
+    {
+    }
+
+
+
+    public void Update()
+    {
+
+
+
+
+
+    }
 
 
 }

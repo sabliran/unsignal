@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3381686383025888103}
   - component: {fileID: 3381686383025888101}
   - component: {fileID: 3381686383025888153}
+  - component: {fileID: 1181491976}
   m_Layer: 0
   m_Name: redEye
   m_TagString: enemy
@@ -55,6 +56,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -206,10 +208,13 @@ MonoBehaviour:
     type: 3}
   Screentip: {fileID: 5944758784166569057}
   projectileSpeed: 10
-  changeColor: {fileID: 3381686383617362362}
   gotHit: 0
   isCloseEnough: 0
   destroyLaser: 0
+  EnemyIsAttacking: 0
+  isChasing: 0
+  distToPlayer: 0
+  jumpSpeed: 0
 --- !u!114 &3381686383025888153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +230,22 @@ MonoBehaviour:
   Material1: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   Object: {fileID: 3381686383025888097}
   refScript: {fileID: 3381686383025888101}
+--- !u!114 &1181491976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381686383025888097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b46afa3b393354988584c02ed1a156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mMovementSpeed: 3
+  bIsGoingRight: 1
+  mRaycastingDistance: 1
+  enemyScript: {fileID: 3381686383025888101}
 --- !u!1 &3381686383617362361
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +430,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -483,6 +505,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.36234203, g: 0.9622642, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -550,6 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 0
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -681,6 +705,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8025502597209036878
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 882548848359959901}
   - component: {fileID: 882548848359959900}
   - component: {fileID: 882548848359959896}
-  - component: {fileID: 882548848359959903}
   m_Layer: 0
-  m_Name: laserBeam_0
+  m_Name: Item_0_laserBeam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,6 +48,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -120,15 +120,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.26
---- !u!114 &882548848359959903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882548848359959843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28ea634cba6d8b4f9d2d8ad2580530e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

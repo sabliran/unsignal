@@ -1,0 +1,600 @@
+fileFormatVersion: 2
+guid: 972b6e0d94caf5b46aff38cfa3b77ecf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4181939170007429961
+    second: Chromium-Sheet_0
+  - first:
+      213: 2253992542803245460
+    second: Chromium-Sheet_1
+  - first:
+      213: 3205741216311866473
+    second: Chromium-Sheet_2
+  - first:
+      213: 4592374254162154783
+    second: Chromium-Sheet_3
+  - first:
+      213: 1478462231602753704
+    second: Chromium-Sheet_4
+  - first:
+      213: 8321408692704793871
+    second: Chromium-Sheet_5
+  - first:
+      213: -1270716301745777788
+    second: Chromium-Sheet_6
+  - first:
+      213: 2589973157945107469
+    second: Chromium-Sheet_7
+  - first:
+      213: -831099202476814213
+    second: Chromium-Sheet_8
+  - first:
+      213: 5022558749830167189
+    second: Chromium-Sheet_9
+  - first:
+      213: -691999639814115129
+    second: Chromium-Sheet_10
+  - first:
+      213: -813326214711956201
+    second: Chromium-Sheet_11
+  - first:
+      213: 539073698632599175
+    second: Chromium-Sheet_12
+  - first:
+      213: 1016598776605025559
+    second: Chromium-Sheet_13
+  - first:
+      213: 1686936046809436360
+    second: Chromium-Sheet_14
+  - first:
+      213: -6912954340547424458
+    second: Chromium-Sheet_15
+  - first:
+      213: 3169704886534029002
+    second: Chromium-Sheet_16
+  - first:
+      213: 2805680700339092673
+    second: Chromium-Sheet_17
+  - first:
+      213: 6029253480734202909
+    second: Chromium-Sheet_18
+  - first:
+      213: 4484838014222018814
+    second: Chromium-Sheet_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Chromium-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc4a635b74c6f5c0800000000000000
+      internalID: -4181939170007429961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499ba28864ac74f10800000000000000
+      internalID: 2253992542803245460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964f818c6a41d7c20800000000000000
+      internalID: 3205741216311866473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f151cfe7d046bbf30800000000000000
+      internalID: 4592374254162154783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a07380019d848410800000000000000
+      internalID: 1478462231602753704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0554870e159b7370800000000000000
+      internalID: 8321408692704793871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483152091428d5ee0800000000000000
+      internalID: -1270716301745777788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d046d196dde61f320800000000000000
+      internalID: 2589973157945107469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70524fbda75774f0800000000000000
+      internalID: -831099202476814213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a38238296b3b540800000000000000
+      internalID: 5022558749830167189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c07e247ef58566f0800000000000000
+      internalID: -691999639814115129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71da49ded1c76b4f0800000000000000
+      internalID: -813326214711956201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78680ca3cac2b7700800000000000000
+      internalID: 539073698632599175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 715a3ae733fab1e00800000000000000
+      internalID: 1016598776605025559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c0d0e49563396710800000000000000
+      internalID: 1686936046809436360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f0d2757a04010a0800000000000000
+      internalID: -6912954340547424458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace3eaceccd0dfb20800000000000000
+      internalID: 3169704886534029002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc71e85bb7cfe620800000000000000
+      internalID: 2805680700339092673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1c13fba8163ca350800000000000000
+      internalID: 6029253480734202909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chromium-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 12
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef82fd889685d3e30800000000000000
+      internalID: 4484838014222018814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

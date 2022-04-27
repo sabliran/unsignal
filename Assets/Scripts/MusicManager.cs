@@ -10,7 +10,7 @@ public class MusicManager : MonoBehaviour
     private void Awake() 
     {
         audioSource = GetComponent<AudioSource>();
-        DontDestroyOnLoad(this); 
+       /* DontDestroyOnLoad(this); */
         
         if (musicManagerInstance == null)
         {
