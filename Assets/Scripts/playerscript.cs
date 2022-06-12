@@ -10,7 +10,6 @@ using UnityEngine.InputSystem;
 
 
 
-
 [RequireComponent(typeof(Rigidbody))]
 
 
@@ -38,17 +37,15 @@ public class playerscript : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
    
-    
+    public float jumpSpeed;
     public bool isJumping;
   
     public float projectileSpeed;
     private bool faceRight;
     private float bulletDecay = 2;
     public bool damaged;
-    
-    public static int currentHealth;
-    public int maxHealth;
-
+    public int maxHealth = 1000;
+    public int currentHealth;
     public HealthBar healthBar;
     public float countdown = 1.0f;
     public GameObject pointLight;
@@ -80,28 +77,13 @@ public class playerscript : MonoBehaviour
     public GameObject MiniMap;
     public bool ActiveMap;
 
-    public float timeRemaining = 100;
 
-    public bool ActivateButtonBool;
-    public GameObject AgoraEnterText;
-
-
-    public teleporter teleporterScript;
-
-    public float JumpInputController;
-
-
-
+    
     private void Awake() 
     {
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
-
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
-
-       
     }
     private void OnEnable() {
         playerControls.Enable();
@@ -113,37 +95,23 @@ public class playerscript : MonoBehaviour
 
     void Start()
     {
-        currentHealth = 1000;
+        currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         dashTime = startDashTime;
         animator = GetComponent<Animator>();
         ActiveMap = false;
-        // maximize fps
-        Application.targetFrameRate = 300;
-
     }
-
+    
 
     public void OnJump()
     {
-        //HandleJump();
-        
-        if(jumpTimeCounter > 0)
-        {
-            rb.velocity = Vector2.up * JumpForce;
-            jumpTimeCounter -= Time.deltaTime;
-        }
-
+        HandleJump();
+    isJumping = true;
+    
     }
-
-    public void OnActivateButton()
-    {
-        ActivateButtonBool = true;
-
-    }
-
-
-
+    
+   
+    
     public void OnShootLaser()
     {
         
@@ -212,7 +180,7 @@ public class playerscript : MonoBehaviour
         GameObject laser = Instantiate(laserPrefab, Screentip.position, Screentip.rotation) as GameObject;
         Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
         rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
-        Destroy (laser, 1.8f);
+        Destroy (laser, 0.3f);
         LazerOn = true;
         AuraOn = false;
         animator.SetBool("isShooting", true);
@@ -228,57 +196,14 @@ public class playerscript : MonoBehaviour
         AuraOn = true;
     }
 
-  
 
-
+ 
     void Update() //----------------------------------------------------UPDATE START-----------------------------------------------------
-    { 
-        
-        
-        //JUMP
-        JumpInputController = playerControls.Player.Jump.ReadValue<float>();
+    {
 
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+    
        
-       
-         if(isGrounded == true && JumpInputController == 1f)
-        {
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * JumpForce;
-        }
-        
-         if(JumpInputController == 1f && isJumping == true)
-        {
-            if(jumpTimeCounter > 0)
-            {
-                rb.velocity = Vector2.up * JumpForce;
-                jumpTimeCounter -= Time.deltaTime;
-            }else
-            {
-                isJumping = false;
-                if (isJumping == false && isGrounded)
-                {
-                    animator.SetBool("isJumpingAnim", true);
-                }
-
-            }
-        }
-
-         if(JumpInputController == 0f)
-        {
-            isJumping = false;
-        }
-
-     
-
-
-
-
-
-
-
-        switch (weaponNumber)
+    switch (weaponNumber)
     {
         case 1 :
             
@@ -308,59 +233,53 @@ public class playerscript : MonoBehaviour
         }
         
 
+#region DASH
         float dashInput = playerControls.Player.Dash.ReadValue<float>();
-
+        
         //0 = not pressed
         //1 = pressed
-
-
-        if (direction == 0)
+        if(direction == 0)
         {
-
-            if (dashInput == 1)
+            
+            if(dashInput == 1)
             {
                 CreateDust();
-                
-                if (movementInput == -1)
+                if(movementInput == -1)
                 {
                     direction = 1;
-                }
-                else if (movementInput == 1)
+                }else if(movementInput == 1)
                 {
                     direction = 2;
                 }
             }
-        }
-        else
+        }else
         {
-            if (dashTime <= 0)
+            if(dashTime <= 0)
             {
                 direction = 0;
                 dashTime = startDashTime;
                 rb.velocity = Vector2.zero;
-            }
-            else
+            }else
             {
-                dashTime -= Time.deltaTime;
+                 dashTime -= Time.deltaTime;
 
-
-                if (direction == 1)
-                {
+                 if (direction == 1)
+                 {
                     rb.velocity = Vector2.left * dashSpeed;
-                }
-                else if (direction == 2)
-                {
-                    rb.velocity = Vector2.right * dashSpeed;
-                }
-
+                 }else if(direction == 2)
+                 {
+                     rb.velocity = Vector2.right * dashSpeed;
+                 }
+                 
             }
         }
 
 
+#endregion
 
-
-     //DASH ANIM
-        if (dashInput == 1)
+    #region ANIMATION CONTROLLER
+    //DASH ANIM
+    if(dashInput == 1)
     {
         animator.SetBool("isDash", true);
     }else
@@ -374,34 +293,31 @@ public class playerscript : MonoBehaviour
         if (meleeInput == 1)
         {
             animator.SetBool("melee", true);
-
-            rb.velocity = Vector2.up * JumpForce;
         }
         else
         {
             animator.SetBool("melee", false);
         }
-   
 
 
 
 
-        // JUMP ANIM
 
 
-
-        if (JumpInputController == 1 && isGrounded)
+        float jumpInput = playerControls.Player.Jump.ReadValue<float>();
+        
+        if(jumpInput == 1)
         {
-            
+            isJumping = true;
             animator.SetBool("isJumpingAnim", true);
         }
         else
         {
-            
+            isJumping = false;
             animator.SetBool("isJumpingAnim", false);
         }
-        
-        
+
+#endregion
 
 
 
@@ -416,7 +332,7 @@ public class playerscript : MonoBehaviour
         
     
 
-     //Damage Anim
+        //Damage Anim
         if (damaged == true)
         {
             animator.SetBool("isDamaged", true);
@@ -461,19 +377,7 @@ public class playerscript : MonoBehaviour
  
     } //--------------------------------------------------------------------------UPDATE END---------------------------------------------
 
-
-
-
-    public void Heal(int amount)
-    {
-        if(amount <= 0) { return; }
-        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-    }
-
-
-
-
-    // play particle function
+// play particle function
     void CreateDust()
     {
         dust.Play();
@@ -497,9 +401,54 @@ public class playerscript : MonoBehaviour
         }
     }
 
- 
+    void restoreTest(int damage)
+    {
+    if (currentHealth < 999)
+    {
+        currentHealth += damage; 
+        
+        healthBar.SetHealth(currentHealth);
+    }
+    }
 
-   
+    public void HandleJump()
+    {
+        float Jumpfloat = playerControls.Player.Jump.ReadValue<float>();
+        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+        if (isGrounded == true && Jumpfloat < 1)
+        {
+            
+            CreateDust();
+            jumpTimeCounter = jumpTime;
+            rb.velocity = Vector2.up * Jumpfloat;
+            
+        }
+
+        if(isJumping == true)
+        {
+            if(jumpTimeCounter > 0)
+            {
+                rb.velocity = Vector2.up * JumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else {
+                isJumping = false;  
+                        
+                }
+
+        }
+
+        if (Jumpfloat == 0f)
+        {
+            isJumping = false;
+        }
+
+
+
+
+    }
+
+
         
    
     //------------------------------------------------------------------------------Collision detection
@@ -559,64 +508,23 @@ public class playerscript : MonoBehaviour
            
             
         }
-
-        // Checking which Levels the player have visited =======================================================
-
-      
-    
-
-
-
-
-
-
-        //======================================================================================================
-
     }
     
         void OnTriggerStay2D(Collider2D collision)
         {
-
-
-
-            if (collision.gameObject.tag == "GreenLight")
-            {  
-                Heal(100);
-            }
-
-
-        if (collision.gameObject.tag == "agoraEnterCollider")
-        {
-            AgoraEnterText.SetActive(true);
-
-            if (ActivateButtonBool == true)
-            {
-                SceneManager.LoadScene("Pub");
-            }
-
-            
+        if (collision.gameObject.tag == "GreenLight")
+        {  
+            restoreTest(2);
         }
-
         }
         
-        void OnTriggerExit2D(Collider2D other)
-        {
 
-        if (other.gameObject.tag == "agoraEnterCollider")
-        {
-            
-            AgoraEnterText.SetActive(false);
-        }
-
-    }
 
         void OnCollisionExit2D(Collision2D col)
     {
         damaged = false;
         countdown = 0.1f;
-
-
-
+        
     }
         
 

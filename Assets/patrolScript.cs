@@ -31,7 +31,7 @@ public class patrolScript : MonoBehaviour
         transform.Translate(directionTranslation);
 
 
-       // Debug.Log(mRaycastingDistance);
+        Debug.Log(mRaycastingDistance);
 
         CheckForWalls();
 
