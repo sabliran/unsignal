@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: be3595435b3c6a9449f94454aa8632e9
+labels:
+- DemoInventoryDatabase
+- DemoRecipesWithCurrency
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

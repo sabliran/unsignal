@@ -10,6 +10,7 @@ using UnityEngine.InputSystem;
 
 
 
+
 [RequireComponent(typeof(Rigidbody))]
 
 
@@ -77,8 +78,14 @@ public class playerscript : MonoBehaviour
     public GameObject MiniMap;
     public bool ActiveMap;
 
+    public float timeRemaining = 100;
 
-    
+    public bool ActivateButtonBool;
+    public GameObject AgoraEnterText;
+   
+
+
+
     private void Awake() 
     {
         playerControls = new PlayerControls();
@@ -100,6 +107,8 @@ public class playerscript : MonoBehaviour
         dashTime = startDashTime;
         animator = GetComponent<Animator>();
         ActiveMap = false;
+        // maximize fps
+        Application.targetFrameRate = 300;
     }
     
 
@@ -109,9 +118,15 @@ public class playerscript : MonoBehaviour
     isJumping = true;
     
     }
-    
-   
-    
+
+    public void OnActivateButton()
+    {
+        ActivateButtonBool = true;
+
+    }
+
+
+
     public void OnShootLaser()
     {
         
@@ -180,7 +195,7 @@ public class playerscript : MonoBehaviour
         GameObject laser = Instantiate(laserPrefab, Screentip.position, Screentip.rotation) as GameObject;
         Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
         rb.AddForce(Screentip.right * projectileSpeed, ForceMode2D.Impulse);
-        Destroy (laser, 0.3f);
+        Destroy (laser, 1.8f);
         LazerOn = true;
         AuraOn = false;
         animator.SetBool("isShooting", true);
@@ -196,14 +211,13 @@ public class playerscript : MonoBehaviour
         AuraOn = true;
     }
 
+  
 
- 
+
     void Update() //----------------------------------------------------UPDATE START-----------------------------------------------------
     {
-
-    
        
-    switch (weaponNumber)
+        switch (weaponNumber)
     {
         case 1 :
             
@@ -233,53 +247,59 @@ public class playerscript : MonoBehaviour
         }
         
 
-#region DASH
         float dashInput = playerControls.Player.Dash.ReadValue<float>();
-        
+
         //0 = not pressed
         //1 = pressed
-        if(direction == 0)
+
+
+        if (direction == 0)
         {
-            
-            if(dashInput == 1)
+
+            if (dashInput == 1)
             {
                 CreateDust();
-                if(movementInput == -1)
+                
+                if (movementInput == -1)
                 {
                     direction = 1;
-                }else if(movementInput == 1)
+                }
+                else if (movementInput == 1)
                 {
                     direction = 2;
                 }
             }
-        }else
+        }
+        else
         {
-            if(dashTime <= 0)
+            if (dashTime <= 0)
             {
                 direction = 0;
                 dashTime = startDashTime;
                 rb.velocity = Vector2.zero;
-            }else
+            }
+            else
             {
-                 dashTime -= Time.deltaTime;
+                dashTime -= Time.deltaTime;
 
-                 if (direction == 1)
-                 {
+
+                if (direction == 1)
+                {
                     rb.velocity = Vector2.left * dashSpeed;
-                 }else if(direction == 2)
-                 {
-                     rb.velocity = Vector2.right * dashSpeed;
-                 }
-                 
+                }
+                else if (direction == 2)
+                {
+                    rb.velocity = Vector2.right * dashSpeed;
+                }
+
             }
         }
 
 
-#endregion
 
-    #region ANIMATION CONTROLLER
-    //DASH ANIM
-    if(dashInput == 1)
+
+        //DASH ANIM
+        if (dashInput == 1)
     {
         animator.SetBool("isDash", true);
     }else
@@ -317,7 +337,7 @@ public class playerscript : MonoBehaviour
             animator.SetBool("isJumpingAnim", false);
         }
 
-#endregion
+
 
 
 
@@ -376,6 +396,14 @@ public class playerscript : MonoBehaviour
 
  
     } //--------------------------------------------------------------------------UPDATE END---------------------------------------------
+
+
+  
+
+
+
+
+
 
 // play particle function
     void CreateDust()
@@ -508,23 +536,62 @@ public class playerscript : MonoBehaviour
            
             
         }
+
+        if (collision.gameObject.tag == "PuzzleCube")
+        {
+            print("puzzleCube touched");
+            
+            
+            SceneManager.LoadScene("1cubepuzzle");
+
+
+        }
+
     }
     
         void OnTriggerStay2D(Collider2D collision)
         {
-        if (collision.gameObject.tag == "GreenLight")
-        {  
-            restoreTest(2);
+
+
+
+            if (collision.gameObject.tag == "GreenLight")
+            {  
+                restoreTest(2);
+            }
+
+
+        if (collision.gameObject.tag == "agoraEnterCollider")
+        {
+            AgoraEnterText.SetActive(true);
+
+            if (ActivateButtonBool == true)
+            {
+                SceneManager.LoadScene("Pub");
+            }
+
+            
         }
+
         }
         
+        void OnTriggerExit2D(Collider2D other)
+        {
 
+        if (other.gameObject.tag == "agoraEnterCollider")
+        {
+            
+            AgoraEnterText.SetActive(false);
+        }
+
+    }
 
         void OnCollisionExit2D(Collision2D col)
     {
         damaged = false;
         countdown = 0.1f;
-        
+
+
+
     }
         
 

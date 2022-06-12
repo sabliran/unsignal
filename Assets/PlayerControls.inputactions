@@ -84,6 +84,25 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+<<<<<<< Updated upstream
+=======
+                },
+                {
+                    "name": "ActivateButton",
+                    "type": "Button",
+                    "id": "3277eff9-6bb2-46c8-abb8-b5ebce2d5b2a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "823b4f41-9275-4280-855f-69c532eca7c9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+>>>>>>> Stashed changes
                 }
             ],
             "bindings": [
@@ -146,6 +165,39 @@
                     "name": "positive",
                     "id": "17b15245-3135-4674-92ec-27da3060c76e",
                     "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "touchscreen",
+                    "id": "4e825c0a-f2bc-4cda-8c50-3730d799ac4c",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "23467d8e-db4f-491b-b262-408e21bc1b69",
+                    "path": "<AndroidJoystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "fee76992-dc54-4560-8799-64d0d6bc252f",
+                    "path": "<AndroidJoystick>/stick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -339,6 +391,31 @@
                     "action": "MeleeAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
+<<<<<<< Updated upstream
+=======
+                },
+                {
+                    "name": "",
+                    "id": "fac87904-295f-455e-942d-c1598e017e41",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivateButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a0e7ce6-b2a7-4176-aa61-746df75cde8d",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+>>>>>>> Stashed changes
                 }
             ]
         },

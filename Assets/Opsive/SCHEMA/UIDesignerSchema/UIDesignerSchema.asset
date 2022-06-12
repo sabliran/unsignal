@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe2a82639b742d6a8cd9dcb3f1a2065, type: 3}
+  m_Name: UIDesignerSchema
+  m_EditorClassIdentifier: 
+  m_KeepPrefabLink: 0
+  m_Description: 'A schema created by duplicating the Schema: RPG'
+  m_Images:
+  - {fileID: 2800000, guid: 5f17c1abc41708f42b44c553472498eb, type: 3}
+  - {fileID: 2800000, guid: f29acd383219302458b3747a1530d93f, type: 3}
+  m_FullSchemaLayout: {fileID: 4967835152718877349, guid: 99a442fa6cae6ca49812089cdff926db,
+    type: 3}
+  m_SimplePanel: {fileID: 4152312017015572901, guid: 9de16b7002e341c42b3cd5af59f4a587,
+    type: 3}
+  m_FloatingPanel: {fileID: 4152312017015572901, guid: 1782cb61f6f71cb4cb249ebec2313ae9,
+    type: 3}
+  m_MainMenuInnerPanel: {fileID: 5144345984913697725, guid: 4a8b0d060965bf7479b0f3e57dd26322,
+    type: 3}
+  m_MainMenuVertical: {fileID: 7009462345255606206, guid: 3b80a42ae2420644d8256688562bc853,
+    type: 3}
+  m_MainMenuHorizontal: {fileID: 243562867810124217, guid: 16fe18981d922594cb8bb771d3eb2a2b,
+    type: 3}
+  m_MainMenuTabButton: {fileID: 5782020871598506308, guid: d7eddeaa5d4584f4687ee800517bd807,
+    type: 3}
+  m_InventoryGrid: {fileID: 8798033766220748082, guid: c6a89a0066ceee7498ed41e6927e9e5e,
+    type: 3}
+  m_ItemShapeGrid: {fileID: 8755210283033333747, guid: 3a584166e0a2fed4592533a3ab79bc8e,
+    type: 3}
+  m_ItemShapeViewSlot: {fileID: 4012611375531495872, guid: adfffefad77ede64f902ad8bdcb74985,
+    type: 3}
+  m_EquipmentItemViewSlotContainer: {fileID: 749471216824709623, guid: 9fc5febbb5624324a8d40c806dfec5c7,
+    type: 3}
+  m_ItemHotbarPanel: {fileID: 8313604035090519111, guid: d3cce8df47874464882551a79129e78b,
+    type: 3}
+  m_ItemViewForHotbar: {fileID: 2481112029096730679, guid: 7ca6a7d4f605a4d4db81f4fc0c143f95,
+    type: 3}
+  m_ItemHotbarViewSet: {fileID: 11400000, guid: 850f260aeeea7974487aa22f3ec972f3,
+    type: 2}
+  m_ItemHotbarActionSet: {fileID: 11400000, guid: 3a0e968bf397ee14280f0b29f83d1404,
+    type: 2}
+  m_ShopMenu: {fileID: 345262622002935535, guid: dc6b813eaad514f4087a5f3098b70cdb,
+    type: 3}
+  m_QuantityPickerPanel: {fileID: 493186163402831629, guid: c31c3d03b54f94b4e935fa7f250479bf,
+    type: 3}
+  m_CraftingMenu: {fileID: 6292172331966684359, guid: 8306914b5109318459704706462d6df5,
+    type: 3}
+  m_RecipePanel: {fileID: 8532643348833150008, guid: 5cdf37c0d189254498e8b31e342b0afd,
+    type: 3}
+  m_SaveMenu: {fileID: 2931278504135758578, guid: 60b752812b801a44e8291477eb8ebf03,
+    type: 3}
+  m_SaveView: {fileID: 3006233821229253468, guid: 050a8a91a5ad788439379a5ba3998a65,
+    type: 3}
+  m_StorageMenu: {fileID: 4828517176987412165, guid: 33d5c8b048b9868448404a82f4cc4eac,
+    type: 3}
+  m_ChestMenu: {fileID: 3718867020934514241, guid: 43c44207609bf5a438bc84929fe14df1,
+    type: 3}
+  m_ItemDescriptionPanel: {fileID: 6603325552138060758, guid: fcaf75147795c9049ad2c05f36c3ea34,
+    type: 3}
+  m_ItemDescription: {fileID: 6077775568040077229, guid: f94632ac9a063e3469cf1d48a7a0cef2,
+    type: 3}
+  m_ItemDescriptionSmall: {fileID: 3801124640718904474, guid: 1ecd231d45f035246b9f54799624fd37,
+    type: 3}
+  m_ItemDescriptionBig: {fileID: 7645116548030060992, guid: da340086e6bd2a042b7cb49a449fa4eb,
+    type: 3}
+  m_MultiCurrencyView: {fileID: 69638757294852590, guid: 8c6a3f0645d38924995673646820a444,
+    type: 3}
+  m_MultiCurrencyViewSmall: {fileID: 3197797215303273492, guid: 31218189c09bc9e408ff13db5cae1ce6,
+    type: 3}
+  m_CurrencyOwnerMonitor: {fileID: 747310318824257902, guid: ec29fc7b72f346842a1b6c032d7ff41f,
+    type: 3}
+  m_CurrencyView: {fileID: 5558264069610053913, guid: b8d2ed00e343459469156994a7698f84,
+    type: 3}
+  m_InventoryMonitor: {fileID: 1604601414081494381, guid: dbcc4d116f75ff941bbec3591f4065b8,
+    type: 3}
+  m_ItemViewSlot: {fileID: 4012611375531495872, guid: 0c09db57517f1e2468314561a0f6f76c,
+    type: 3}
+  m_ItemViewForGrid: {fileID: 7624246339917249320, guid: bbae61b3c3f0cae4586c510635ee6440,
+    type: 3}
+  m_ItemViewForList: {fileID: 7914497926605967612, guid: c151a665cdb2183499d945ef8bd7e0aa,
+    type: 3}
+  m_ItemViewForShop: {fileID: 765635982066011842, guid: 0ccb52fc412290c409508b2e44dbda7c,
+    type: 3}
+  m_ItemViewForItemShape: {fileID: 6867094090503280914, guid: b968c6c16964e0145a92d8cbd0927882,
+    type: 3}
+  m_ItemViewForIngredient: {fileID: 1311435730791490545, guid: 5c7e32ebc6d00d044aa42328b5c92885,
+    type: 3}
+  m_ItemViewForInventoryMonitor: {fileID: 3138634633631440103, guid: 29a36defbb56f3a49bb53730fcbfb165,
+    type: 3}
+  m_GridCategoryItemViewSet: {fileID: 11400000, guid: ab6223bdf2336764bb7029b3b454d960,
+    type: 2}
+  m_ListCategoryItemViewSet: {fileID: 11400000, guid: 58c5c4e59f391684c897f18703311321,
+    type: 2}
+  m_ShopCategoryItemViewSet: {fileID: 11400000, guid: 5137298b63ed1d4449be2577aaae81cd,
+    type: 2}
+  m_ItemShapeCategoryItemViewSet: {fileID: 11400000, guid: 51c2116f27b7ccb48992f83c60d7444c,
+    type: 2}
+  m_AttributeView: {fileID: 8260904806648500130, guid: 803bf9c4c46737d4b9970b2a38e395d7,
+    type: 3}
+  m_CategoryAttributeViewSet: {fileID: 11400000, guid: 5cff6488ec82aef45b0b8caa064551a5,
+    type: 2}
+  m_ItemActionPanel: {fileID: 335945689555693807, guid: 153abb9af30bd9c4a9d8add09cfe6e95,
+    type: 3}
+  m_ItemActionButton: {fileID: 8202421382263091597, guid: e3ab35e39c3985c489d6f52e3adb6bd5,
+    type: 3}
+  m_CategoryItemActionSet: {fileID: 11400000, guid: 3a0e968bf397ee14280f0b29f83d1404,
+    type: 2}
+  m_TabToggle: {fileID: 2588454746733045744, guid: bb75d80a443643b4f8cdd90a2ff6ebfa,
+    type: 3}
+  m_ButtonRight: {fileID: 5512035640155413722, guid: b8694a2d629e52346a1bc9180b82b563,
+    type: 3}
+  m_GridSortDropDown: {fileID: 6974239198999370456, guid: f916d263f284d14418c970a4a6461981,
+    type: 3}
+  m_GridSearchBar: {fileID: 1424489465810608493, guid: b3c89945dc2f0d74080e95c65f14fe0a,
+    type: 3}
+  m_ScrollbarVertical: {fileID: 217281251133894175, guid: 3f9bd89d46589194baf04166e74f1c97,
+    type: 3}
+  m_ItemViewSlotDropActionSet: {fileID: 11400000, guid: 0d389009a1c18d24fbcf6d00305a12fb,
+    type: 2}

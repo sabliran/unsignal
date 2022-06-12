@@ -19,7 +19,8 @@ TagManager:
   - Obstacle
   - ObstacleRedLaser
   - Wall
-  - SwitchCubeFace
+  - PuzzleCube
+  - agoraEnterCollider
   layers:
   - Default
   - TransparentFX
