@@ -56,12 +56,12 @@ public class AnimationWithScripting : MonoBehaviour
 
 
 
-/*
+
         if (refScript.isJumping == true)
         {
             StopAllCoroutines();
             StartCoroutine(Jump());
-        }*/
+        }
         
         if (isDamaged == true)
         {

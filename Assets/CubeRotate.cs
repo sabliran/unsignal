@@ -16,12 +16,14 @@ public class CubeRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(switchCoroutine());
 
+        
     }
 
-    public IEnumerator switchCoroutine()
+
+     public void cubeRotateFunction()
     {
+
         //find the vector pointing from our position to the target
         _direction = (Target.position - transform.position).normalized;
 
@@ -31,28 +33,6 @@ public class CubeRotate : MonoBehaviour
         //rotate us over time according to speed until we are in the required rotation
         transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
 
-        Debug.Log("cube rotated111");
-        yield return null;
-    }
-
-    public void cubeRotateFunction()
-    {
-        /*
-                //find the vector pointing from our position to the target
-                _direction = (Target.position - transform.position).normalized;
-
-                //create the rotation we need to be in to look at the target
-                _lookRotation = Quaternion.LookRotation(_direction);
-
-                //rotate us over time according to speed until we are in the required rotation
-                transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
-
-                Debug.Log("cube rotated");    */
-
-
-        
-
-
-
+        Debug.Log("cube rotated");    
     }
 }
